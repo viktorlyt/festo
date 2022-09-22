@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  height: auto;
+  width: 100%;
+  background-color: #ff3818;
+  opacity: 0.5;
+
+  &__rightSide {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__home {
+    padding: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  &__features {
+    padding: 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  &__register {
+    margin-right: 60px;
+    padding: 0 30px 0 15px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
