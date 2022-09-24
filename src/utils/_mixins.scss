@@ -1,40 +1,34 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.4s;
   &:hover {
     #{$_property}: $_toValue;
   }
 }
 
 @mixin hover-content {
-  transition: all 0.4s;
   &:hover {
     @content;
   }
 }
 
 @mixin active($_property, $_toValue) {
-  transition: #{$_property} 0.4s;
   &:active {
     #{$_property}: $_toValue;
   }
 }
 
 @mixin active-content {
-  transition: all 0.4s;
   &:active {
     @content;
   }
 }
 
 @mixin focus($_property, $_toValue) {
-  transition: #{$_property} 0.4s;
   &:focus {
     #{$_property}: $_toValue;
   }
 }
 
 @mixin focus-content {
-  transition: all 0.4s;
   &:focus {
     @content;
   }

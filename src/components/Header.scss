@@ -22,17 +22,29 @@
     padding: 0 15px;
     color: $colorWhite;
     text-decoration: none;
+        
+    &:hover {
+      color: $colorGray;
+    }
   }
   
   &__features {
     padding: 0 15px;
     color: $colorWhite;
     text-decoration: none;
+        
+    &:hover {
+      color: $colorGray;
+    }
   }
   &__register {
-    margin-right: 60px;
+    /* margin-right: 60px; */
     padding: 0 30px 0 15px;
     color: $colorWhite;
     text-decoration: none;
+        
+    &:hover {
+      color: $colorGray;
+    }
   }
 }

@@ -1,12 +1,14 @@
 @import './utils.scss';
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import './components/Header';
 @import './components/Home/Home.scss';
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import './components/Footer';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.4s ease;
 }
 
 body {
