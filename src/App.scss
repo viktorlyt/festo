@@ -1,13 +1,17 @@
-@import './components/Header.scss';
+@import './utils.scss';
+@import './components/Header';
 @import './components/Home/Home.scss';
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   position: relative;
   font-family: questrial, sans-serif;
+  scroll-behavior: smooth;
+  transition: 1.4s ease;
 }

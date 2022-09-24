@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
-    <header className="header">
-      <img src="../../festo-app-logo.png" alt="logo" />
+    <header id='header' className="header">
+      <Link to='/'>
+        <img src="../../festo-app-logo.png" alt="logo" />
+      </Link>
       <div className='header__rightSide'>
         <Link to='/' className='header__home'>Home</Link>
         <Link to='/features' className='header__features'>Features</Link>

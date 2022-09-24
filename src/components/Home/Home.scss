@@ -2,7 +2,7 @@
   &__banner {
     height: 1174px;
     object-fit: cover;
-    color: #ffffff;
+    color: $colorWhite;
 
     &-center {
       display: flex;
@@ -53,12 +53,133 @@
   
   &__span4 {
     margin: 0 10px 40px 10px;
-    color: rgb(255,56,24);
+    color: $colorRed;
   }
 
   &__red_shadow {
     z-index: 1;
-    /* height: 603px; */
     transform: translateY(-565px);
+  }
+
+  &__redSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    height: 304px;
+    background-color: $colorRed;
+    color: $colorWhite;
+    text-align: center;
+
+    &-span1 {
+      font-size: 35px;
+      margin-bottom: 30px;
+      margin-top: 15px;
+    }
+    
+    &-span2 {
+      font-size: 55px;
+      margin-bottom: 40px;
+    }
+    
+    &-span3 {
+      font-size: 20px;
+    }
+  }
+
+  &__gray {
+    height: 63px;
+    background-color: #f2f2f2;
+  }
+  
+  &__subscribe {
+    height: 272px;
+    background-color: #fAfAfA;
+
+    &-span {
+      display: block;
+      padding: 30px 0 15px;
+      font-size: 50px;
+      text-align: center;
+      color: $colorGray;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 920px;
+      margin: auto;
+
+      &--label {
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 22px;
+
+        &::after {
+          display: block;
+          content: "*";
+          color: $colorRed;
+        }
+      }
+
+      &--div {
+        position: relative;
+        display: flex;
+      }
+
+      &--input {
+        display: block;
+        width: 100%;
+        height: 70px;
+        padding: 0 10px 0 30px;
+        border: 0.5px solid $colorRed;
+        border-radius: 35px;
+        background-color: $colorRed;
+
+        font-size: 14px;
+        color: $colorWhite;
+        
+        &::placeholder {
+          color: $colorWhite;
+        }
+
+        @include hover-content {
+          color: $colorGray;
+          background-color: rgb(237, 237, 237);
+          border-color: $colorGray;
+        };
+        
+        &:focus {
+          color: $colorBlack;
+          background-color: rgb(237, 237, 237);
+          border-color: $colorRed;
+          outline: none;
+        };
+      }
+
+      &--button {
+        position: absolute;
+        flex-shrink: 0;
+        height: 48px;
+        width: 162px;
+
+        color: $colorGray;
+        font-weight: bold;
+        font-size: 14px;
+        border: 1px solid $colorRed;
+        border-radius: 24px;
+        background-color: $colorWhite;
+
+        transform: translateX(-174px) translateY(12px);
+        transition: all 0.4s ease;
+
+        @include hover-content {
+          color: $colorWhite;
+          background-color: $colorGray;
+          cursor: pointer;
+        };
+      }
+    }
   }
 }
