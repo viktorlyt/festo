@@ -1,13 +1,13 @@
 import React from 'react'
-import { Footer } from '../Footer'
-import { Header } from '../Header'
+import { Footer } from '../../components/Footer'
+import { Header } from '../../components/Header'
 import { Subscribe } from '../Home/Subscribe'
 
-export const PrivacyPolicy = () => {
+export const Features = () => {
   return (
-    <div className='ContactUs'>
+    <div className='Features'>
       <Header />
-      <div className='home__banner' style={{ backgroundImage: "url(/home_banner.png)" }}>
+      <div className='home__banner' style={{ backgroundImage: "url(/features_banner.png)" }}>
         <div className='home__banner-center'>
           <span className='home__span1'>
             Look at the map and discover house parties!

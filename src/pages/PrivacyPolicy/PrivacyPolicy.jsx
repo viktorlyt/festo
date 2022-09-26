@@ -1,9 +1,9 @@
 import React from 'react'
-import { Footer } from '../Footer'
-import { Header } from '../Header'
+import { Footer } from '../../components/Footer'
+import { Header } from '../../components/Header'
 import { Subscribe } from '../Home/Subscribe'
 
-export const ContactUs = () => {
+export const PrivacyPolicy = () => {
   return (
     <div className='ContactUs'>
       <Header />
