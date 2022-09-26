@@ -364,3 +364,38 @@
   }
 }
 
+.reviews {
+  padding: 70px 100px;
+  background-color: #f2f2f2;
+
+  &__slider {
+    margin-bottom: 132px;
+    padding: 78px 192px;
+    background-color: $colorRed;
+    border-radius: 20px;
+    font-size: 55px;
+    color: $colorWhite;
+
+    &--textbox {
+      display: flex;
+      flex-direction: column;
+      width: 292px;
+
+      &-text {
+        line-height: 1.4em;
+      }
+
+      &-logo {
+        width: 198px;
+        height: 78px;
+        transform: translateX(-28px);
+      }
+    }
+  }
+
+  &__photos {
+    display: flex;
+    gap: 10px;
+  }
+}
+

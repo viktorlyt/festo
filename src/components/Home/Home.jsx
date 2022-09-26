@@ -148,7 +148,26 @@ export const Home = () => {
         </div>
       </section>
       
-      <div className='home__gray'></div>
+      <section className='reviews'>
+        <div className="reviews__slider">
+          <div className="reviews__slider--textbox">
+            <img 
+              src="festo-app-logo-198x78.png" 
+              alt="logo"
+              className="reviews__slider--textbox-logo"
+            />
+            <span className="reviews__slider--textbox-text">
+              Why people love it?
+            </span>
+          </div>
+          <div className="reviews__slider--sliderbox"></div>
+        </div>
+        <div className="reviews__photos">
+          <img src="photo1.png" alt="photo1" className='reviews__photos--photo'/>
+          <img src="photo2.png" alt="photo2" className='reviews__photos--photo'/>
+          <img src="photo3.png" alt="photo3" className='reviews__photos--photo'/>
+        </div>
+      </section>
 
       <Subscribe id='subscribe' />
       <Footer />
