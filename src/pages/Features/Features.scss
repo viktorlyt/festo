@@ -1,17 +1,7 @@
-.home {
+.features {
   &__banner {
-    height: 1174px;
+    height: 595px;
     object-fit: cover;
-    color: $colorWhite;
-
-    &-center {
-      display: flex;
-      flex-direction: column;
-      padding-top: 170px;
-      margin: auto;
-      width: 750px;
-      text-align: center;
-    }
   }
 
   &__mobile1 {
