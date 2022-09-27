@@ -136,6 +136,12 @@ export const Features = () => {
         </div>
       </section>
 
+      <div className='features__banner2'></div>
+      <div className='features__banner2--text'>
+          <span className='features__banner2--text-text1'>NO</span>
+          <br />
+          <span className='features__banner2--text-text2'>More Stressful Party Planning</span>
+        </div>
       <Subscribe />
       <Footer />
     </div>

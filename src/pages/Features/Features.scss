@@ -61,4 +61,33 @@
       }
     }
   }
+
+  &__banner2 {
+    position: relative;
+    height: 824px;
+    padding: 256px 620px;
+    object-fit: cover;
+    background-image: url('features_banner2.png');
+    filter: brightness(50%);
+
+    &--text {
+      position: absolute;
+      height: 824px;
+      padding: 256px 620px;
+      color: $colorWhite;
+      text-align: center;
+      background-color: transparent;
+      transform: translateY(-100%);
+
+      &-text1 {
+        font-size: 80px;
+      font-weight: bold;
+      }
+      
+      &-text2 {
+        font-size: 70px;
+        font-weight: normal;
+      }
+    }
+  }
 }
