@@ -1,184 +1,155 @@
-.home {
+.contactUs {
   &__banner {
-    height: 1174px;
+    height: 595px;
     object-fit: cover;
     color: $colorWhite;
-
-    &-center {
-      display: flex;
-      flex-direction: column;
-      padding-top: 170px;
-      margin: auto;
-      width: 750px;
-      text-align: center;
-    }
-  }
-
-  &__mobile1 {
-    position: relative;
-    z-index: 3;
-    height: 565px;
-    width: 298px;
-    transform: rotate(353deg) translateX(12px);
-  }
-
-  &__mobile2 {
-    position: relative;
-    z-index: 2;
-    height: 565px;
-    width: 298px;
-    transform: rotate(7deg) translateX(-12px);
-  }
-
-  &__span1 {
-    margin-bottom: 40px;
-    font-size: 70px;
-    font-weight: bold;
-    line-height: 1.2em;
-  }
-  
-  &__span2 {
-    margin-bottom: 40px;
-    font-size: 30px;
-  }
-
-  &__span-reg {
-    font-size: 38px;
-    margin-bottom: 80px;
-  }
-  
-  &__span3 {
-    margin-bottom: 40px;
-  }
-  
-  &__span4 {
-    margin: 0 10px 40px 10px;
-    color: $colorRed;
-  }
-
-  &__red_shadow {
-    z-index: 1;
-    transform: translateY(-565px);
-  }
-
-  &__redSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: center;
-    height: 304px;
-    background-color: $colorRed;
-    color: $colorWhite;
-    text-align: center;
-
-    &-span1 {
-      font-size: 35px;
-      margin-bottom: 30px;
-      margin-top: 15px;
-    }
-    
-    &-span2 {
-      font-size: 55px;
-      margin-bottom: 40px;
-    }
-    
-    &-span3 {
-      font-size: 20px;
-    }
+    background-image: url('./contact-us_banner.png');
   }
 
   &__gray {
-    height: 63px;
-    background-color: #f2f2f2;
+    height: 49px;
+    background-color: #fafafa;
   }
-  
-  &__subscribe {
-    height: 272px;
-    background-color: #fAfAfA;
 
-    &-span {
-      display: block;
-      padding: 30px 0 15px;
-      font-size: 50px;
-      text-align: center;
+  &__white {
+    height: 12px;
+    background-color: #ffffff;
+  }
+
+  &__red {
+    height: 49px;
+    background-color: $colorRed;
+  }
+
+  &__register {
+    display: flex;
+    background-color: #f2f2f2;
+
+    &--red {
+      width: 474px;
+      height: 865px;
+  
+      &-logo {
+        transform: translateY(268px) translateX(192px) rotate(-90deg);
+      }
+    }
+
+    &--infobox {
+      padding: 40px 384px 0;
       color: $colorGray;
     }
 
-    &-form {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      width: 920px;
-      margin: auto;
+    &--info {
+      width: 660px;
 
-      &--label {
-        display: flex;
-        margin-bottom: 10px;
-        font-size: 22px;
-
-        &::after {
-          display: block;
-          content: "*";
-          color: $colorRed;
-        }
-      }
-
-      &--div {
-        position: relative;
-        display: flex;
-      }
-
-      &--input {
-        display: block;
-        width: 100%;
-        height: 70px;
-        padding: 0 10px 0 30px;
-        border: 0.5px solid $colorRed;
-        border-radius: 35px;
-        background-color: $colorRed;
-
-        font-size: 14px;
-        color: $colorWhite;
-        
-        &::placeholder {
-          color: $colorWhite;
-        }
-
-        @include hover-content {
-          color: $colorGray;
-          background-color: rgb(237, 237, 237);
-          border-color: $colorGray;
-        };
-        
-        &:focus {
-          color: $colorBlack;
-          background-color: rgb(237, 237, 237);
-          border-color: $colorRed;
-          outline: none;
-        };
-      }
-
-      &--button {
-        position: absolute;
-        flex-shrink: 0;
-        height: 48px;
-        width: 162px;
-
-        color: $colorGray;
-        font-weight: bold;
-        font-size: 14px;
-        border: 1px solid $colorRed;
-        border-radius: 24px;
-        background-color: $colorWhite;
-
-        transform: translateX(-174px) translateY(12px);
-
-        @include hover-content {
-          color: $colorWhite;
-          background-color: $colorGray;
-          cursor: pointer;
-        };
+      &-h2 {
+        font-size: 70px;
+        font-weight: normal;
+        margin-bottom: 40px;
       }
     }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      &-row {
+        display: flex;
+        gap: 20px;
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+
+          &--label {
+            margin-bottom: 12px;
+            font-size: 14px;
+
+            &::after {
+              content: '*';
+              color: $colorRed;
+            }
+
+            &-NR {
+              margin-bottom: 12px;
+              font-size: 14px;
+            }
+          }
+
+          &--input {
+            width: 320px;
+            height: 50px;
+            padding: 3px 3px 3px 24px;
+            border: 0.5px solid $colorGray;
+            border-radius: 10px;
+            font-size: 18px;
+            color: $colorGray;
+
+            &:focus {
+              border: 2px solid $colorRed;
+              outline: none;
+            }
+
+            &::placeholder {
+              font-weight: normal;
+              font-family: questrial, sans-serif;
+            }
+          }
+      
+          &--textarea {
+            width: 660px;
+            height: 150px;
+            padding: 3px 3px 3px 24px;
+            border: 0.5px solid $colorGray;
+            border-radius: 10px;
+            font-size: 18px;
+            color: $colorGray;
+
+            &:focus {
+              border: 2px solid $colorRed;
+              outline: none;
+            }
+          }
+        }
+      }
+
+      &-btn {
+        width: 278px;
+        height: 52px;
+        border: 2px solid $colorRed;
+        border-radius: 10px;
+        background-color: $colorWhite;
+        color: $colorRed;
+        font-size: 17px ;
+
+        &:hover {
+          background-color: $colorRed;
+          color: $colorWhite;
+        }
+      }
+    }
+  }
+  
+  &--button {
+    position: absolute;
+    flex-shrink: 0;
+    height: 48px;
+    width: 162px;
+
+    color: $colorGray;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid $colorRed;
+    border-radius: 24px;
+    background-color: $colorWhite;
+
+    transform: translateX(-174px) translateY(12px);
+
+    @include hover-content {
+      color: $colorWhite;
+      background-color: $colorGray;
+      cursor: pointer;
+    };
   }
 }
