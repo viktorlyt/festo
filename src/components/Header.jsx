@@ -25,7 +25,7 @@ export const Header = () => {
       })}
     >
       <Link to='/'>
-        <img src="../../festo-app-logo.png" alt="logo" />
+        <img src="festo-app-logo.png" alt="logo" />
       </Link>
       <div className='header__rightSide'>
         <NavLink 
