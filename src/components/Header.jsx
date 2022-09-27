@@ -1,19 +1,36 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export const Header = () => {
   const { pathname } = useLocation();
+  const [scrollTop, setScrollTop] = useState(0);
+  
+  const onScroll = (e) => {
+    if (scrollTop !== e.target.documentElement.scrollTop) {
+      setScrollTop(e.target.documentElement.scrollTop);
+      console.log(e.target.documentElement.scrollTop);
+    }
+  }
+
+  useEffect(() => {
+      window.addEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header id='header' className="header">
+    <header 
+      className={classNames({ 
+        'header': scrollTop === 0, 
+        'header-scrolled': scrollTop !== 0, 
+      })}
+    >
       <Link to='/'>
         <img src="../../festo-app-logo.png" alt="logo" />
       </Link>
       <div className='header__rightSide'>
         <NavLink 
           to='/'
-          className={({ isActive }) => classNames('header__home', { 'isActive': pathname === '/' })}
+          className={() => classNames('header__home', { 'isActive': pathname === '/' })}
         >
           Home
         </NavLink>

@@ -7,10 +7,21 @@
   padding: 5px 30px;
   height: auto;
   width: 100%;
-  background-color: rgba(255, 56, 34, 1);
-  opacity: 1;
-  box-shadow: 0 5px 20px 1px rgba(0,0,0,0.2);
+  background-color: transparent;
 
+  &-scrolled {
+    position: fixed;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    height: auto;
+    width: 100%;
+    background-color: rgba(255, 56, 34, 1);
+    box-shadow: 0 5px 20px 1px rgba(0,0,0,0.2);  
+  }
+  
   &__rightSide {
     display: flex;
     justify-content: center;
