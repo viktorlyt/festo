@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/festo/static/css/main.d6b5c52b.css",
+    "main.js": "/festo/static/js/main.f7ce4dd1.js",
+    "static/js/787.50b1c56e.chunk.js": "/festo/static/js/787.50b1c56e.chunk.js",
+    "index.html": "/festo/index.html",
+    "main.d6b5c52b.css.map": "/festo/static/css/main.d6b5c52b.css.map",
+    "main.f7ce4dd1.js.map": "/festo/static/js/main.f7ce4dd1.js.map",
+    "787.50b1c56e.chunk.js.map": "/festo/static/js/787.50b1c56e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6b5c52b.css",
+    "static/js/main.f7ce4dd1.js"
+  ]
+}
