@@ -1,7 +1,7 @@
 import React from 'react'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
-import { Subscribe } from '../Home/Subscribe'
+import { Subscribe } from '../../components/Subscribe'
 
 export const PrivacyPolicy = () => {
   return (

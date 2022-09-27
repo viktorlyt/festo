@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
-import { Subscribe } from './Subscribe'
+import { Subscribe } from '../../components/Subscribe'
 
 export const Home = () => {
   return (
