@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <footer id='footer' className="footer">
       <Link to='/'>
-        <img src="../../festo-app-logo.png" alt="logo" />
+        <img src="festo-app-logo.png" alt="logo" />
       </Link>
       <NavLink 
         to='/' 
