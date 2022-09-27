@@ -9,7 +9,7 @@ export const Home = () => {
   return (
     <div className='home'>
       <Header />
-      <section className='home__banner' style={{ backgroundImage: "url(/home_banner.png)" }}>
+      <section className='home__banner'>
         <div className='home__banner-center'>
           <span className='home__span1'>
             Look at the map and discover house parties!
