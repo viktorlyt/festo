@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/festo/static/css/main.802e08b3.css",
-    "main.js": "/festo/static/js/main.6ab7bdc5.js",
+    "main.css": "/festo/static/css/main.af4cbdd3.css",
+    "main.js": "/festo/static/js/main.342ceb17.js",
     "static/js/787.50b1c56e.chunk.js": "/festo/static/js/787.50b1c56e.chunk.js",
     "static/media/home_banner.png": "/festo/static/media/home_banner.90317960cb544debc798.png",
     "static/media/features_banner.png": "/festo/static/media/features_banner.4a948db3dcb6fc107e65.png",
     "index.html": "/festo/index.html",
-    "main.802e08b3.css.map": "/festo/static/css/main.802e08b3.css.map",
-    "main.6ab7bdc5.js.map": "/festo/static/js/main.6ab7bdc5.js.map",
+    "main.af4cbdd3.css.map": "/festo/static/css/main.af4cbdd3.css.map",
+    "main.342ceb17.js.map": "/festo/static/js/main.342ceb17.js.map",
     "787.50b1c56e.chunk.js.map": "/festo/static/js/787.50b1c56e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.802e08b3.css",
-    "static/js/main.6ab7bdc5.js"
+    "static/css/main.af4cbdd3.css",
+    "static/js/main.342ceb17.js"
   ]
 }
