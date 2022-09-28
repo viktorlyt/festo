@@ -73,6 +73,8 @@ export const PrivacyPolicy = () => {
           </p>
         </span>
 
+        <img src="Privacy-Cookies.jpg" alt="Privacy-Cookies" />
+
         <h3 className='pp__main--h3'>
           How can your site visitors withdraw their consent?
         </h3>
