@@ -1,6 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import logo from '../images/festo-app-logo.png';
+import Fb from '../images/F.png';
+import Inst from '../images/Inst.png';
 
 export const Footer = () => {
   const { pathname } = useLocation();
@@ -8,7 +11,7 @@ export const Footer = () => {
   return (
     <footer id='footer' className="footer">
       <Link to='/'>
-        <img src="festo-app-logo.png" alt="logo" />
+        <img src={logo} alt="logo" />
       </Link>
       <NavLink 
         to='/' 
@@ -49,14 +52,14 @@ export const Footer = () => {
             target='_blank' 
             rel="noreferrer"
           >
-            <img src="F.png" alt="F" className='footer__facebook' />
+            <img src={Fb} alt="F" className='footer__facebook' />
           </a>
           <a 
             href='https://www.instagram.com/festoapp/' 
             target='_blank' 
             rel="noreferrer"
           >
-            <img src="Inst.png" alt="Inst" className='footer__instagram' />
+            <img src={Inst} alt="Inst" className='footer__instagram' />
           </a>
         </div>
       </div>

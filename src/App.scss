@@ -22,6 +22,11 @@ body {
   transition: 1.4s ease;
 }
 
+.App {
+  /* position: absolute; */
+  top: 0;
+}
+
 .isActive {
   color: $colorGray;
 }

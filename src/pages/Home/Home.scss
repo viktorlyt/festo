@@ -1,9 +1,12 @@
 .home {
+  width: 100%;
+
   &__banner {
     height: 1174px;
+    width: 100%;
     object-fit: cover;
     color: $colorWhite;
-    background-image: url('./home_banner.png');
+    background-image: url('../../images/home_banner.png');
 
     &-center {
       display: flex;

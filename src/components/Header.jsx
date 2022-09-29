@@ -1,11 +1,13 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import logo from '../images/festo-app-logo.png';
 
 export const Header = () => {
   const { pathname } = useLocation();
   const [scrollTop, setScrollTop] = useState(0);
   
+  // eslint-disable-next-line
   const onScroll = (e) => {
     if (scrollTop !== e.target.documentElement.scrollTop) {
       setScrollTop(e.target.documentElement.scrollTop);
@@ -25,7 +27,7 @@ export const Header = () => {
       })}
     >
       <Link to='/'>
-        <img src="festo-app-logo.png" alt="logo" />
+        <img src={logo} alt="logo" />
       </Link>
       <div className='header__rightSide'>
         <NavLink 

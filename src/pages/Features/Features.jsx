@@ -2,6 +2,19 @@ import React from 'react'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Subscribe } from '../../components/Subscribe'
+import f1 from '../../images/f1.svg'
+import f2 from '../../images/f2.svg'
+import f3 from '../../images/f3.svg'
+import f4 from '../../images/f4.svg'
+import f5 from '../../images/f5.svg'
+import f6 from '../../images/f6.svg'
+import f7 from '../../images/f7.svg'
+import f8 from '../../images/f8.svg'
+import f9 from '../../images/f9.svg'
+import f10 from '../../images/f10.svg'
+import f11 from '../../images/f11.svg'
+import f12 from '../../images/f12.svg'
+import f13 from '../../images/f13.png'
 
 export const Features = () => {
   return (
@@ -20,7 +33,7 @@ export const Features = () => {
       <section className='features__apps'>
         <div className='features__apps--box'>
           <img 
-            src="f1.svg" 
+            src={f1}
             alt="f1"
             className='features__apps--box-img' 
           />
@@ -30,7 +43,7 @@ export const Features = () => {
         <div className='features__apps--boxrow'>
           <div className='features__apps--box'>
             <img
-              src="f2.svg"
+              src={f2}
               alt="f2"
               className='features__apps--box-img'
             />
@@ -38,7 +51,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img
-              src="f3.svg"
+              src={f3}
               alt="f3"
               className='features__apps--box-img'
             />
@@ -46,7 +59,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img
-              src="f4.svg"
+              src={f4}
               alt="f4"
               className='features__apps--box-img'
             />
@@ -57,7 +70,7 @@ export const Features = () => {
         <div className='features__apps--boxrow'>
           <div className='features__apps--box'>
             <img 
-              src="f5.svg" 
+              src={f5} 
               alt="f5"
               className='features__apps--box-img' 
             />
@@ -65,7 +78,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img 
-              src="f6.svg" 
+              src={f6}
               alt="f6"
               className='features__apps--box-img' 
             />
@@ -73,7 +86,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img 
-              src="f7.svg" 
+              src={f7}
               alt="f7"
               className='features__apps--box-img' 
             />
@@ -84,7 +97,7 @@ export const Features = () => {
         <div className='features__apps--boxrow'>
           <div className='features__apps--box'>
             <img 
-              src="f8.svg" 
+              src={f8}
               alt="f8"
               className='features__apps--box-img' 
             />
@@ -92,7 +105,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img 
-              src="f9.svg" 
+              src={f9}
               alt="f9"
               className='features__apps--box-img' 
             />
@@ -100,7 +113,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img 
-              src="f10.svg" 
+              src={f10}
               alt="f10"
               className='features__apps--box-img' 
             />
@@ -111,7 +124,7 @@ export const Features = () => {
         <div className='features__apps--boxrow'>
           <div className='features__apps--box'>
             <img 
-              src="f11.svg" 
+              src={f11}
               alt="f11"
               className='features__apps--box-img' 
             />
@@ -119,7 +132,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img 
-              src="f12.svg" 
+              src={f12}
               alt="f12"
               className='features__apps--box-img' 
             />
@@ -127,7 +140,7 @@ export const Features = () => {
           </div>
           <div className='features__apps--box'>
             <img 
-              src="f13.png" 
+              src={f13}
               alt="f13"
               className='features__apps--box-img' 
             />

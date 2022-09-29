@@ -2,6 +2,7 @@ import React from 'react'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Subscribe } from '../../components/Subscribe'
+import logoBig from '../../images/logo-big.png'
 
 export const ContactUs = () => {
   return (
@@ -15,7 +16,7 @@ export const ContactUs = () => {
       <section className='festo-easy contactUs__register'>
         <div className='festo-easy__red contactUs__register--red'>
           <img 
-            src="logo-big.png" 
+            src={logoBig}
             alt="logo-big" 
             className='contactUs__register--red-logo'
           />

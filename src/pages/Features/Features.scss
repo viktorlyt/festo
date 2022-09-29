@@ -1,10 +1,12 @@
 .features {
+  width: 100%;
   color: $colorGray;
 
   &__banner {
     height: 595px;
+    width: 100%;
     object-fit: cover;
-    background-image: url('./features_banner.png');
+    background-image: url('../../images/features_banner.png');
     filter: brightness(50%);
   }
 
@@ -67,7 +69,7 @@
     height: 824px;
     padding: 256px 620px;
     object-fit: cover;
-    background-image: url('features_banner2.png');
+    background-image: url('../../images/features_banner2.png');
     filter: brightness(50%);
 
     &--text {

@@ -2,6 +2,9 @@ import React from 'react'
 import { Footer } from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Subscribe } from '../../components/Subscribe'
+import PrivacyCookies from '../../images/Privacy-Cookies.jpg'
+import PrivacyPolicyPdf from '../../images/Privacy Policy.pdf'
+import pdf from '../../images/pdf.png'
 
 export const PrivacyPolicy = () => {
   return (
@@ -73,7 +76,7 @@ export const PrivacyPolicy = () => {
           </p>
         </span>
 
-        <img src="Privacy-Cookies.jpg" alt="Privacy-Cookies" />
+        <img src={PrivacyCookies} alt="Privacy-Cookies" />
 
         <h3 className='pp__main--h3'>
           How can your site visitors withdraw their consent?
@@ -103,9 +106,11 @@ export const PrivacyPolicy = () => {
         </span>
 
         <div className='pp__main--pdf'>
-          <img src="pdf.png" alt="pdf" />
+          <img src={pdf} alt="pdf" />
           <span className='pp__main--pdf-span'>Cookie Policy</span>
-          <a href="Privacy Policy.pdf" target='_blank'><img src="pdf.png" alt="pdf" /></a>
+          <a href={PrivacyPolicyPdf} target='_blank' rel="noreferrer">
+            <img src={pdf} alt="pdf" />
+          </a>
           <span>Privacy Policy</span>
         </div>
       </section>
