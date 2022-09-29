@@ -6,6 +6,7 @@
 @import './pages/ContactUs/ContactUs';
 @import './pages/PrivacyPolicy/PrivacyPolicy';
 @import './components/Footer';
+@import './components/grid';
 
 * {
   margin: 0;
@@ -23,9 +24,10 @@ body {
 }
 
 .App {
-  position: absolute;
+  /* position: absolute; */
+  display: block;
   top: 0;
-
+  width: 100%;
   margin: 0 auto;
   /* max-width: 1680px; */
 }

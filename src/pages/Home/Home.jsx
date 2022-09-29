@@ -17,9 +17,9 @@ import festoPartyAppMibile from '../../images/Festo-party-app-mibile.png'
 import festoPartyApp3 from '../../images/Festo-party-app3.png'
 import FestoPartyAppChat from '../../images/Festo-party-app-chat.png'
 import logo198x78 from '../../images/festo-app-logo-198x78.png'
-import photo1 from '../../images/photo1.png'
-import photo2 from '../../images/photo2.png'
-import photo3 from '../../images/photo3.png'
+// import photo1 from '../../images/photo1.png'
+// import photo2 from '../../images/photo2.png'
+// import photo3 from '../../images/photo3.png'
 
 export const Home = () => {
   return (
@@ -57,12 +57,13 @@ export const Home = () => {
             />
           </span>
         </div>
-        <img 
+      </section>
+
+      <img 
           src={redShadow}
           alt="red_shadow"
           className='home__red_shadow'
         />
-      </section>
 
       <section className='home__redSection'>
         <span className='home__redSection-span1'>
@@ -179,9 +180,17 @@ export const Home = () => {
           <div className="reviews__slider--sliderbox"></div>
         </div>
         <div className="reviews__photos">
-          <img src={photo1} alt="photo1" className='reviews__photos--photo'/>
-          <img src={photo2} alt="photo2" className='reviews__photos--photo'/>
-          <img src={photo3} alt="photo3" className='reviews__photos--photo'/>
+          <div className='reviews__photos--photo1'>
+            {/* <img src={photo1} alt="photo1" className='reviews__photos--photo'/> */}
+          </div>
+          <div className='reviews__photos--photo2'>
+            {/* <img src={photo2} alt="photo1" className='reviews__photos--photo'/> */}
+          </div>
+          <div className='reviews__photos--photo3'>
+            {/* <img src={photo3} alt="photo1" className='reviews__photos--photo'/> */}
+          </div>
+          {/* <img src={photo2} alt="photo2" className='reviews__photos--photo'/>
+          <img src={photo3} alt="photo3" className='reviews__photos--photo'/> */}
         </div>
       </section>
 
