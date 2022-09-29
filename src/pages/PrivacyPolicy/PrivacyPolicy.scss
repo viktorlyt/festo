@@ -10,8 +10,23 @@
     }
   }
 
+  &__mainbox {
+    width: 1000px;
+
+    @include onTablet {
+      width: 700px;
+    }
+    
+    @include onMobile {
+      width: 400px;
+    }
+  }
+
   &__main {
-    padding: 24px 472px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 12px;
     /* font-family: "HelveticaW01-Light"; */
     font-size: 16px;
     font-stretch: 100%;

@@ -76,7 +76,7 @@
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    height: 304px;
+    height: auto;
     background-color: $colorRed;
     color: $colorWhite;
     text-align: center;
@@ -94,6 +94,7 @@
     
     &-span3 {
       font-size: 20px;
+      margin-bottom: 40px;
     }
   }
 
@@ -290,7 +291,9 @@
   color: $colorGray;
 
   &__info {
-    padding: 144px 0 0 248px;
+    display: flex;
+    justify-content: center;
+    padding: 144px 0 0 48px;
     
     &--h2 {
       margin-bottom: 40px;

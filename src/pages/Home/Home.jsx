@@ -105,19 +105,21 @@ export const Home = () => {
 
       <section className='plan-parties grid'>
         <div className='plan-parties__info grid__item--1-7'>
-          <h3 className='plan-parties__info--h2'>Plan Public/Private Parties</h3>
-          <h3 className='plan-parties__info--h3'>Chose whether to have your parties for public or keep them private.</h3>
-          <div className='plan-parties__info--p'>
-            <img src={publicSvg} alt="public" className='plan-parties__info--p-p1' />
-            <p className='plan-parties__info--p-p2'>Public Parties</p>
-            <img src={lock} alt="lock" className='plan-parties__info--p-p3' />
-            <p className='plan-parties__info--p-p4'>Private Parties</p>
-          </div>
-          <Link className='plan-parties__info--sub' to="/features" >
-            <div className='plan-parties__info--subdiv'>
-              + View Features
+          <div className='plan-parties__infobox'>
+            <h3 className='plan-parties__info--h2'>Plan Public/Private Parties</h3>
+            <h3 className='plan-parties__info--h3'>Chose whether to have your parties for public or keep them private.</h3>
+            <div className='plan-parties__info--p'>
+              <img src={publicSvg} alt="public" className='plan-parties__info--p-p1' />
+              <p className='plan-parties__info--p-p2'>Public Parties</p>
+              <img src={lock} alt="lock" className='plan-parties__info--p-p3' />
+              <p className='plan-parties__info--p-p4'>Private Parties</p>
             </div>
-          </Link>
+            <Link className='plan-parties__info--sub' to="/features" >
+              <div className='plan-parties__info--subdiv'>
+                + View Features
+              </div>
+            </Link>
+          </div>
         </div>
         <div className='plan-parties__red  grid__item--8-12'></div>
         <img 
