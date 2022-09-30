@@ -43,6 +43,16 @@
       line-height: 1.2em;
     }
 
+    &--ppcookies {
+      @include onTablet {
+        width: 700px
+      }
+      
+      @include onMobile {
+        width: 300px
+      }
+    }
+
     &--pdf {
       display: flex;
       gap: 10px;

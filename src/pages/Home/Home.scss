@@ -1,6 +1,7 @@
 .home {
   display: block;
   width: 100%;
+  /* overflow: scroll; */
 
   &__banner {
     display: block;
@@ -19,6 +20,14 @@
       margin: auto;
       width: 750px;
       text-align: center;
+
+      @include onTablet {
+        width: 600px;
+      }
+      
+      @include onMobile {
+        /* width: 250px; */
+      }
     }
   }
 
@@ -28,6 +37,16 @@
     height: 565px;
     width: 298px;
     transform: rotate(353deg) translateX(12px);
+
+    @include onTablet {
+      height: 420px;
+      width: 200px;
+    }
+    
+    @include onMobile {
+      height: 300px;
+      width: 150px;
+    }
   }
 
   &__mobile2 {
@@ -36,6 +55,16 @@
     height: 565px;
     width: 298px;
     transform: rotate(7deg) translateX(-12px);
+
+    @include onTablet {
+      height: 420px;
+      width: 200px;
+    }
+    
+    @include onMobile {
+      height: 300px;
+      width: 150px;
+    }
   }
 
   &__span1 {
@@ -214,6 +243,16 @@
     object-position: 50% 50%;
     right: 50%;
     top: 80px;
+
+    @include onTablet {
+      height: 420px;
+      width: 400px;
+    }
+    
+    @include onMobile {
+      height: 300px;
+      width: 300px;
+    }
   }
 
   &__red {
@@ -221,6 +260,16 @@
     background-color: $colorRed;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+  }
+
+  &__infobox {
+    @include onTablet {
+      width: 300px;
+    }
+    
+    @include onMobile {
+      width: 220px;
+    }
   }
 
   &__info {
@@ -370,6 +419,18 @@
     }
   }
 
+  &__infobox {
+    &__infobox {
+      @include onTablet {
+        width: 300px;
+      }
+      
+      @include onMobile {
+        width: 220px;
+      }
+    }
+  }
+
   &__red {
     height: 612px;
     background-color: $colorRed;
@@ -482,6 +543,14 @@
   padding: 70px 100px;
   background-color: #f2f2f2;
 
+    @include onTablet {
+      padding: 40px 50px;
+    }
+    
+    @include onMobile {
+      padding: 20px 20px;
+    }
+
   &__slider {
     margin-bottom: 132px;
     padding: 78px 192px;
@@ -489,6 +558,14 @@
     border-radius: 20px;
     font-size: 55px;
     color: $colorWhite;
+
+    @include onTablet {
+      padding: 40px 50px;
+    }
+    
+    @include onMobile {
+      padding: 20px 20px;
+    }
 
     &--textbox {
       display: flex;
