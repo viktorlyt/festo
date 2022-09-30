@@ -2,6 +2,8 @@
   &__banner {
     height: 595px;
     object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: $colorWhite;
     background-image: url('../../images/contact-us_banner.png');
   }

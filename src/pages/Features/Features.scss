@@ -6,6 +6,8 @@
     height: 595px;
     width: 100%;
     object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-image: url('../../images/features_banner.png');
     filter: brightness(50%);
   }
@@ -82,6 +84,8 @@
     height: 824px;
     /* padding: 256px 620px; */
     object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-image: url('../../images/features_banner2.png');
     background-position: center;
     filter: brightness(50%);
