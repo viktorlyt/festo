@@ -153,7 +153,7 @@ export const Home = () => {
               <img src={lock} alt="lock" className='plan-parties__info--p-p3' />
               <p className='plan-parties__info--p-p4'>Secure payments</p>
             </div>
-            <div className='plan-parties__info--p2'>
+            <div className='plan-parties__info--p2 sell-tickets__info--p2'>
               <img src={lock2} alt="lock2" className='plan-parties__info--p-p1' />
               <p className='sell-tickets__info--p-p2-1'>Chat with people</p>
               <img src={lock3} alt="lock3" className='plan-parties__info--p-p3' />

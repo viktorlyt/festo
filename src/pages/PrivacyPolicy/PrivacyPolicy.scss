@@ -12,14 +12,6 @@
 
   &__mainbox {
     width: 1000px;
-
-    @include onTablet {
-      width: 700px;
-    }
-    
-    @include onMobile {
-      width: 400px;
-    }
   }
 
   &__main {
@@ -41,16 +33,6 @@
       display: block;
       margin-bottom: 20px;
       line-height: 1.2em;
-    }
-
-    &--ppcookies {
-      @include onTablet {
-        width: 700px
-      }
-      
-      @include onMobile {
-        width: 300px
-      }
     }
 
     &--pdf {

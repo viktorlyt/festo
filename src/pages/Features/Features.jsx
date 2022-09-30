@@ -31,131 +31,134 @@ export const Features = () => {
       </div>
 
       <section className='features__apps'>
-        <div className='features__apps--box'>
-          <img 
-            src={f1}
-            alt="f1"
-            className='features__apps--box-img' 
-          />
-          <p className='features__apps--box-p'>Create Profile</p>
-        </div>
-        
-        <div className='features__apps--boxrow'>
+        <div className='features__apps--appsbox'>
           <div className='features__apps--box'>
             <img
-              src={f2}
-              alt="f2"
+              src={f1}
+              alt="f1"
               className='features__apps--box-img'
             />
-            <p className='features__apps--box-p'>Find Friends</p>
+            <p className='features__apps--box-p'>Create Profile</p>
           </div>
-          <div className='features__apps--box'>
-            <img
-              src={f3}
-              alt="f3"
-              className='features__apps--box-img'
-            />
-            <p className='features__apps--box-p'>Add Friends</p>
+          
+          <div className='features__apps--boxrow'>
+            <div className='features__apps--box'>
+              <img
+                src={f2}
+                alt="f2"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Find Friends</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f3}
+                alt="f3"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Add Friends</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f4}
+                alt="f4"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Block People</p>
+            </div>
           </div>
-          <div className='features__apps--box'>
-            <img
-              src={f4}
-              alt="f4"
-              className='features__apps--box-img'
-            />
-            <p className='features__apps--box-p'>Block People</p>
+          
+          <div className='features__apps--boxrow'>
+            <div className='features__apps--box'>
+              <img
+                src={f5}
+                alt="f5"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Create a Partiy</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f6}
+                alt="f6"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Public Parties</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f7}
+                alt="f7"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Private Parties</p>
+            </div>
           </div>
-        </div>
-        
-        <div className='features__apps--boxrow'>
-          <div className='features__apps--box'>
-            <img 
-              src={f5} 
-              alt="f5"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Create a Partiy</p>
+          <div className='features__apps--boxrow'>
+            <div className='features__apps--box'>
+              <img
+                src={f8}
+                alt="f8"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Discover Parties</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f9}
+                alt="f9"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Add Bank</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f10}
+                alt="f10"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Secure Payments</p>
+            </div>
           </div>
-          <div className='features__apps--box'>
-            <img 
-              src={f6}
-              alt="f6"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Public Parties</p>
-          </div>
-          <div className='features__apps--box'>
-            <img 
-              src={f7}
-              alt="f7"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Private Parties</p>
-          </div>
-        </div>
-
-        <div className='features__apps--boxrow'>
-          <div className='features__apps--box'>
-            <img 
-              src={f8}
-              alt="f8"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Discover Parties</p>
-          </div>
-          <div className='features__apps--box'>
-            <img 
-              src={f9}
-              alt="f9"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Add Bank</p>
-          </div>
-          <div className='features__apps--box'>
-            <img 
-              src={f10}
-              alt="f10"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Secure Payments</p>
-          </div>
-        </div>
-        
-        <div className='features__apps--boxrow'>
-          <div className='features__apps--box'>
-            <img 
-              src={f11}
-              alt="f11"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Chat on App</p>
-          </div>
-          <div className='features__apps--box'>
-            <img 
-              src={f12}
-              alt="f12"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Notifications</p>
-          </div>
-          <div className='features__apps--box'>
-            <img 
-              src={f13}
-              alt="f13"
-              className='features__apps--box-img' 
-            />
-            <p className='features__apps--box-p'>Scan QR codes</p>
+          
+          <div className='features__apps--boxrow'>
+            <div className='features__apps--box'>
+              <img
+                src={f11}
+                alt="f11"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Chat on App</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f12}
+                alt="f12"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Notifications</p>
+            </div>
+            <div className='features__apps--box'>
+              <img
+                src={f13}
+                alt="f13"
+                className='features__apps--box-img'
+              />
+              <p className='features__apps--box-p'>Scan QR codes</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <div className='features__banner2'></div>
-      <div className='features__banner2--text'>
-        <span className='features__banner2--text-text1'>NO</span>
-        <br />
-        <span className='features__banner2--text-text2'>
-          More Stressful Party Planning
-        </span>
+      <div className='features__banner2box'>
+        <div className='features__banner2'></div>
+        <div className='features__banner2--text'>
+          <span className='features__banner2--text-text1'>NO</span>
+          <br />
+          <span className='features__banner2--text-text2'>
+            More Stressful Party Planning
+          </span>
+        </div>
       </div>
       <Subscribe />
       <Footer />
