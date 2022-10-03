@@ -158,8 +158,13 @@
     }
 
     &2 {
-      display: block;
-      height: 120px;
+      height: 63px;
+      background-color: #f2f2f2;
+
+      @include onMobile {
+        display: block;
+        height: 120px;
+      }
     }
    
     &3 {
@@ -580,7 +585,7 @@
 
       @include onMobile {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
         margin-right: 0;
@@ -598,6 +603,29 @@
         }
 
         &1 {
+          @include onMobile {
+            margin-right: 0;
+            justify-self: flex-end;
+          }
+        }
+       
+        &2 {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          @include onMobile {
+            margin-right: 70px;
+            margin-left: 30px;
+            justify-self: flex-end;
+          }
+        }
+
+        &4 {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
           @include onMobile {
             margin-right: 0;
           }
@@ -629,7 +657,7 @@
       }
 
       &-p2 {
-        margin-right: 60px;
+        margin-right: 70px;
 
         @include onMobile {
           text-align: center;
@@ -647,12 +675,18 @@
    
     &--p2 {
       display: flex;
-      align-items: flex-start;
+      justify-content: flex-start;
       align-items: center;
       font-size: 17px;
       margin-bottom: 56px;
       max-width: 364px;
       font-size: 17px;
+
+      @include onMobile {
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
 
       &-p1 {
         width: 40px;
@@ -773,12 +807,12 @@
   &__photos {
     display: flex;
     justify-content: stretch;
-    row-gap: 10px;
+    column-gap: 10px;
     width: 100%;
-    justify-content: space-between;
 
     @include onMobile {
       flex-direction: column;
+      row-gap: 10px;
     }
 
     &--photo1 {

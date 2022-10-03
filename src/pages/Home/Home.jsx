@@ -85,7 +85,7 @@ export const Home = () => {
 
       <Subscribe />
 
-      <div className='home__gray home__gray2'></div>
+      <div className='home__gray2'></div>
       
       <div className='home__white'></div>
 
@@ -162,7 +162,7 @@ export const Home = () => {
             <h3 className='sell-tickets__info--h2'>Sell tickets to parties & chat with people</h3>
             <h3 className='sell-tickets__info--h3'>Create and get paid for parties directly from the app.</h3>
             <div className='sell-tickets__info--p'>
-              <div className='sell-tickets__info--p-box'>
+              <div className='sell-tickets__info--p-box2'>
                 <img src={lock1} alt="lock1" className='sell-tickets__info--p-p1' />
                 <p className='sell-tickets__info--p-p2'>Add bank</p>
               </div>
@@ -176,7 +176,7 @@ export const Home = () => {
                 <img src={lock2} alt="lock2" className='sell-tickets__info--p-p1' />
                 <p className='sell-tickets__info--p-p2-1'>Chat with people</p>
               </div>
-              <div className='sell-tickets__info--p-box'>
+              <div className='sell-tickets__info--p-box4'>
                 <img src={lock3} alt="lock3" className='sell-tickets__info--p-p3' />
                 <p className='sell-tickets__info--p-p4'>Block people</p>
               </div>
