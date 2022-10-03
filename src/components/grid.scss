@@ -13,7 +13,7 @@
     column-gap: 20px;
   } */
 
-  &--desktop {
+  /* &--desktop {
     display: grid;
     align-items: center;
 
@@ -25,7 +25,7 @@
       display: grid;
       align-items: center;
     }
-  }
+  } */
 
   &__item {
     @for $start from 1 through 12 {

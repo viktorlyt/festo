@@ -72,11 +72,13 @@ export const PrivacyPolicy = () => {
               If your website tracks personal information through the use of cookies, for example, you must make this clear to your site visitors. Be clear about what tracking tools (e.g. cookies, flash cookies, web beacons, etc.,) your website employs, what personal information they gather and why they are being used.
             </p>
           </span>
-          <img 
-            src={PrivacyCookies} 
-            alt="Privacy-Cookies" 
-            className='pp__main--ppcookies'
-          />
+          <div className='pp__main--ppcookies-box'>
+            <img
+              src={PrivacyCookies}
+              alt="Privacy-Cookies"
+              className='pp__main--ppcookies'
+            />
+          </div>
           <h3 className='pp__main--h3'>
             How can your site visitors withdraw their consent?
           </h3>
@@ -108,7 +110,7 @@ export const PrivacyPolicy = () => {
             <a href={PrivacyPolicyPdf} target='_blank' rel="noreferrer">
               <img src={pdf} alt="pdf" />
             </a>
-            <span>Privacy Policy</span>
+            <span  className='pp__main--pdf-span'>Privacy Policy</span>
           </div>
         </div>
       </section>

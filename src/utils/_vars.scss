@@ -3,3 +3,8 @@ $colorGray: #555555;
 $colorBlack: #000000;
 $colorWhite: #ffffff;
 $white: #ffffff;
+$grid_color: #00f;
+$margin-standart: 0;
+$grid_margin: percentage($margin-standart / 1920); // 40 / 1920 * 100%;
+$grid_width: percentage(165 / (1920 - $margin-standart * 2));
+$grid_gutter: percentage(30 / (1920 - $margin-standart * 2));

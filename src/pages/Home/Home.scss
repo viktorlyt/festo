@@ -1,7 +1,6 @@
 .home {
   display: block;
   width: 100%;
-  /* overflow: scroll; */
 
   &__banner {
     display: block;
@@ -13,12 +12,19 @@
     color: $colorWhite;
     background-image: url('../../images/home_banner.png');
 
+    @include onMobile {
+      /* width: 770px; */
+      height: 750px;
+      background-image: url('../../images/mobile/home_banner-m.jpg');
+      background-size: content;
+    }
+
     &-center {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: $grid_gutter;
       padding-top: 170px;
       margin: auto;
-      width: 750px;
       text-align: center;
     }
   }
@@ -29,6 +35,11 @@
     height: 565px;
     width: 298px;
     transform: rotate(353deg) translateX(12px);
+
+    @include onMobile {
+      height: 305px;
+      width: 166px;
+    }
   }
 
   &__mobile2 {
@@ -37,6 +48,11 @@
     height: 565px;
     width: 298px;
     transform: rotate(7deg) translateX(-12px);
+
+    @include onMobile {
+      height: 305px;
+      width: 166px;
+    }
   }
 
   &__span1 {
@@ -44,16 +60,29 @@
     font-size: 70px;
     font-weight: bold;
     line-height: 1.2em;
+
+    @include onMobile {
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
   }
   
   &__span2 {
     margin-bottom: 40px;
     font-size: 30px;
+
+    @include onMobile {
+      font-size: 18px;
+    }
   }
 
   &__span-reg {
     font-size: 38px;
     margin-bottom: 80px;
+    
+    @include onMobile {
+      font-size: 20px;
+    }
   }
   
   &__span3 {
@@ -70,12 +99,18 @@
     z-index: 1;
     width: 100%;
     transform: translateY(-99%);
+
+    @include onMobile {
+      height: 400px;
+    }
   }
 
   &__redSection {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: $grid_gutter;
     justify-content: top;
+    padding-top: 20px;
     align-items: center;
     height: auto;
     background-color: $colorRed;
@@ -86,158 +121,154 @@
       font-size: 35px;
       margin-bottom: 30px;
       margin-top: 15px;
+
+      @include onMobile {
+        font-size: 22px;
+      }
     }
     
     &-span2 {
+      width: 810px;
+      margin: 0 auto;
       font-size: 55px;
       margin-bottom: 40px;
+
+      @include onMobile {
+        width: 300px;
+        font-size: 27px;
+      }
     }
     
     &-span3 {
       font-size: 20px;
       margin-bottom: 40px;
+
+      @include onMobile {
+        font-size: 15px;
+      }
     }
   }
 
   &__gray {
     height: 63px;
     background-color: #f2f2f2;
-  }
-  
-  &__subscribe {
-    height: 272px;
-    background-color: #fAfAfA;
 
-    &-span {
-      display: block;
-      padding: 30px 0 15px;
-      font-size: 50px;
-      text-align: center;
-      color: $colorGray;
+    @include onMobile {
+      display: none;
     }
 
-    &-form {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      width: 920px;
-      margin: auto;
+    &2 {
+      display: block;
+      height: 120px;
+    }
+   
+    &3 {
+      display: block;
+      height: 40px;
+    }
+  }
+  
+  &__white {
+    display: none;
 
-      &--label {
-        display: flex;
-        margin-bottom: 10px;
-        font-size: 22px;
-
-        &::after {
-          display: block;
-          content: "*";
-          color: $colorRed;
-        }
-      }
-
-      &--div {
-        position: relative;
-        display: flex;
-      }
-
-      &--input {
-        display: block;
-        width: 100%;
-        height: 70px;
-        padding: 0 10px 0 30px;
-        border: 0.5px solid $colorRed;
-        border-radius: 35px;
-        background-color: $colorRed;
-
-        font-size: 14px;
-        color: $colorWhite;
-        
-        &::placeholder {
-          color: $colorWhite;
-        }
-
-        @include hover-content {
-          color: $colorGray;
-          background-color: rgb(237, 237, 237);
-          border-color: $colorGray;
-        };
-        
-        &:focus {
-          color: $colorBlack;
-          background-color: rgb(237, 237, 237);
-          border-color: $colorRed;
-          outline: none;
-        };
-      }
-
-      &--button {
-        position: absolute;
-        flex-shrink: 0;
-        height: 48px;
-        width: 162px;
-
-        color: $colorGray;
-        font-weight: bold;
-        font-size: 14px;
-        border: 1px solid $colorRed;
-        border-radius: 24px;
-        background-color: $colorWhite;
-
-        transform: translateX(-174px) translateY(12px);
-
-        @include hover-content {
-          color: $colorWhite;
-          background-color: $colorGray;
-          cursor: pointer;
-        };
-      }
+    @include onMobile {
+      display: block;
+      height: 12px;
+      background-color: #ffffff;
     }
   }
 }
 
 .festo-easy {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: $grid_gutter;
   color: $colorGray;
+
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+  }
 
   &__mobiles {
     position: absolute;
     object-position: 50% 50%;
     right: 50%;
     top: 80px;
+
+    @include onMobile {
+      width: 306px;
+      height: 300px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      top: -120px;
+    }
   }
 
   &__red {
+    grid-column: 1/5;
     height: 612px;
     background-color: $colorRed;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    @include onMobile {
+      height: 180px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &__info {
+    grid-column: 6/11;
     padding: 118px 20px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
+
+    @include onMobile {
+      padding: 40px 20px;
+      text-align: center;
+    }
     
     &--h2 {
       margin-bottom: 40px;
-      width: 440px;
+      max-width: 440px;
       font-size: 45px;
       font-weight: 400;
+
+      @include onMobile {
+        margin-bottom: 30px;
+        font-size: 25px;
+      }
      }
 
     &--h3 {
       margin-bottom: 32px;
-      width: 440px;
+      max-width: 440px;
       font-size: 25px;
       font-weight: 400;
+
+      @include onMobile {
+        margin-bottom: 24px;
+        font-size: 16px;
+      }
     }
 
     &--p {
       margin-bottom: 56px;
-      width: 364px;
+      max-width: 364px;
       font-size: 17px;
+
+      @include onMobile {
+        margin: 0 auto 40px;
+        text-align: center;
+        font-size: 15px;
+      }
     }
     
     &--sub {
@@ -258,33 +289,72 @@
         color: $colorWhite;
         background-color: $colorRed;
       }
+
+      @include onMobile {
+        margin: 0 auto 40px;
+        text-align: center;
+        font-size: 15px;
+      }
     }
   }
 }
 
 .plan-parties {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   justify-content: space-between;
   color: $colorGray;
 
+  &__white {
+    display: none;
+
+    @include onMobile {
+      display: block;
+      height: 12px;
+      background-color: #ffffff;
+    }
+  }
+
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+  }
+
   &__info {
+    grid-column: 1/6;
     display: flex;
     justify-content: center;
-    padding: 144px 0 0 48px;
+    padding: 144px 0 0 24px;
+
+    @include onMobile {
+      order: 2;
+      text-align: center;
+    }
     
     &--h2 {
       margin-bottom: 40px;
-      width: 440px;
+      max-width: 440px;
       font-size: 45px;
       font-weight: 400;
+
+      @include onMobile {
+        font-size: 25px;
+      }
     }
 
     &--h3 {
       margin-bottom: 32px;
-      width: 440px;
+      max-width: 440px;
       font-size: 25px;
       font-weight: 400;
+
+      
+      @include onMobile {
+        font-size: 15px;
+        width: 270px;
+      }
     }
 
     &--p2 {
@@ -300,11 +370,23 @@
       font-size: 17px;
       margin-bottom: 30px;
 
+      
+      @include onMobile {
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14px;
+      }
+
       &-p1 {
         width: 40px;
         height: 29px;
         margin-right: 12px;
         font-weight: bold;
+
+        @include onMobile {
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
       }
       
       &-p3 {
@@ -312,10 +394,21 @@
         height: 29px;
         margin-right: 12px;
         font-weight: bold;
+
+        @include onMobile {
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
       }
 
       &-p2 {
         margin-right: 60px;
+
+        @include onMobile {
+          text-align: center;
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
       }
     }
     
@@ -337,14 +430,27 @@
         color: $colorWhite;
         background-color: $colorRed;
       }
+
+      @include onMobile {
+        margin: 0 auto;
+      }
     }
   }
 
   &__red {
+    grid-column: 7/11;
     height: 612px;
     background-color: $colorRed;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+
+    @include onMobile {
+      order: 1;
+      height: 180px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 0;
+    }
   }
 
   &__mobile {
@@ -353,40 +459,81 @@
     height: 532px;
     left: 55%;
     top: 60px;
+
+    @include onMobile {
+      width: 174px;
+      height: 346px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      top: -172px;
+    }
   }
 }
 
 .sell-tickets {
   position: relative;
   color: $colorGray;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+  }
 
   &__mobiles1 {
     position: absolute;
     z-index: 1;
     right: 60%;
     top: 48px;
+
+    @include onMobile {
+      display: none;
+    }
   }
   
   &__mobiles2 {
     position: absolute;
     right: 51%;
     top: 108px;
+
+    @include onMobile {
+      width: 159px;
+      height: 317px;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      top: -140px;
+    }
   }
   
   &__info {
+    grid-column: 6/11;
     &--p-p2 {
       margin-right: 74px;
     }
+    
     &--p-p2-1 {
       margin-right: 20px;
     }
   }
 
   &__red {
+    grid-column: 1/5;
     height: 612px;
     background-color: $colorRed;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    @include onMobile {
+      order: 0;
+      height: 180px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &__info {
@@ -394,29 +541,159 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
+
+    @include onMobile {
+      text-align: center;
+      max-width: 320px;
+    }
     
     &--h2 {
       margin-bottom: 40px;
-      width: 440px;
+      max-width: 440px;
       font-size: 45px;
       font-weight: 400;
+
+      @include onMobile {
+        font-size: 25px;
+      }
     }
 
     &--h3 {
       margin-bottom: 40px;
-      width: 440px;
+      max-width: 440px;
       font-size: 25px;
       font-weight: 400;
+
+      @include onMobile {
+        font-size: 15px;
+      }
     }
 
     &--p {
-      margin-bottom: 56px;
-      width: 364px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 17px;
-    }
-
-    &--p2 {
       margin-bottom: 56px;
+      max-width: 364px;
+      font-size: 17px;
+
+      @include onMobile {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
+
+      &-box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include onMobile {
+          flex-direction: column;
+          justify-content: center;
+          margin-right: 50px;
+        }
+
+        &1 {
+          @include onMobile {
+            margin-right: 0;
+          }
+        }
+      }
+
+      &-p1 {
+        width: 40px;
+        height: 29px;
+        margin-right: 12px;
+        font-weight: bold;
+  
+        @include onMobile {
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+      }
+
+      &-p3 {
+        width: 22px;
+        height: 29px;
+        margin-right: 12px;
+        font-weight: bold;
+
+        @include onMobile {
+          margin-bottom: 20px;
+          margin-right: 10px;
+        }
+      }
+
+      &-p2 {
+        margin-right: 60px;
+
+        @include onMobile {
+          text-align: center;
+          margin-right: 0;
+        }
+      }
+
+      @include onMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+      }
+    }
+   
+    &--p2 {
+      display: flex;
+      align-items: flex-start;
+      align-items: center;
+      font-size: 17px;
+      margin-bottom: 56px;
+      max-width: 364px;
+      font-size: 17px;
+
+      &-p1 {
+        width: 40px;
+        height: 29px;
+        margin-right: 12px;
+        font-weight: bold;
+  
+        @include onMobile {
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+      }
+
+      &-p3 {
+        width: 22px;
+        height: 29px;
+        margin-right: 12px;
+        font-weight: bold;
+
+        @include onMobile {
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+      }
+
+      &-p2 {
+        margin-right: 60px;
+
+        @include onMobile {
+          text-align: center;
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+      }
+
+      @include onMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+      }
     }
     
     &--sub {
@@ -445,6 +722,25 @@
   padding: 70px 100px 148px;
   background-color: #f2f2f2;
 
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__mobile {
+    display: none;
+
+    @include onMobile {
+      display: block;
+      width: 160px;
+      height: 318px;
+      margin: 0 auto 20px;
+    }
+  }
+
   &__slider {
     margin-bottom: 132px;
     padding: 78px 192px;
@@ -452,6 +748,10 @@
     border-radius: 20px;
     font-size: 55px;
     color: $colorWhite;
+
+    @include onMobile {
+      display: none;
+    }
 
     &--textbox {
       display: flex;
@@ -472,17 +772,29 @@
 
   &__photos {
     display: flex;
-    gap: 10px;
+    justify-content: stretch;
+    row-gap: 10px;
+    width: 100%;
     justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+    }
 
     &--photo1 {
       width: 100%;
       height: 400px;
       background-image: url(../../images/photo1.png);
       background-repeat: no-repeat;
-      background-position: center;
+      background-position: center center;
       object-fit: cover;
+
+      @include onMobile {
+        flex-direction: column;
+        max-width: 767px;
+      }
     }
+
     &--photo2 {
       width: 100%;
       height: 400px;
@@ -491,6 +803,7 @@
       background-position: center;
       object-fit: cover;
     }
+
     &--photo3 {
       width: 100%;
       height: 400px;

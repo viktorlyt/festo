@@ -10,8 +10,12 @@ export const Footer = () => {
 
   return (
     <footer id='footer' className="footer">
-      <Link to='/'>
-        <img src={logo} alt="logo" />
+      <Link to='/' className='footer__logo'>
+        <img 
+          src={logo} 
+          alt="logo"
+          className='footer__logo--img'
+        />
       </Link>
       <NavLink 
         to='/' 
@@ -33,6 +37,23 @@ export const Footer = () => {
       >
         Register Your Interest
       </NavLink>
+
+      <div className='footer__fi'>
+          <a 
+            href='https://www.facebook.com/Festo-Entertainment-103326965771562' 
+            target='_blank' 
+            rel="noreferrer"
+          >
+            <img src={Fb} alt="F" className='footer__facebook--m' />
+          </a>
+          <a 
+            href='https://www.instagram.com/festoapp/' 
+            target='_blank' 
+            rel="noreferrer"
+          >
+            <img src={Inst} alt="Inst" className='footer__instagram--m' />
+          </a>
+        </div>
 
       <NavLink 
         to='/privacy-policy'

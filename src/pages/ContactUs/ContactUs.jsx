@@ -10,18 +10,22 @@ export const ContactUs = () => {
       <Header />
       <div className='contactUs__banner'></div>
 
+      <div className='contactUs__text'>
+        <h1 className='contactUs__text--h'>Register your <br/> interest.</h1>
+      </div>
+
       <div className='contactUs__gray'></div>
       <div className='contactUs__white'></div>
 
-      <section className='festo-easy contactUs__register grid'>
-        <div className='festo-easy__red contactUs__register--red grid__item--1-3'>
+      <section className='contactUs__register'>
+        <div className='contactUs__register--red'>
           <img 
             src={logoBig}
             alt="logo-big" 
             className='contactUs__register--red-logo'
           />
         </div>
-        <div className='contactUs__register--infobox grid__item--4-12'>
+        <div className='contactUs__register--infobox'>
           <div className='contactUs__register--info'>
             <h3 className='contactUs__register--info-h2'>Register your interest.</h3>
 

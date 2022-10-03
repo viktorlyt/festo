@@ -2,19 +2,19 @@ import React from 'react'
 
 export const Subscribe = () => {
   return (
-    <div className='home__subscribe'>
-      <span className='home__subscribe-span'>Subscribe to our newsletters</span>
+    <div className='subscribe'>
+      <span className='subscribe-span'>Subscribe to our newsletters</span>
       <form 
         action="" 
         method='post'
-        className='home__subscribe-form'
+        className='subscribe-form'
       >
-        <label htmlFor="subscribe" className='home__subscribe-form--label'>
+        <label htmlFor="subscribe" className='subscribe-form--label'>
           Enter your email address
         </label>
-        <div className='home__subscribe-form--div'>
+        <div className='subscribe-form--div'>
           <input
-            className='home__subscribe-form--input'
+            className='subscribe-form--input'
             type='email'
             id='subscribe'
             placeholder='e.g., name@example.com'
@@ -27,7 +27,16 @@ export const Subscribe = () => {
           <div>
             <button
               type="submit"
-              className='home__subscribe-form--button'
+              className='subscribe-form--button'
+            >
+              Subscribe
+            </button>
+          </div>
+          
+          <div>
+            <button
+              type="submit"
+              className='subscribe-form--button-mobile'
             >
               Subscribe
             </button>

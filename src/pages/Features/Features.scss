@@ -10,6 +10,14 @@
     background-repeat: no-repeat;
     background-image: url('../../images/features_banner.png');
     filter: brightness(50%);
+
+    @include mq(768) {
+      height: 400px;
+    }
+    
+    @include mq(568) {
+      height: 350px;
+    }
   }
 
   &__text {
@@ -21,6 +29,16 @@
       font-size: 70px;
       font-weight: normal;
       text-align: center;
+
+      @include onMobile {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        font-size: 30px;
+        color: $colorWhite;
+        transform: translateY(-300%);
+      }
     }
     
     &--text2 {
@@ -28,6 +46,20 @@
       font-size: 20px;
       font-weight: normal;
       text-align: center;
+
+      @include onMobile {
+        margin: 0 auto;
+        padding: 30px 0;
+        width: 380px;
+        font-size: 14px;
+      }
+
+      @include mq(600) {
+        margin: 0 auto;
+        padding: 30px 0;
+        width: 280px;
+        font-size: 14px;
+      }
     }
   }
 
@@ -51,6 +83,13 @@
     &--boxrow {
       display: flex;
       gap: 30px;
+
+      @include onMobile {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 17px;
+      }
     }
 
     &--box {
@@ -66,6 +105,16 @@
 
       font-size: 17px;
 
+      @include onMobile {
+        width: 380px;
+        margin: 0 20px;
+      }
+
+      @include mq(600) {
+        width: 280px;
+        margin: 0 20px;
+      }
+
       &-img {
         width: 66px;
         height: 66px;
@@ -75,20 +124,22 @@
   }
 
   &__banner2box {
-    /* display: flex; */
     text-align: center;
   }
 
   &__banner2 {
     position: relative;
     height: 824px;
-    /* padding: 256px 620px; */
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('../../images/features_banner2.png');
     background-position: center;
     filter: brightness(50%);
+
+    @include onMobile {
+      height: 252px;
+    }
 
     &--text {
       display: block;
@@ -106,14 +157,27 @@
       background-color: transparent;
       transform: translateY(-100%);
 
+      @include onMobile {
+        width: 280px;
+        transform: translateY(-50%);
+      }
+
       &-text1 {
         font-size: 80px;
-      font-weight: bold;
+        font-weight: bold;
+
+        @include onMobile {
+          font-size: 33px;
+        }
       }
       
       &-text2 {
         font-size: 70px;
         font-weight: normal;
+
+        @include onMobile {
+          font-size: 30px;
+        }
       }
     }
   }
