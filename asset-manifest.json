@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/festo/static/css/main.afe9a5b9.css",
-    "main.js": "/festo/static/js/main.e398c5bc.js",
+    "main.css": "/festo/static/css/main.42bb18fd.css",
+    "main.js": "/festo/static/js/main.c160e896.js",
     "static/js/787.50b1c56e.chunk.js": "/festo/static/js/787.50b1c56e.chunk.js",
     "static/media/red_shadow.png": "/festo/static/media/red_shadow.db1579acd252edf7a04c.png",
     "static/media/Privacy Policy.pdf": "/festo/static/media/Privacy Policy.5217b2c324bdaffbb431.pdf",
     "static/media/features_banner2.png": "/festo/static/media/features_banner2.673b6b8a3931187a64f2.png",
     "static/media/home_banner.png": "/festo/static/media/home_banner.90317960cb544debc798.png",
     "static/media/contact-us_banner.png": "/festo/static/media/contact-us_banner.b8e34a9e4918c8c9dfc5.png",
-    "static/media/Festo-party-app.png": "/festo/static/media/Festo-party-app.06c6beb2a23ef64405be.png",
+    "static/media/Festo-party-app.png": "/festo/static/media/Festo-party-app.0484fcf8a5a95395a175.png",
     "static/media/features_banner.png": "/festo/static/media/features_banner.4a948db3dcb6fc107e65.png",
-    "static/media/festo-app-on-mobile.png": "/festo/static/media/festo-app-on-mobile.952c42dcaee6e8f63ac6.png",
+    "static/media/festo-app-on-mobile.png": "/festo/static/media/festo-app-on-mobile.82c822618c330b762cdc.png",
     "static/media/Festo-party-app-mobiles2.png": "/festo/static/media/Festo-party-app-mobiles2.6d4feff5b213c7f5f541.png",
     "static/media/Festo-party-app3.png": "/festo/static/media/Festo-party-app3.03005a7f914f673e5c6c.png",
     "static/media/Festo-party-app-mibile.png": "/festo/static/media/Festo-party-app-mibile.fdfa8bcd857ddd6a811c.png",
+    "static/media/red_shadows.png": "/festo/static/media/red_shadows.96ff15d6ab9fb2dc890e.png",
     "static/media/Privacy-Cookies.jpg": "/festo/static/media/Privacy-Cookies.f0d72879d257eef292e4.jpg",
+    "static/media/home_banner-m.jpg": "/festo/static/media/home_banner-m.2faab27eb818859a33a0.jpg",
     "static/media/photo2.png": "/festo/static/media/photo2.bbb7978e08336b820e74.png",
     "static/media/photo3.png": "/festo/static/media/photo3.b2804531c455db71ac64.png",
     "static/media/Festo-party-app-chat.png": "/festo/static/media/Festo-party-app-chat.eb6bfa32c0cec8b49d56.png",
@@ -37,12 +39,12 @@
     "static/media/lock.svg": "/festo/static/media/lock.637febd1cd6b501a1166aef49c24f78f.svg",
     "static/media/lock1.svg": "/festo/static/media/lock1.8ddfdbf81e7ce373490ac7a881361d40.svg",
     "index.html": "/festo/index.html",
-    "main.afe9a5b9.css.map": "/festo/static/css/main.afe9a5b9.css.map",
-    "main.e398c5bc.js.map": "/festo/static/js/main.e398c5bc.js.map",
+    "main.42bb18fd.css.map": "/festo/static/css/main.42bb18fd.css.map",
+    "main.c160e896.js.map": "/festo/static/js/main.c160e896.js.map",
     "787.50b1c56e.chunk.js.map": "/festo/static/js/787.50b1c56e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.afe9a5b9.css",
-    "static/js/main.e398c5bc.js"
+    "static/css/main.42bb18fd.css",
+    "static/js/main.c160e896.js"
   ]
 }
