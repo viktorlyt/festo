@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import logo from '../images/festo-app-logo.png';
+// import { MenuMain } from './MenuMain';
 
 export const Header = () => {
   const { pathname } = useLocation();
@@ -27,6 +28,7 @@ export const Header = () => {
         'header-scrolled': scrollTop !== 0, 
       })}
     >
+      {/* <MenuMain right width={ '280px' }/> */}
       <Link to='/' className='header__logobox'>
         <img 
           src={logo} 

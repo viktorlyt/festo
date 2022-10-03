@@ -19,9 +19,10 @@
   &-form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: stretch;
     max-width: 920px;
-    margin: 0 30px;
+    margin: 0 auto;
 
     @include onMobile {
       align-self: center;
