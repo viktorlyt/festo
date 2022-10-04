@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import logo from '../images/festo-app-logo.png';
-import Fb from '../images/F.png';
-import Inst from '../images/Inst.png';
+import logo from '../../images/festo-app-logo.png';
+import Fb from '../../images/F.png';
+import Inst from '../../images/Inst.png';
 
 export const Footer = () => {
   const { pathname } = useLocation();

@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import logo from '../images/festo-app-logo.png';
-// import { MenuMain } from './MenuMain';
+import logo from '../../images/festo-app-logo.png';
+import { Nav } from '../Nav/Nav';
 
 export const Header = () => {
   const { pathname } = useLocation();
   const [scrollTop, setScrollTop] = useState(0);
+  const [nav, setNav] = useState(false);
   
   // eslint-disable-next-line
   const onScroll = (e) => {
@@ -28,7 +28,6 @@ export const Header = () => {
         'header-scrolled': scrollTop !== 0, 
       })}
     >
-      {/* <MenuMain right width={ '280px' }/> */}
       <Link to='/' className='header__logobox'>
         <img 
           src={logo} 
@@ -36,7 +35,16 @@ export const Header = () => {
           className="header__logo"
         />
       </Link>
-      <div className='header__rightSide'>
+
+      <Nav setNav={setNav} nav={nav} />
+
+      <div 
+        className={
+          nav 
+          ? ['header__rightSide', 'header__rightSide--active'].join(' ') 
+          : 'header__rightSide'
+        }
+      >
         <NavLink 
           to='/'
           className={() => classNames('header__rightSide--home', { 'isActive': pathname === '/' })}
@@ -57,24 +65,7 @@ export const Header = () => {
         >
           Register Your Interest
         </NavLink>
-
-        <AnchorLink href='#menu'>
-          <div className='header__menu'>
-            <div className='header__menu--line1'></div>
-            <div className='header__menu--line2'></div>
-            <div className='header__menu--line3'></div>
-          </div>
-        </AnchorLink>
       </div>
-
-      <nav className='page__menu menu' id="#menu">
-        <div className='header__menu'>
-          <div className='header__menu--line1'></div>
-          <div className='header__menu--line2'></div>
-          <div className='header__menu--line3'></div>
-        </div>
-      </nav>
-
     </header>
   );
 }

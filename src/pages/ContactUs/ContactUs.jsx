@@ -1,7 +1,7 @@
 import React from 'react'
-import { Footer } from '../../components/Footer'
-import { Header } from '../../components/Header'
-import { Subscribe } from '../../components/Subscribe'
+import { Footer } from '../../components/Footer/Footer'
+import { Header } from '../../components/Header/Header'
+import { Subscribe } from '../../components/Subscribe/Subscribe'
 import logoBig from '../../images/logo-big.png'
 
 export const ContactUs = () => {

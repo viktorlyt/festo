@@ -1,0 +1,77 @@
+.nav {
+  display: none;
+
+  @include onMobile {
+    position: absolute;
+    right: 24px;
+    top: 16px;
+    z-index: 11;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__menu {
+    &--icon {
+      position: relative;
+      display: none;
+  
+      @include onMobile {
+        display: flex;
+        width: 26px;
+        height: 21px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      &-line1 {
+        position: absolute;
+        width: 13px;
+        height: 3px;
+        background-color: $colorWhite;
+        color: $colorWhite;
+        border-radius: 3px;
+
+        &_cross {
+          transform-origin: center;
+          transform: rotate(-135deg) translateX(-6px) translateY(-3px);
+        }
+      }
+      
+      &-line2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 26px;
+        height: 3px;
+        background-color: $colorWhite;
+        color: $colorWhite;
+        border-radius: 3px;
+
+        &_cross {
+          transform-origin: center;
+          transform: rotate(-45deg);
+        }
+      }
+      
+      &-line3 {
+        position: absolute;
+        bottom: 0;
+        align-self: flex-end;
+        width: 13px;
+        height: 3px;
+        background-color: $colorWhite;
+        color: $colorWhite;
+        border-radius: 3px;
+
+        &_cross {
+          transform-origin: center;
+          transform: rotate(-135deg) translateX(3px) translateY(1px);
+        }
+      }
+    }
+  }
+}

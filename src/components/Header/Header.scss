@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  height: auto;
+  width: 100%;
+  background-color: transparent;
+
+  @include onMobile {
+    padding: 17px;
+  }
+
+  &-scrolled {
+    position: fixed;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    height: auto;
+    width: 100%;
+    background-color: rgba(255, 56, 34, 1);
+    box-shadow: 0 5px 20px 1px rgba(0,0,0,0.2); 
+    
+    @include onMobile {
+      padding: 17px;
+    }
+  }
+
+  &__logo {
+    @include onMobile {
+      width: 110px;
+      height: 44px;
+    }
+  }
+  
+  &__rightSide {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 500;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: right;
+      position: fixed;
+      left: 30%;
+      right: 0;
+      top: -100%;
+      bottom: 0;
+      height: 100vh;
+      width: 70%;
+      padding: 10px 30px 20px 20px;
+      background-color: $colorRed;
+      opacity: 0;
+      z-index: 10;
+      font-size: 18px;
+      line-height: 1.5em;
+      transition: all 0.5s;
+    }
+
+    &--active {
+      @include onMobile {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    &--home {
+      padding: 0 15px;
+      color: $colorWhite;
+      text-decoration: none;
+          
+      &:hover {
+        color: $colorGray;
+      }
+
+      @include onMobile {
+        padding: 100px 15px 20px 0;
+        text-align: right;
+        border-bottom: 1px solid $colorWhite;
+      }
+    }
+    
+    &--features {
+      padding: 0 15px;
+      color: $colorWhite;
+      text-decoration: none;
+          
+      &:hover {
+        color: $colorGray;
+      }
+
+      @include onMobile {
+        padding: 20px 15px 20px 0;
+        text-align: right;
+        border-bottom: 1px solid $colorWhite;
+      }
+    }
+
+    &--register {
+      padding: 0 30px 0 15px;
+      color: $colorWhite;
+      text-decoration: none;
+          
+      &:hover {
+        color: $colorGray;
+      }
+
+      @include onMobile {
+        padding: 20px 15px 20px 0;
+        text-align: right;
+        border-bottom: 1px solid $colorWhite;
+      }
+    }
+  }
+}
+
+.nav {
+  
+}
