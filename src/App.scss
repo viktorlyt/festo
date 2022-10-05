@@ -8,6 +8,7 @@
 @import './pages/PrivacyPolicy/PrivacyPolicy';
 @import './components/Footer/Footer';
 @import './components/Nav/Nav';
+@import './components/Slider/Slider';
 @import './components/grid';
 
 * {
@@ -32,7 +33,7 @@ body {
   width: 100%; 
   /* overflow-x: hidden; */
   min-width: 340px;
-  /* max-width: 1300px; */
+  /* min-width: 1000px; */
   font-family: questrial, sans-serif;
   font-weight: normal;
   scroll-behavior: smooth;

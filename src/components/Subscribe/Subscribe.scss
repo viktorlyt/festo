@@ -1,6 +1,11 @@
 .subscribe {
   height: 272px;
+  padding: 0 50px;
   background-color: #fAfAfA;
+
+  @include onMobile {
+    padding: 0 20px;
+  }
 
   &-span {
     display: block;

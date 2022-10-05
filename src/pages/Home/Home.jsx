@@ -20,6 +20,7 @@ import logo198x78 from '../../images/festo-app-logo-198x78.png'
 import FestoPartyApp from '../../images/mobile/Festo-party-app.png'
 import festoAppOnMobileM from '../../images/mobile/festo-app-on-mobile.png'
 import redShadows from '../../images/mobile/red_shadows.png'
+import { Slider } from '../../components/Slider/Slider'
 
 export const Home = () => {
   return (
@@ -204,10 +205,12 @@ export const Home = () => {
               className="reviews__slider--textbox-logo"
             />
             <span className="reviews__slider--textbox-text">
-              Why people love it?
+              Why people <br/> love it?
             </span>
           </div>
-          <div className="reviews__slider--sliderbox"></div>
+          <div className="reviews__slider--sliderbox">
+            <Slider />
+          </div>
         </div>
         <div className="reviews__photos">
           <div className='reviews__photos--photo1'></div>
