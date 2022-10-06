@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
@@ -16,7 +16,10 @@ import f11 from '../../images/f11.svg'
 import f12 from '../../images/f12.svg'
 import f13 from '../../images/f13.png'
 
-export const Features = () => {
+export const Features = ({ animeFunction }) => {
+  // eslint-disable-next-line
+  useEffect(() => animeFunction, []);
+
   return (
     <div className='features'>
       <Header />
@@ -32,7 +35,7 @@ export const Features = () => {
 
       <section className='features__apps'>
         <div className='features__apps--appsbox'>
-          <div className='features__apps--box'>
+          <div className='features__apps--box-center _anim-items _anim-no-hide'>
             <img
               src={f1}
               alt="f1"
@@ -42,7 +45,7 @@ export const Features = () => {
           </div>
           
           <div className='features__apps--boxrow'>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-leftside  _anim-items _anim-no-hide'>
               <img
                 src={f2}
                 alt="f2"
@@ -50,7 +53,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Find Friends</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-center _anim-items _anim-no-hide'>
               <img
                 src={f3}
                 alt="f3"
@@ -58,7 +61,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Add Friends</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-rightside _anim-items _anim-no-hide'>
               <img
                 src={f4}
                 alt="f4"
@@ -69,7 +72,7 @@ export const Features = () => {
           </div>
           
           <div className='features__apps--boxrow'>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-leftside _anim-items _anim-no-hide'>
               <img
                 src={f5}
                 alt="f5"
@@ -77,7 +80,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Create a Partiy</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-center _anim-items _anim-no-hide'>
               <img
                 src={f6}
                 alt="f6"
@@ -85,7 +88,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Public Parties</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-rightside _anim-items _anim-no-hide'>
               <img
                 src={f7}
                 alt="f7"
@@ -95,7 +98,7 @@ export const Features = () => {
             </div>
           </div>
           <div className='features__apps--boxrow'>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-leftside _anim-items _anim-no-hide'>
               <img
                 src={f8}
                 alt="f8"
@@ -103,7 +106,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Discover Parties</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-center _anim-items _anim-no-hide'>
               <img
                 src={f9}
                 alt="f9"
@@ -111,7 +114,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Add Bank</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-rightside _anim-items _anim-no-hide'>
               <img
                 src={f10}
                 alt="f10"
@@ -122,7 +125,7 @@ export const Features = () => {
           </div>
           
           <div className='features__apps--boxrow'>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-leftside _anim-items _anim-no-hide'>
               <img
                 src={f11}
                 alt="f11"
@@ -130,7 +133,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Chat on App</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-center _anim-items _anim-no-hide'>
               <img
                 src={f12}
                 alt="f12"
@@ -138,7 +141,7 @@ export const Features = () => {
               />
               <p className='features__apps--box-p'>Notifications</p>
             </div>
-            <div className='features__apps--box'>
+            <div className='features__apps--box-rightside _anim-items _anim-no-hide'>
               <img
                 src={f13}
                 alt="f13"
