@@ -140,7 +140,7 @@ export const Home = () => {
         <img 
             src={festoPartyAppMobiles2}
             alt="Festo-party-app-mobiles2" 
-            className='festo-easy__mobiles'
+            className='festo-easy__mobiles _anim-items _anim-no-hide'
           />
         <div className='festo-easy__info'>
           <div  className='festo-easy__infobox'>
@@ -182,7 +182,7 @@ export const Home = () => {
         <img 
           src={festoPartyAppMibile}
           alt="Festo-party-app-mobiles" 
-          className='plan-parties__mobile'
+          className='plan-parties__mobile _anim-items _anim-no-hide'
         />
       </section>
 
@@ -195,12 +195,12 @@ export const Home = () => {
         <img 
           src={festoPartyApp3}
           alt="Festo-party-app3" 
-          className='sell-tickets__mobiles1'
+          className='sell-tickets__mobiles1 _anim-items _anim-no-hide'
         />
         <img 
           src={FestoPartyAppChat}
           alt="Festo-party-app-chat" 
-          className='sell-tickets__mobiles2'
+          className='sell-tickets__mobiles2 _anim-items _anim-no-hide'
         />
         <div className='sell-tickets__red '></div>
         <div className='sell-tickets__info'>
