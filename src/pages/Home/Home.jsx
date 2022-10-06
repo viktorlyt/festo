@@ -17,12 +17,57 @@ import festoPartyAppMibile from '../../images/Festo-party-app-mibile.png'
 import festoPartyApp3 from '../../images/Festo-party-app3.png'
 import FestoPartyAppChat from '../../images/Festo-party-app-chat.png'
 import logo198x78 from '../../images/festo-app-logo-198x78.png'
-import FestoPartyApp from '../../images/mobile/Festo-party-app.png'
+import festoPartyAppM from '../../images/mobile/Festo-party-app.png'
 import festoAppOnMobileM from '../../images/mobile/festo-app-on-mobile.png'
 import redShadows from '../../images/mobile/red_shadows.png'
 import { Slider } from '../../components/Slider/Slider'
+import { useEffect } from 'react'
 
 export const Home = () => {
+  useEffect (() => {
+    const animItems = document.querySelectorAll('._anim-items');
+
+  if (animItems.length > 0) {
+    window.addEventListener('scroll', animOnScroll);
+
+  
+    
+    function animOnScroll() {
+      for (let index = 0; index < animItems.length; index++) {
+        const animItem = animItems[index];
+        const animItemHeight = animItem.offsetHeight;
+        const animItemOffset = offset(animItem).top;
+        const animStart = 4;
+
+        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+        if (animItemHeight > window.innerHeight) {
+          animItemPoint = window.innerHeight - window.innerHeight / animStart;
+        }
+
+        if ((window.pageYOffset > animItemOffset - animItemPoint) && window.pageYOffset < (animItemOffset + animItemHeight)) {
+          animItem.classList.add('_active');
+        } else if (!animItem.classList.contains('_anim-no-hide')) {
+          animItem.classList.remove('_active');
+        }
+      }
+    }
+
+    function offset(el) {
+      const rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
+    }
+
+    setTimeout(() => {
+      animOnScroll();
+    }, 500);
+  }
+  }, [])
+  
+  
+
   return (
     <div className='home'>
       <Header />
@@ -45,21 +90,21 @@ export const Home = () => {
               now!
             </span>
           </div>
-          <span className='home__mobiles'>
+          <div className='home__mobiles'>
             <img 
               src={festoPartyApp}
-              srcSet={`${FestoPartyApp} 768w`}
+              srcSet={`${festoPartyAppM} 767w`}
               // sizes='(max-width: 767px) 100vw'
               alt="Festo-party-app"
-              className='home__mobile1'
+              className='home__mobile1 _anim-items _anim-no-hide'
             />
             <img 
               src={festoAppOnMobile}
               srcSet={`${festoAppOnMobileM} 767px`}
               alt="festo-app-on-mobile"
-              className='home__mobile2'
+              className='home__mobile2 _anim-items _anim-no-hide'
             />
-          </span>
+          </div>
         </div>
       </section>
 
@@ -71,13 +116,13 @@ export const Home = () => {
         />
 
       <section className='home__redSection'>
-        <span className='home__redSection-span1'>
+        <span className='home__redSection-span1 _anim-items _anim-no-hide'>
           What is Festo?
         </span>
-        <span className='home__redSection-span2'>
+        <span className='home__redSection-span2 _anim-items _anim-no-hide'>
           Meet Festo the all-in-one solution for efficient party planning
         </span>
-        <span className='home__redSection-span3'>
+        <span className='home__redSection-span3 _anim-items _anim-no-hide'>
           Register your interest today and learn about next steps to set-up your party
         </span>
       </section>

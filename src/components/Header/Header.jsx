@@ -13,7 +13,6 @@ export const Header = () => {
   const onScroll = (e) => {
     if (scrollTop !== e.target.documentElement.scrollTop) {
       setScrollTop(e.target.documentElement.scrollTop);
-      console.log(e.target.documentElement.scrollTop);
     }
   }
 

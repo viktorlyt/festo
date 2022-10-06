@@ -35,7 +35,7 @@
       grid-template-columns: 1fr;
       column-gap: $grid_gutter;
       padding-top: 150px;
-      margin: auto;
+      /* margin: auto; */
       color: $colorWhite;
       text-align: center;
     }
@@ -43,12 +43,35 @@
 
   &__mobile1 {
     position: relative;
-    left: -1000px;
     z-index: 3;
     height: 565px;
     width: 298px;
-    transform: rotate(353deg) translateX(12px) left 500px;
-    transition: left 2s;
+    /* transform: rotate(-7deg) translateX(12px); */
+
+    transform: translateX(-1500px);
+    opacity: 0;
+    transition: all 3s ease 0s;
+
+    &._active {
+      transform: rotate(-7deg) translateX(12px);
+      opacity: 1;
+    }
+
+    /* animation-name: slideRight;
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+    visibility: visible;
+
+    @keyframes slideRight {
+      0% {
+        transform: translateX(-1500px) rotate(-7deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(12px) rotate(-7deg);
+        opacity: 1;
+      }
+    } */
 
     @include onMobile {
       height: 305px;
@@ -61,11 +84,47 @@
     z-index: 2;
     height: 565px;
     width: 298px;
-    transform: rotate(7deg) translateX(-12px);
+    /* transform: rotate(7deg) translateX(-12px); */
+
+    transform: translateX(1500px);
+    opacity: 0;
+    transition: all 3s ease 0s;
+
+    &._active {
+      transform: rotate(7deg) translateX(-12px);
+      opacity: 1;
+    }
+
+    /* animation-name: slideLeft;
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out; 
+    visibility: visible;
+
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(1500px) rotate(7deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(-12px) rotate(7deg);
+        opacity: 1;
+      }
+    } */
 
     @include onMobile {
       height: 305px;
       width: 166px;
+
+      @keyframes slideLeft {
+        0% {
+          transform: translateX(400px) rotate(7deg);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(-12px) rotate(7deg);
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -93,7 +152,16 @@
   &__span-reg {
     font-size: 38px;
     margin-bottom: 80px;
-    
+    animation-name: slideRight;
+    animation-duration: 3s; 
+    animation-timing-function: ease-in-out; 
+    visibility: visible;
+
+    @keyframes slideRight {
+      0% {transform: translateX(-150%);}
+      100% {transform: translateX(0%);}
+    }
+
     @include onMobile {
       font-size: 20px;
     }
@@ -136,6 +204,15 @@
       margin-bottom: 30px;
       margin-top: 15px;
 
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 1s ease 0s;
+
+      &._active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
       @include onMobile {
         font-size: 22px;
       }
@@ -147,6 +224,15 @@
       font-size: 55px;
       margin-bottom: 40px;
 
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 1s ease 0s;
+
+      &._active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
       @include onMobile {
         width: 300px;
         font-size: 27px;
@@ -157,6 +243,15 @@
       font-size: 20px;
       margin-bottom: 40px;
 
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 1s ease 0s;
+
+      &._active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      
       @include onMobile {
         font-size: 15px;
       }
