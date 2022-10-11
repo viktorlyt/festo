@@ -18,14 +18,10 @@ export const Slider = () => {
         delay: 4000,
         disableOnInteraction: false,
       }}
-      // navigation
       pagination={{ 
         clickable: true,
         backgroundColor: 'black'
       }}
-      // scrollbar={{ draggable: true }}
-      // onSwiper={(swiper) => console.log(swiper)}
-      // onSlideChange={() => console.log('slide change')}
     >
       <SwiperSlide>
         <div className='slide'>

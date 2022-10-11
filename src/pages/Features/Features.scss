@@ -5,10 +5,12 @@
   &__banner {
     height: 595px;
     width: 100%;
+    top: 0;
     object-fit: cover;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-image: url('../../images/features_banner.png');
+    background-image: url('../../images/features_banner3.png');
     filter: brightness(50%);
 
     @include mq(768) {

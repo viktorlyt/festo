@@ -45,7 +45,7 @@ export const Features = ({ animeFunction }) => {
           </div>
           
           <div className='features__apps--boxrow'>
-            <div className='features__apps--box-leftside  _anim-items _anim-no-hide'>
+            <div className='features__apps--box-leftside _anim-items _anim-no-hide'>
               <img
                 src={f2}
                 alt="f2"
