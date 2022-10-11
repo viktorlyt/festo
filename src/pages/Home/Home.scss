@@ -118,6 +118,7 @@
 
     @include onMobile {
       font-size: 20px;
+      animation: none;
     }
   }
   
@@ -169,6 +170,8 @@
 
       @include onMobile {
         font-size: 22px;
+        transform: translateY(0);
+        opacity: 1;
       }
     }
     
@@ -190,6 +193,8 @@
       @include onMobile {
         width: 300px;
         font-size: 27px;
+        transform: translateY(0);
+        opacity: 1;
       }
     }
     
@@ -208,6 +213,8 @@
       
       @include onMobile {
         font-size: 15px;
+        transform: translateY(0);
+        opacity: 1;
       }
     }
   }
@@ -282,15 +289,18 @@
       left: 0;
       margin: 0 auto;
       top: -120px;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 
   &__red {
     grid-column: 1/5;
     height: 612px;
-    background-color: $colorRed;
+    /* background-color: $colorRed; */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    opacity: 0;
 
     @include onMobile {
       height: 180px;
@@ -517,9 +527,10 @@
   &__red {
     grid-column: 7/11;
     height: 612px;
-    background-color: $colorRed;
+    /* background-color: $colorRed; */
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    opacity: 0;
 
     @include onMobile {
       order: 1;
@@ -553,6 +564,8 @@
       left: 0;
       margin: 0 auto;
       top: -172px;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 }
@@ -604,12 +617,15 @@
     }
 
     @include onMobile {
+      z-index: 1;
       width: 159px;
       height: 317px;
       right: 0;
       left: 0;
       margin: 0 auto;
       top: -140px;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
   
@@ -627,9 +643,10 @@
   &__red {
     grid-column: 1/5;
     height: 612px;
-    background-color: $colorRed;
+    /* background-color: $colorRed; */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    opacity: 0;
 
     @include onMobile {
       order: 0;
@@ -888,10 +905,11 @@
     margin-bottom: 132px;
     padding: 78px 0;
     /* min-width: 1000px; */
-    background-color: $colorRed;
+    background-color: black;
     border-radius: 20px;
     font-size: 55px;
     color: $colorWhite;
+    opacity: 0;
 
     @include onMobile {
       display: none;
@@ -976,4 +994,11 @@
       object-fit: cover;
     }
   }
+}
+
+._red_anime1,
+._red_anime2,
+._red_anime3,
+._red_anime4 {
+  background-color: $colorRed;
 }

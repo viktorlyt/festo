@@ -22,10 +22,68 @@ import festoAppOnMobileM from '../../images/mobile/festo-app-on-mobile.png'
 import redShadows from '../../images/mobile/red_shadows.png'
 import { Slider } from '../../components/Slider/Slider'
 import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Home = ({ animeFunction }) => {
+  useEffect(() => {
+    animeFunction();
+
+    const tl = gsap.timeline({ defaults: { duration: 8 } });
+
+    tl.to('._red_anime1', {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: '._red_anime1',
+            start: 'top 100%',
+            end: 'center 50%',
+            // markers: true,
+            scrub: true,
+            toggleActions: 'restart none reverse reset',
+          }
+        })
+        .to('._red_anime2', {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: '._red_anime2',
+            start: 'top 100%',
+            end: 'center 50%',
+            // markers: true,
+            scrub: true,
+            toggleActions: 'restart none reverse reset',
+          }
+        })
+        .to('._red_anime3', {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: '._red_anime3',
+            start: 'top 100%',
+            end: 'center 50%',
+            // markers: true,
+            scrub: true,
+            toggleActions: 'restart none reverse reset',
+          }
+        })
+        .to('._red_anime4', {
+          // backgroundColor: '$colorRed',
+          opacity: 1,
+          scrollTrigger: {
+            trigger: '._red_anime4',
+            start: 'top 100%',
+            end: 'center 50%',
+            // markers: true,
+            scrub: true,
+            toggleActions: 'restart none reverse reset',
+          }
+        });
+        
   // eslint-disable-next-line
-  useEffect(() => animeFunction, []);
+  }, []);
+
+  
+
 
   return (
     <div className='home'>
@@ -38,7 +96,7 @@ export const Home = ({ animeFunction }) => {
           <span className='home__span2'>
             Host a party yourself and make money on party tickets!
           </span>
-          <div className='home__span-reg'>
+          <div className='home__span-reg _anim-items _anim-no-hide'>
             <span className='home__span3'>
               Register your 
             </span>
@@ -95,7 +153,7 @@ export const Home = ({ animeFunction }) => {
       <div className='home__white'></div>
 
       <section className='festo-easy'>
-        <div className='festo-easy__red'></div>
+        <div className='festo-easy__red _red_anime1'></div>
         <img 
             src={festoPartyAppMobiles2}
             alt="Festo-party-app-mobiles2" 
@@ -137,7 +195,7 @@ export const Home = ({ animeFunction }) => {
             </Link>
           </div>
         </div>
-        <div className='plan-parties__red'></div>
+        <div className='plan-parties__red _red_anime2'></div>
         <img 
           src={festoPartyAppMibile}
           alt="Festo-party-app-mobiles" 
@@ -161,7 +219,7 @@ export const Home = ({ animeFunction }) => {
           alt="Festo-party-app-chat" 
           className='sell-tickets__mobiles2 _anim-items _anim-no-hide'
         />
-        <div className='sell-tickets__red '></div>
+        <div className='sell-tickets__red _red_anime3'></div>
         <div className='sell-tickets__info'>
           <div className='sell-tickets__infobox'>
             <h3 className='sell-tickets__info--h2'>Sell tickets to parties & chat with people</h3>
@@ -201,7 +259,7 @@ export const Home = ({ animeFunction }) => {
           alt="Festo-party-app3" 
           className='reviews__mobile'
         />
-        <div className="reviews__slider">
+        <div className="reviews__slider _red_anime4">
           <div className="reviews__slider--textbox">
             <img 
               src={logo198x78}

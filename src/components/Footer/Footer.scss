@@ -15,6 +15,8 @@
   }
 
   &__logo {
+    display: inline;
+    width: fit-content;
     @include onMobile {
       align-self: center;
       margin-bottom: 30px;
@@ -29,6 +31,8 @@
   }
 
   &__home {
+    display: inline;
+    width: fit-content;
     margin: 12px 0;
     padding: 0 24px;
     color: $colorWhite;
@@ -44,6 +48,8 @@
   }
   
   &__features {
+    display: inline;
+    width: fit-content;
     padding: 0 24px;
     color: $colorWhite;
     text-decoration: none;
@@ -58,6 +64,8 @@
   }
   
   &__register {
+    display: inline;
+    width: fit-content;
     margin: 12px 0;
     padding: 0 24px;
     color: $colorWhite;
@@ -73,6 +81,8 @@
   }
   
   &__pp {
+    display: inline;
+    width: fit-content;
     align-self: flex-end;
     margin: 12px 0 60px;
     padding: 0 30px;
