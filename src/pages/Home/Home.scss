@@ -307,6 +307,7 @@
       border-top-right-radius: 20px;
       border-top-left-radius: 20px;
       border-bottom-right-radius: 0;
+      opacity: 1;
     }
   }
 
@@ -654,6 +655,7 @@
       border-top-right-radius: 20px;
       border-top-left-radius: 20px;
       border-bottom-right-radius: 0;
+      opacity: 1;
     }
   }
 
@@ -1001,4 +1003,8 @@
 ._red_anime3,
 ._red_anime4 {
   background-color: $colorRed;
+
+  @include onMobile {
+    opacity: 1;
+  }
 }
