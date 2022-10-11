@@ -117,7 +117,7 @@ export const Home = ({ animeFunction }) => {
             />
             <img 
               src={festoAppOnMobile}
-              srcSet={`${festoAppOnMobileM} 767px`}
+              srcSet={`${festoAppOnMobileM} 767w`}
               alt="festo-app-on-mobile"
               className='home__mobile2 _anim-items _anim-no-hide'
             />
@@ -127,7 +127,7 @@ export const Home = ({ animeFunction }) => {
 
       <img 
           src={redShadow}
-          srcSet={`${redShadows} 768w`}
+          srcSet={`${redShadows} 767w`}
           alt="red_shadow"
           className='home__red_shadow'
         />
