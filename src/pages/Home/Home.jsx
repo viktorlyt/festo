@@ -31,7 +31,7 @@ export const Home = ({ animeFunction }) => {
   useEffect(() => {
     animeFunction();
 
-    const tl = gsap.timeline({ defaults: { duration: 8 } });
+    const tl = gsap.timeline({ defaults: { duration: 4 } });
 
     tl.to('._red_anime1', {
           opacity: 1,
