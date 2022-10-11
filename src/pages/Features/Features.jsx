@@ -18,7 +18,7 @@ import f13 from '../../images/f13.png'
 
 export const Features = ({ animeFunction }) => {
   // eslint-disable-next-line
-  useEffect(() => animeFunction, []);
+  useEffect(() => animeFunction(), []);
 
   return (
     <div className='features'>

@@ -8,9 +8,9 @@
     top: 0;
     object-fit: cover;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    background-image: url('../../images/features_banner3.png');
+    background-image: url('../../images/features_banner4.png');
     filter: brightness(50%);
 
     @include mq(768) {
