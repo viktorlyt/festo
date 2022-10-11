@@ -37,7 +37,7 @@ export const Home = ({ animeFunction }) => {
           opacity: 1,
           scrollTrigger: {
             trigger: '._red_anime1',
-            start: 'top 100%',
+            start: 'top 90%',
             end: 'center 50%',
             // markers: true,
             scrub: true,
@@ -48,7 +48,7 @@ export const Home = ({ animeFunction }) => {
           opacity: 1,
           scrollTrigger: {
             trigger: '._red_anime2',
-            start: 'top 100%',
+            start: 'top 90%',
             end: 'center 50%',
             // markers: true,
             scrub: true,
@@ -59,7 +59,7 @@ export const Home = ({ animeFunction }) => {
           opacity: 1,
           scrollTrigger: {
             trigger: '._red_anime3',
-            start: 'top 100%',
+            start: 'top 90%',
             end: 'center 50%',
             // markers: true,
             scrub: true,
@@ -71,7 +71,7 @@ export const Home = ({ animeFunction }) => {
           opacity: 1,
           scrollTrigger: {
             trigger: '._red_anime4',
-            start: 'top 100%',
+            start: 'top 90%',
             end: 'center 50%',
             // markers: true,
             scrub: true,
