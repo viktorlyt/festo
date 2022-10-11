@@ -84,7 +84,7 @@ export const Features = ({ animeFunction }) => {
               <img
                 src={f6}
                 alt="f6"
-                className='features__apps--box-img'
+                className='features__apps--box-img features__apps--box-img6'
               />
               <p className='features__apps--box-p'>Public Parties</p>
             </div>
