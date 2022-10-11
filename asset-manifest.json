@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/festo/static/css/main.e8954741.css",
-    "main.js": "/festo/static/js/main.18c420be.js",
+    "main.css": "/festo/static/css/main.4d41e4c8.css",
+    "main.js": "/festo/static/js/main.5d6eaa66.js",
     "static/js/787.50b1c56e.chunk.js": "/festo/static/js/787.50b1c56e.chunk.js",
     "static/media/red_shadow.png": "/festo/static/media/red_shadow.db1579acd252edf7a04c.png",
     "static/media/Privacy Policy.pdf": "/festo/static/media/Privacy Policy.5217b2c324bdaffbb431.pdf",
@@ -9,8 +9,8 @@
     "static/media/home_banner.png": "/festo/static/media/home_banner.90317960cb544debc798.png",
     "static/media/contact-us_banner.png": "/festo/static/media/contact-us_banner.b8e34a9e4918c8c9dfc5.png",
     "static/media/Festo-party-app.png": "/festo/static/media/Festo-party-app.0484fcf8a5a95395a175.png",
+    "static/media/features_banner4.png": "/festo/static/media/features_banner4.55bbcad29583c61ea9f5.png",
     "static/media/festo-app-on-mobile.png": "/festo/static/media/festo-app-on-mobile.82c822618c330b762cdc.png",
-    "static/media/features_banner3.png": "/festo/static/media/features_banner3.a4233a6059d5585f9eec.png",
     "static/media/Festo-party-app-mobiles2.png": "/festo/static/media/Festo-party-app-mobiles2.6d4feff5b213c7f5f541.png",
     "static/media/Festo-party-app3.png": "/festo/static/media/Festo-party-app3.03005a7f914f673e5c6c.png",
     "static/media/Festo-party-app-mibile.png": "/festo/static/media/Festo-party-app-mibile.fdfa8bcd857ddd6a811c.png",
@@ -39,12 +39,12 @@
     "static/media/lock.svg": "/festo/static/media/lock.637febd1cd6b501a1166aef49c24f78f.svg",
     "static/media/lock1.svg": "/festo/static/media/lock1.8ddfdbf81e7ce373490ac7a881361d40.svg",
     "index.html": "/festo/index.html",
-    "main.e8954741.css.map": "/festo/static/css/main.e8954741.css.map",
-    "main.18c420be.js.map": "/festo/static/js/main.18c420be.js.map",
+    "main.4d41e4c8.css.map": "/festo/static/css/main.4d41e4c8.css.map",
+    "main.5d6eaa66.js.map": "/festo/static/js/main.5d6eaa66.js.map",
     "787.50b1c56e.chunk.js.map": "/festo/static/js/787.50b1c56e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8954741.css",
-    "static/js/main.18c420be.js"
+    "static/css/main.4d41e4c8.css",
+    "static/js/main.5d6eaa66.js"
   ]
 }
