@@ -15,10 +15,12 @@ import f10 from '../../images/f10.svg'
 import f11 from '../../images/f11.svg'
 import f12 from '../../images/f12.svg'
 import f13 from '../../images/f13.png'
+import { ParallaxBanner } from './ParallaxBanner'
 
 export const Features = ({ animeFunction }) => {
   // eslint-disable-next-line
   useEffect(() => animeFunction(), []);
+
 
   return (
     <div className='features'>
@@ -152,6 +154,8 @@ export const Features = ({ animeFunction }) => {
           </div>
         </div>
       </section>
+
+      <ParallaxBanner />
 
       <div className='features__banner2box'>
         <div className='features__banner2'></div>
