@@ -7,7 +7,7 @@ export const ParallaxBanner = () => (
       bgImage={features_banner2}
       strength={500}
       bgImageStyle={{
-        filter: 'brightness(50%)',
+        filter: 'brightness(51%)',
       }}
     >
       <div className='features__banner2--text' style={{ height: 824 }}>
