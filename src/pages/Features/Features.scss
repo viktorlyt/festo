@@ -288,9 +288,8 @@
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../images/features_banner5.png');
+    background-image: url('../../images/features_banner6.png');
     background-position: center;
-    filter: brightness(51%);
 
     /* &::before {
       content: '';
@@ -311,10 +310,6 @@
       transform: translateZ(-200px);
     } */
 
-    /* &--img {
-      filter: brightness(50%);
-    } */
-
     @include onMobile {
       display: block;
       height: 252px;
@@ -322,7 +317,6 @@
 
     &--text {
       display: block;
-      /* position: absolute; */
       height: 824px;
       width: 630px;
       padding: 256px 0;
@@ -333,8 +327,6 @@
       justify-self: center;
       color: $colorWhite;
       text-align: center;
-      /* background-color: transparent; */
-      /* transform: translateY(-100%) translateZ(200px); */
 
       @include onMobile {
         width: 280px;
