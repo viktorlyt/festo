@@ -1,10 +1,21 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
+import { ErrorMessage } from "@hookform/error-message"
 
 export const Subscribe = () => {
+  const { register, handleSubmit, formState: {errors} } = useForm({
+    criteriaMode: "all"
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className='subscribe'>
       <span className='subscribe-span'>Subscribe to our newsletters</span>
       <form 
+        onSubmit={handleSubmit(onSubmit)}
         action="" 
         method='post'
         className='subscribe-form'
@@ -14,16 +25,18 @@ export const Subscribe = () => {
         </label>
         <div className='subscribe-form--div'>
           <input
+             {...register("subscribe", {
+              required: true,
+              pattern: {
+                value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
+                message: "Please enter a valid email address.", 
+              },
+            })}
+            placeholder='e.g., name@example.com'
             className='subscribe-form--input'
             type='email'
             id='subscribe'
-            placeholder='e.g., name@example.com'
-            required
-            pattern="^.+@.+\.[a-zA-Z]{2,63}$"
-            maxLength='250'
-            title='Please fill in this field'
-          >
-          </input>
+          />
           <div>
             <button
               type="submit"
@@ -42,6 +55,18 @@ export const Subscribe = () => {
             </button>
           </div>
         </div>
+        <ErrorMessage
+          errors={errors}
+          name="subscribe"
+          render={({ messages }) => {
+            console.log("messages", messages);
+            return messages
+              ? Object.entries(messages).map(([type, message]) => (
+                  <p key={type} style={{ color: 'red' }}>{message}</p>
+                ))
+              : null;
+          }}
+        />
       </form>
     </div>
   )

@@ -136,7 +136,7 @@ export const ContactUs = () => {
                         message: "Please enter a valid email address.", 
                       },
                     })}
-                    placeholder = "box@gmail.com"
+                    placeholder='e.g., name@example.com'
                     className='contactUs__register--form-row__item--input'
                     type='email'
                     id='email'
