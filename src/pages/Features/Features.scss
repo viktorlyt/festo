@@ -271,8 +271,13 @@
   }
 
   &__banner2parallax {
-    position: relative;
-    height: 100vh;
+    position: absolute;
+    height: 824px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
 
     @include onMobile {
       display: none;
@@ -316,21 +321,20 @@
     }
 
     &--text {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 824px;
       width: 630px;
-      padding: 256px 0;
       margin: 0 auto;
-      left: 0;
-      right: 0;
-      align-self: center;
-      justify-self: center;
       color: $colorWhite;
       text-align: center;
 
       @include onMobile {
         width: 280px;
-        transform: translateY(-50%);
+        gap: 1px;
+        height: 252px;
       }
 
       &-text1 {

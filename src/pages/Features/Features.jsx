@@ -158,13 +158,13 @@ export const Features = ({ animeFunction }) => {
       <ParallaxBanner />
 
       <div className='features__banner2box'>
-        <div className='features__banner2'></div>
+        <div className='features__banner2'>
         <div className='features__banner2--text'>
           <span className='features__banner2--text-text1'>NO</span>
-          <br />
           <span className='features__banner2--text-text2'>
             More Stressful Party Planning
           </span>
+        </div>
         </div>
       </div>
       <Subscribe />

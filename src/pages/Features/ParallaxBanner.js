@@ -5,7 +5,7 @@ export const ParallaxBanner = () => (
     <Parallax
       className='features__banner2parallax'
       bgImage={features_banner2}
-      strength={500}
+      strength={-200}
     >
       <div className='features__banner2--text' style={{ height: 824 }}>
         <span className='features__banner2--text-text1'>NO</span>
