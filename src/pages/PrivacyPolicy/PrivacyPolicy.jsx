@@ -40,7 +40,7 @@ export const PrivacyPolicy = () => {
               &emsp;1. To provide and operate the Services;<br/>
               &emsp;2. To provide our Users with ongoing customer assistance and technical support;<br/>
               &emsp;3. To be able to contact our Visitors and Users with general or personalized service-related notices and promotional messages;<br/>
-              &emsp;4. To create aggregated statistical data and other aggregated and/or inferred Non-personal Information, which we or our business<br/>&emsp;&emsp;partners may use to provide and improve our respective services;<br/>
+              &emsp;4. To create aggregated statistical data and other aggregated and/or inferred Non-personal Information, which we or our business partners may use to provide and improve our respective services;<br/>
               &emsp;5. To comply with any applicable laws and regulations.<br/>
             </p>
           </span>
