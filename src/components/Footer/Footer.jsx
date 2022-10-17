@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import logo from '../../images/festo-app-logo.png';
 import Fb from '../../images/F.png';
 import Inst from '../../images/Inst.png';
@@ -10,33 +11,33 @@ export const Footer = () => {
 
   return (
     <footer id='footer' className="footer">
-      <Link to='/' className='footer__logo'>
+      <HashLink smooth to='/#top' className='footer__logo'>
         <img 
           src={logo} 
           alt="logo"
           className='footer__logo--img'
         />
-      </Link>
-      <NavLink 
-        to='/' 
+      </HashLink>
+      <NavHashLink 
+        smooth to='/#top'
         className={({ isActive }) => classNames('footer__home', { 'isActive': pathname === '/' })}
       >
         Home
-      </NavLink>
+      </NavHashLink>
       
-      <NavLink 
-        to='/features' 
+      <NavHashLink 
+        smooth to='/features#top'
         className={({ isActive }) => classNames('footer__features', { 'isActive': isActive })}
       >
         Features
-      </NavLink>
+      </NavHashLink>
 
-      <NavLink 
-        to='/contact-us'
+      <NavHashLink 
+        smooth to='/contact-us#top'
         className={({ isActive }) => classNames('footer__register', { 'isActive': isActive })}
       >
         Register Your Interest
-      </NavLink>
+      </NavHashLink>
 
       <div className='footer__fi'>
           <a 
@@ -55,12 +56,12 @@ export const Footer = () => {
           </a>
         </div>
 
-      <NavLink 
-        to='/privacy-policy'
+      <NavHashLink 
+        smooth to='/privacy-policy#top'
         className={({ isActive }) => classNames('footer__pp', { 'isActive': isActive })}
       >
         Privacy Policy
-      </NavLink>
+      </NavHashLink>
       
       <div className='footer__line'>
         <div className='footer__line-item' />

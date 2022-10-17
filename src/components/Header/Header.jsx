@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { HashLink, NavHashLink } from 'react-router-hash-link';
 import logo from '../../images/festo-app-logo.png';
 import { Nav } from '../Nav/Nav';
 
@@ -27,13 +28,13 @@ export const Header = () => {
         'header-scrolled': scrollTop !== 0, 
       })}
     >
-      <Link to='/' className='header__logobox'>
+      <HashLink smooth to='/#top' className='header__logobox'>
         <img 
           src={logo} 
           alt="logo"
           className="header__logo"
         />
-      </Link>
+      </HashLink>
 
       <Nav setNav={setNav} nav={nav} />
 
@@ -44,26 +45,26 @@ export const Header = () => {
           : 'header__rightSide'
         }
       >
-        <NavLink 
-          to='/'
+        <NavHashLink 
+          smooth to='/#top'
           className={() => classNames('header__rightSide--home', { 'isActive': pathname === '/' })}
         >
           Home
-        </NavLink>
+        </NavHashLink>
 
-        <NavLink 
-          to='/features'
+        <NavHashLink 
+          smooth to='/features#top'
           className={({ isActive }) => classNames('header__rightSide--features', { 'isActive': isActive })}
         >
           Features
-        </NavLink>
+        </NavHashLink>
         
-        <NavLink 
-          to='/contact-us'
+        <NavHashLink 
+          smooth to='/contact-us#top'
           className={({ isActive }) => classNames('header__rightSide--register', { 'isActive': isActive })}
         >
           Register Your Interest
-        </NavLink>
+        </NavHashLink>
       </div>
     </header>
   );

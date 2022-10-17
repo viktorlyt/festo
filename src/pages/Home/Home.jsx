@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
+import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
+import { Subscribe2 } from '../../components/Subscribe/Subscribe2'
 import festoPartyApp from '../../images/Festo-party-app.png'
 import festoAppOnMobile from '../../images/festo-app-on-mobile.png'
 import redShadow from '../../images/red_shadow.png'
@@ -82,9 +82,6 @@ export const Home = ({ animeFunction }) => {
   // eslint-disable-next-line
   }, []);
 
-  
-
-
   return (
     <div className='home'>
       <Header />
@@ -111,7 +108,6 @@ export const Home = ({ animeFunction }) => {
             <img 
               src={festoPartyApp}
               srcSet={`${festoPartyAppM} 767w`}
-              // sizes='(max-width: 767px) 100vw'
               alt="Festo-party-app"
               className='home__mobile1 _anim-items _anim-no-hide'
             />
@@ -164,7 +160,7 @@ export const Home = ({ animeFunction }) => {
             <h3 className='festo-easy__info--h2'>Festo Easy setup</h3>
             <h3 className='festo-easy__info--h3'>No hassle setup just follow the steps.</h3>
             <p className='festo-easy__info--p'>Festo app allows their users a hassle-free setup that only requires key information like phone number , date of birth and password to proceed.</p>
-            <HashLink className='festo-easy__info--sub' to="#subscribe" >
+            <HashLink className='festo-easy__info--sub' smooth to={"/#subscribeForm"} >
               <div className='festo-easy__info--subdiv'>
                 + Subscribe to our newsletter
               </div>
@@ -188,11 +184,11 @@ export const Home = ({ animeFunction }) => {
               <img src={lock} alt="lock" className='plan-parties__info--p-p3' />
               <p className='plan-parties__info--p-p4'>Private Parties</p>
             </div>
-            <Link className='plan-parties__info--sub' to="/features" >
+            <NavHashLink className='plan-parties__info--sub' smooth to="/features#top" >
               <div className='plan-parties__info--subdiv'>
                 + View Features
               </div>
-            </Link>
+            </NavHashLink>
           </div>
         </div>
         <div className='plan-parties__red _red_anime2'></div>
@@ -244,11 +240,11 @@ export const Home = ({ animeFunction }) => {
                 <p className='sell-tickets__info--p-p4'>Block people</p>
               </div>
             </div>
-            <HashLink className='festo-easy__info--sub' to="/contact-us" >
+            <NavHashLink className='festo-easy__info--sub' smooth to="/contact-us#top" >
               <div className='festo-easy__info--subdiv'>
                 + Register your interest
               </div>
-            </HashLink>
+            </NavHashLink>
           </div>
         </div>
       </section>
@@ -281,7 +277,7 @@ export const Home = ({ animeFunction }) => {
         </div>
       </section>
 
-      <Subscribe id='subscribe' />
+      <Subscribe2 />
       <Footer />
     </div>
   )
