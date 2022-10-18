@@ -5,14 +5,34 @@ import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
 import logoBig from '../../images/logo-big.png'
+import { useState } from 'react';
+import { requestToServer } from '../../helpers/requestToServer';
 
 export const ContactUs = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm({
-    criteriaMode: "all"
+  const { register, handleSubmit, formState: {errors} } = useForm({ criteriaMode: "all" });
+  const [data, setData] = useState({ 
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    comment: "",
+    company: "",
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  function handle(e) {
+    console.log(e);
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log(newData);
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    requestToServer(
+      '/user/create-users-potential',
+      data,
+    );
   };
 
   return (
@@ -40,18 +60,18 @@ export const ContactUs = () => {
             <h3 className='contactUs__register--info-h2'>Register your interest.</h3>
 
             <form
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={(e) => handleSubmit(onSubmit(e))}
               action="" 
-              method='post'
+              method='POST'
               className='contactUs__register--form'
             >
               <div className='contactUs__register--form-row'>
                 <span className='contactUs__register--form-row__item'>
-                  <label htmlFor="firstName" className='contactUs__register--form-row__item--label'>
+                  <label htmlFor="first_name" className='contactUs__register--form-row__item--label'>
                     First Name
                   </label>
                   <input
-                    {...register('firstName', {
+                    {...register('first_name', {
                       required: 'This input is required.',
                       minLength: {
                         value: 3,
@@ -66,13 +86,15 @@ export const ContactUs = () => {
                         message: "Please enter a valid first name.",
                       },
                     })}
+                    onChange={(e) => handle(e)}
+                    value={data.first_name}
                     className='contactUs__register--form-row__item--input'
                     type='text'
-                    id='firstName'
+                    id='first_name'
                   />
                   <ErrorMessage
                     errors={errors}
-                    name="firstName"
+                    name="first_name"
                     render={({ messages }) => {
                       console.log("messages", messages);
                       return messages
@@ -85,11 +107,11 @@ export const ContactUs = () => {
                 </span>
 
                 <span className='contactUs__register--form-row__item'>
-                  <label htmlFor="lastName" className='contactUs__register--form-row__item--label'>
+                  <label htmlFor="last_name" className='contactUs__register--form-row__item--label'>
                     Last Name
                   </label>
                   <input
-                    {...register("lastName", {
+                    {...register("last_name", {
                       required: 'This input is required.',
                       minLength: {
                         value: 3,
@@ -104,13 +126,15 @@ export const ContactUs = () => {
                         message: "Please enter a valid last name.",
                       },
                     })}
+                    onChange={(e) => handle(e)}
+                    value={data.last_name}
                     className='contactUs__register--form-row__item--input'
                     type='text'
-                    id='lastName'
+                    id='last_name'
                   />
                   <ErrorMessage
                     errors={errors}
-                    name="lastName"
+                    name="last_name"
                     render={({ messages }) => {
                       console.log("messages", messages);
                       return messages
@@ -136,6 +160,8 @@ export const ContactUs = () => {
                         message: "Please enter a valid email address.", 
                       },
                     })}
+                    onChange={(e) => handle(e)}
+                    value={data.email}
                     placeholder='e.g., name@example.com'
                     className='contactUs__register--form-row__item--input'
                     type='email'
@@ -175,6 +201,8 @@ export const ContactUs = () => {
                         message: "Please enter a valid phone number", 
                       },
                     })}
+                    onChange={(e) => handle(e)}
+                    value={data.phone}
                     placeholder = "+447428072804"
                     className='contactUs__register--form-row__item--input'
                     type='phone'
@@ -197,11 +225,11 @@ export const ContactUs = () => {
               
               <div className='contactUs__register--form-row'>
                 <span className='contactUs__register--form-row__item'>
-                  <label htmlFor="message" className='contactUs__register--form-row__item--label'>
+                  <label htmlFor="comment" className='contactUs__register--form-row__item--label'>
                     Leave us a message...
                   </label>
                   <textarea
-                    {...register("multipleErrorInputMessage", {
+                    {...register("comment", {
                       required: 'This input is required.',
                       minLength: {
                         value: 20,
@@ -212,15 +240,17 @@ export const ContactUs = () => {
                         message: 'Max 1000 characters.',
                       },
                     })}
+                    onChange={(e) => handle(e)}
+                    value={data.comment}
                     placeholder = "...so I'd like to order twenty tickets for my family and friends..."
                     className='contactUs__register--form-row__item--textarea'
                     type='text'
-                    id='massage'
+                    id='comment'
                   >
                   </textarea>
                   <ErrorMessage
                     errors={errors}
-                    name="multipleErrorInputMessage"
+                    name="comment"
                     render={({ messages }) => {
                       console.log("messages", messages);
                       return messages
@@ -239,6 +269,8 @@ export const ContactUs = () => {
                     Company
                   </label>
                   <input
+                    onChange={(e) => handle(e)}
+                    value={data.company}
                     className='contactUs__register--form-row__item--input'
                     type='text'
                     id='company'

@@ -1,41 +1,58 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { ErrorMessage } from "@hookform/error-message"
+import { useState } from 'react';
+import { requestToServer } from '../../helpers/requestToServer';
 
 export const Subscribe = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm({
-    criteriaMode: "all"
-  });
+  const { register, handleSubmit, formState: {errors} } = useForm({ criteriaMode: "all" });
+  const [data, setData] = useState({ email: "" });
 
-  const onSubmit = (data) => {
-    console.log(data);
+  function handle(e) {
+    console.log(e);
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log(newData);
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    requestToServer(
+      '/user/create-subscribe',
+      data,
+    )
   };
 
   return (
     <div className='subscribe'>
       <span className='subscribe-span'>Subscribe to our newsletters</span>
       <form 
-        onSubmit={handleSubmit(onSubmit)}
-        action="" 
-        method='post'
+        id='formSub'
+        onSubmit={(e) => handleSubmit(onSubmit(e))}
+        action=""
+        method='POST'
         className='subscribe-form'
       >
-        <label htmlFor="subscribe" className='subscribe-form--label'>
+        <label htmlFor="email" className='subscribe-form--label'>
           Enter your email address
         </label>
         <div className='subscribe-form--div'>
           <input
-             {...register("subscribe", {
+             {...register("email", {
               required: true,
+              name: "email",
               pattern: {
                 value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
                 message: "Please enter a valid email address.", 
               },
             })}
+            onChange={(e) => handle(e)}
+            value={data.email}
             placeholder='e.g., name@example.com'
             className='subscribe-form--input'
             type='email'
-            id='subscribe'
+            id='email'
           />
           <div>
             <button
@@ -57,7 +74,7 @@ export const Subscribe = () => {
         </div>
         <ErrorMessage
           errors={errors}
-          name="subscribe"
+          name="email"
           render={({ messages }) => {
             console.log("messages", messages);
             return messages
