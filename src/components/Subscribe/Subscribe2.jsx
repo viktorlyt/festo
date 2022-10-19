@@ -3,25 +3,32 @@ import { useForm } from 'react-hook-form'
 import { ErrorMessage } from "@hookform/error-message"
 import { useState } from 'react';
 import { requestToServer } from '../../helpers/requestToServer';
+import { Alert } from '@mui/material';
 
 export const Subscribe2 = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm({ criteriaMode: "all" });
+  const { register, handleSubmit, formState: {errors} } = useForm({   
+    criteriaMode: "all",
+    mode: 'onChange',
+  });
   const [data, setData] = useState({ email: "" });
 
   function handle(e) {
-    console.log(e);
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(newData);
   }
 
   const onSubmit = (e) => {
     e.preventDefault();
-    requestToServer(
-      '/user/create-subscribe',
-      data,
-    )
+
+    if (errors) {
+      alert('Check out the form for mistakes!');
+    } else {
+      requestToServer(
+        '/user/create-subscribe',
+        data,
+      )
+    }
   };
 
   return (
@@ -29,7 +36,7 @@ export const Subscribe2 = () => {
       <span className='subscribe-span'>Subscribe to our newsletters</span>
       <form 
         id='formSub'
-        onSubmit={(e) => handleSubmit(onSubmit(e))}
+        onSubmit={(e) => handleSubmit(onSubmit(e))(e)}
         action=""
         method='POST'
         className='subscribe-form'
@@ -40,7 +47,7 @@ export const Subscribe2 = () => {
         <div className='subscribe-form--div'>
           <input
              {...register("email", {
-              required: true,
+              required: 'This input is required.',
               name: "email",
               pattern: {
                 value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
@@ -79,7 +86,8 @@ export const Subscribe2 = () => {
             console.log("messages", messages);
             return messages
               ? Object.entries(messages).map(([type, message]) => (
-                  <p key={type} style={{ color: 'red' }}>{message}</p>
+                  <Alert key={type} severity="warning">{message}</Alert>
+                  // <p key={type} style={{ color: 'red' }}>{message}</p>
                 ))
               : null;
           }}
