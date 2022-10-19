@@ -63,7 +63,7 @@ export const Subscribe = () => {
               onChange: (e) => handle(e),
             })}
             value={data.email}
-            placeholder='e.g., name@example.com'
+            placeholder='name@example.com'
             className='subscribe-form--input'
             type='email'
             id='email'

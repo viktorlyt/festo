@@ -103,6 +103,7 @@ export const ContactUs = () => {
                       onChange: (e) => handle(e),
                     })}
                     value={data.first_name}
+                    placeholder='John'
                     className='contactUs__register--form-row__item--input'
                     type='text'
                     id='first_name'
@@ -144,6 +145,7 @@ export const ContactUs = () => {
                       onChange: (e) => handle(e),
                     })}
                     value={data.last_name}
+                    placeholder='Smith'
                     className='contactUs__register--form-row__item--input'
                     type='text'
                     id='last_name'
@@ -179,7 +181,7 @@ export const ContactUs = () => {
                     onChange: (e) => handle(e),
                     })}
                     value={data.email}
-                    placeholder='e.g., name@example.com'
+                    placeholder='name@example.com'
                     className='contactUs__register--form-row__item--input'
                     type='email'
                     id='email'
@@ -284,7 +286,7 @@ export const ContactUs = () => {
               <div className='contactUs__register--form-row'>
                 <span className='contactUs__register--form-row__item'>
                   <label htmlFor="company" className='contactUs__register--form-row__item--label-NR'>
-                    Company
+                    Company (optional)
                   </label>
                   <input
                     {...register("company", {
