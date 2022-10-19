@@ -6,10 +6,15 @@ import { requestToServer } from '../../helpers/requestToServer';
 import { Alert } from '@mui/material';
 
 export const Subscribe2 = () => {
-  const { register, handleSubmit, formState: {errors} } = useForm({   
+  const { 
+    register, 
+    handleSubmit, 
+    formState: { errors, isValid } 
+  } = useForm({ 
     criteriaMode: "all",
-    mode: 'onChange',
+    mode: "onChange"
   });
+
   const [data, setData] = useState({ email: "" });
 
   function handle(e) {
@@ -18,16 +23,19 @@ export const Subscribe2 = () => {
     setData(newData);
   }
 
-  const onSubmit = (e) => {
+  console.log('isValid', isValid);
+
+  const onSubmit = (data, e) => {
     e.preventDefault();
 
-    if (errors) {
+    if (!isValid) {
       alert('Check out the form for mistakes!');
     } else {
+      setData(data);
       requestToServer(
         '/user/create-subscribe',
         data,
-      )
+      );
     }
   };
 
@@ -36,7 +44,7 @@ export const Subscribe2 = () => {
       <span className='subscribe-span'>Subscribe to our newsletters</span>
       <form 
         id='formSub'
-        onSubmit={(e) => handleSubmit(onSubmit(e))(e)}
+        onSubmit={handleSubmit(onSubmit)}
         action=""
         method='POST'
         className='subscribe-form'
@@ -53,8 +61,8 @@ export const Subscribe2 = () => {
                 value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
                 message: "Please enter a valid email address.", 
               },
+              onChange: (e) => handle(e),
             })}
-            onChange={(e) => handle(e)}
             value={data.email}
             placeholder='e.g., name@example.com'
             className='subscribe-form--input'

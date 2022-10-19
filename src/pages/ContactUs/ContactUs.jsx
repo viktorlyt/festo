@@ -5,8 +5,8 @@ import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
 import logoBig from '../../images/logo-big.png'
-// import { useState } from 'react';
-// import { requestToServer } from '../../helpers/requestToServer';
+import { useState } from 'react';
+import { requestToServer } from '../../helpers/requestToServer';
 import { Alert } from '@mui/material';
 
 export const ContactUs = () => {
@@ -19,42 +19,36 @@ export const ContactUs = () => {
     mode: "onChange"
   });
 
-  console.log('isvalid', isValid);
+  const [data, setData] = useState({ 
+    first_name: "",
+    last_name: "",
+    email: "",
+    phone: "",
+    comment: "",
+    company: "",
+  });
 
-  // const [data, setData] = useState({ 
-  //   first_name: "",
-  //   last_name: "",
-  //   email: "",
-  //   phone: "",
-  //   comment: "",
-  //   company: "",
-  // });
-
-  // function handle(e) {
-  //   const newData = { ...data };
-  //   newData[e.target.id] = e.target.value;
-  //   setData(newData);
-  //   console.log('isValid', isValid);
-  // }
-
-  const onSubmit = (data) => {
-    console.log(data);
+  const handle = (e) => {
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
   }
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
 
-  //   if (errors.length > 0) {
-  //     // console.log('isvalid', isValid);
+  console.log('isValid', isValid);
 
-  //     alert('Check out the form for mistakes!');
-  //   } else {
-  //     data.phone = data.phone.replace(/[\s+]/g, '');
-  //     requestToServer(
-  //       '/user/create-users-potential',
-  //       data,
-  //     );
-  //   }
-  // };
+  const onSubmit = (data, e) => {
+    e.preventDefault();
+
+    if (!isValid) {
+      alert('Check out the form for mistakes!');
+    } else {
+      setData(data);
+      requestToServer(
+        '/user/create-users-potential',
+        data,
+      );
+    }
+  };
 
   return (
     <div className='contactUs'>
@@ -81,7 +75,7 @@ export const ContactUs = () => {
             <h3 className='contactUs__register--info-h2'>Register your interest.</h3>
 
             <form
-              onSubmit={(e) => handleSubmit(onSubmit(e))(e)}
+              onSubmit={handleSubmit(onSubmit)}
               action="" 
               method='POST'
               className='contactUs__register--form'
@@ -106,9 +100,9 @@ export const ContactUs = () => {
                         value: /^[A-Za-z]+$/,
                         message: "Please enter a valid last name.",
                       },
+                      onChange: (e) => handle(e),
                     })}
-                    // onChange={(e) => handle(e)}
-                    // value={data.first_name}
+                    value={data.first_name}
                     className='contactUs__register--form-row__item--input'
                     type='text'
                     id='first_name'
@@ -147,9 +141,9 @@ export const ContactUs = () => {
                         value: /^[A-Za-z]+$/,
                         message: "Please enter a valid last name.",
                       },
+                      onChange: (e) => handle(e),
                     })}
-                    // onChange={(e) => handle(e)}
-                    // value={data.last_name}
+                    value={data.last_name}
                     className='contactUs__register--form-row__item--input'
                     type='text'
                     id='last_name'
@@ -182,9 +176,9 @@ export const ContactUs = () => {
                         value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
                         message: "Please enter a valid email address.", 
                       },
+                    onChange: (e) => handle(e),
                     })}
-                    // onChange={(e) => handle(e)}
-                    // value={data.email}
+                    value={data.email}
                     placeholder='e.g., name@example.com'
                     className='contactUs__register--form-row__item--input'
                     type='email'
@@ -224,9 +218,9 @@ export const ContactUs = () => {
                         value: /^\+\d+$/, 
                         message: "Please enter a valid phone number", 
                       },
+                      onChange: (e) => handle(e),
                     })}
-                    // onChange={(e) => handle(e)}
-                    // value={data.phone}
+                    value={data.phone}
                     placeholder = "+447428072804"
                     className='contactUs__register--form-row__item--input'
                     type='phone'
@@ -264,9 +258,9 @@ export const ContactUs = () => {
                         value: 1000,
                         message: 'Max 1000 characters.',
                       },
+                      onChange: (e) => handle(e),
                     })}
-                    // onChange={(e) => handle(e)}
-                    // value={data.comment}
+                    value={data.comment}
                     placeholder = "...so I'd like to order twenty tickets for my family and friends..."
                     className='contactUs__register--form-row__item--textarea'
                     type='text'
@@ -277,11 +271,9 @@ export const ContactUs = () => {
                     errors={errors}
                     name="comment"
                     render={({ messages }) => {
-                      // console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <Alert key={type} severity="warning">{message}</Alert>
-                            // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
                     }}
@@ -297,9 +289,9 @@ export const ContactUs = () => {
                   <input
                     {...register("company", {
                       required: false,
+                      onChange: (e) => handle(e),
                     })}
-                    // onChange={(e) => handle(e)}
-                    // value={data.company}
+                    value={data.company}
                     className='contactUs__register--form-row__item--input'
                     type='text'
                     id='company'
