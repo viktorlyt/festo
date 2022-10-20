@@ -17,6 +17,8 @@ export const Subscribe = () => {
 
   const [data, setData] = useState({ email: "" });
 
+  const [itog, setItog] = useState('initial');
+
   function handle(e) {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
@@ -35,7 +37,13 @@ export const Subscribe = () => {
       requestToServer(
         '/user/create-subscribe',
         data,
-      );
+      )
+      .then(() => setItog('success'))
+      .catch(() => setItog('failure'));
+
+      setData({
+        email: "",
+      });
     }
   };
 
@@ -99,6 +107,25 @@ export const Subscribe = () => {
               : null;
           }}
         />
+
+        {itog === 'success' &&
+          <Alert 
+            variant='filled' 
+            severity="success"
+            id='success_sub'
+          >
+              Your data was sent succesfully!
+          </Alert>
+        }
+        {itog === 'failure' && 
+          <Alert 
+            variant='filled' 
+            severity="error"
+            id='success_sub'
+          >
+              Server error!
+          </Alert>
+        }
       </form>
     </div>
   )

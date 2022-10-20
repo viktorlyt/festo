@@ -28,7 +28,7 @@ export const ContactUs = () => {
     company: "",
   });
 
-  const [itog, setItog] = useState(false);
+  const [itog, setItog] = useState('initial');
 
   const handle = (e) => {
     const newData = { ...data };
@@ -44,11 +44,11 @@ export const ContactUs = () => {
     if (isValid) {
       setData(data);
       requestToServer(
-        '/user/create-users-potential1',
+        '/user/create-users-potential',
         data,
       )
-      .then(() => setItog(true))
-      .catch(() => setItog(false));
+      .then(() => setItog('success'))
+      .catch(() => setItog('failure'));
 
       setData({
         first_name: "",
@@ -85,20 +85,20 @@ export const ContactUs = () => {
           <div className='contactUs__register--info'>
             <h3 className='contactUs__register--info-h2'>Register your interest.</h3>
 
-            {itog && 
+            {itog === 'success' && 
               <Alert 
                 variant='filled' 
                 severity="success"
-                className='success'
+                id='success_form'
               >
                   Your data was sent succesfully!
               </Alert>
             }
-            {!itog && 
+            {itog === 'failure' && 
               <Alert 
                 variant='filled' 
                 severity="error"
-                className='success'
+                id='success_form'
               >
                   Server error!
               </Alert>
