@@ -13,7 +13,7 @@ export const ContactUs = () => {
   const { 
     register, 
     handleSubmit, 
-    formState: { errors, isValid } 
+    formState: { errors, isValid },
   } = useForm({ 
     criteriaMode: "all",
     mode: "onChange"
@@ -28,6 +28,8 @@ export const ContactUs = () => {
     company: "",
   });
 
+  const [itog, setItog] = useState(false);
+
   const handle = (e) => {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
@@ -35,19 +37,28 @@ export const ContactUs = () => {
   }
 
   console.log('isValid', isValid);
-
+ 
   const onSubmit = (data, e) => {
     e.preventDefault();
 
-    if (!isValid) {
-      alert('Check out the form for mistakes!');
-    } else {
+    if (isValid) {
       setData(data);
       requestToServer(
-        '/user/create-users-potential',
+        '/user/create-users-potential1',
         data,
-      );
-    }
+      )
+      .then(() => setItog(true))
+      .catch(() => setItog(false));
+
+      setData({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
+        comment: "",
+        company: "",
+      });
+    } 
   };
 
   return (
@@ -73,6 +84,25 @@ export const ContactUs = () => {
         <div className='contactUs__register--infobox'>
           <div className='contactUs__register--info'>
             <h3 className='contactUs__register--info-h2'>Register your interest.</h3>
+
+            {itog && 
+              <Alert 
+                variant='filled' 
+                severity="success"
+                className='success'
+              >
+                  Your data was sent succesfully!
+              </Alert>
+            }
+            {!itog && 
+              <Alert 
+                variant='filled' 
+                severity="error"
+                className='success'
+              >
+                  Server error!
+              </Alert>
+            }
 
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -115,7 +145,7 @@ export const ContactUs = () => {
                       console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="warning">{message}</Alert>
+                            <Alert key={type} severity="error">{message}</Alert>
                             // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
@@ -157,7 +187,7 @@ export const ContactUs = () => {
                       console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="warning">{message}</Alert>
+                            <Alert key={type} severity="error">{message}</Alert>
                             // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
@@ -193,7 +223,7 @@ export const ContactUs = () => {
                       console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
-                          <Alert key={type} severity="warning">{message}</Alert>
+                          <Alert key={type} severity="error">{message}</Alert>
                             // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
@@ -235,7 +265,7 @@ export const ContactUs = () => {
                       console.log("messages", messages);
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="warning">{message}</Alert>
+                            <Alert key={type} severity="error">{message}</Alert>
                             // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
@@ -275,7 +305,7 @@ export const ContactUs = () => {
                     render={({ messages }) => {
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="warning">{message}</Alert>
+                            <Alert key={type} severity="error">{message}</Alert>
                           ))
                         : null;
                     }}

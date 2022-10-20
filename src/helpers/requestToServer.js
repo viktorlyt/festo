@@ -14,15 +14,7 @@ export const requestToServer = async (url, options) => {
       body: formData,
     })
       .then(response => response.json())
-      .then(req => {
-          alert('Successfully!');
-          resolve(req);
-        }
-      )
-      .catch(err => {
-        // console.error(err, 'err')
-        reject(err)
-        alert(err.message);
-      })
-  })
-};
+      .then(req => resolve(req))
+      .catch(err => reject(err))
+  });
+}
