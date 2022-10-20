@@ -114,7 +114,7 @@ export const Subscribe2 = () => {
             severity="success"
             id='success_sub'
           >
-              Your data was sent succesfully!
+              You subscribed succesfully!
           </Alert>
         }
         {itog === 'failure' && 
