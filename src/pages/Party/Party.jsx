@@ -7,8 +7,25 @@ import flagOfEngland from '../../images/flag-of-england.png'
 import slide1_img from '../../images/slide1_img.png'
 import usd from '../../images/noun-usd-square-4425742.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
+// import { getParty } from '../../api/party'
+// import { useParams } from 'react-router-dom'
+// import { useState } from 'react'
+// import { useEffect } from 'react'
 
 export const Party = () => {
+  // const { id } = useParams();
+  // const [party, setParty] = useState();
+
+  // useEffect(() => {
+  //   getParty(id)
+  //   .then(response => {
+  //     setParty(response.data);
+  //   })
+  //   .catch(error => console.log(error));
+  // }, [id]); 
+
+  // console.log(party.id);
+
   return (
     <div className='party'>
       <Header />
@@ -20,7 +37,7 @@ export const Party = () => {
             <h3 className='party__left--h3'>🠔 All events</h3>
           </a>
           <h2 className='party__left--h2'>
-            WEEKND 26.10 🔥 UK Grime Party 
+            WEEKND 26.10 🔥 UK party.title 
             <img 
               src={flagOfEngland} 
               alt='flagOfEngland' 
