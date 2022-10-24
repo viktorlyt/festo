@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 35px;
+  grid-template-columns: repeat(10, 1fr);
+  column-gap: $grid_gutter;
 
   /* @include onTablet {
     grid-template-columns: repeat(6, 1fr);
@@ -28,8 +28,8 @@
   } */
 
   &__item {
-    @for $start from 1 through 12 {
-      @for $end from 1 through 12 {
+    @for $start from 1 through 10 {
+      @for $end from 1 through 10 {
         &--#{$start}-#{$end} {
           grid-column: #{$start} / #{$end + 1};
         }

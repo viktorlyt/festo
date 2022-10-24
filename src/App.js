@@ -4,6 +4,7 @@ import { Home } from "./pages/Home/Home";
 import { Features } from "./pages/Features/Features";
 import { ContactUs } from "./pages/ContactUs/ContactUs";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
+import { Party } from "./pages/Party/Party";
 
 function App() {
   const animeFunction = () => {
@@ -54,6 +55,10 @@ function App() {
         <Route path="/features" element={<Features animeFunction={animeFunction} />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/party">
+          <Route index element={(<Party />)} />
+          <Route path=":id" element={(<Party />)} />
+        </Route>
       </Routes>
     </div>
   );

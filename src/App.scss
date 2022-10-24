@@ -6,9 +6,11 @@
 @import './pages/Features/Features';
 @import './pages/ContactUs/ContactUs';
 @import './pages/PrivacyPolicy/PrivacyPolicy';
+@import './pages/Party/Party';
 @import './components/Footer/Footer';
 @import './components/Nav/Nav';
 @import './components/Slider/Slider';
+@import './components/Slider2/Slider2';
 @import './components/grid';
 
 * {
@@ -39,7 +41,7 @@ body {
   scroll-behavior: smooth;
   transition: 1.4s ease;
 
-  &.is-grid::after {
+  &.grid::after {
     content: '';
     position: absolute;
     z-index: 1000;
