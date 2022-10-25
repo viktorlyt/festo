@@ -98,10 +98,31 @@
       }
     }
 
+    &--price {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+      font-weight: 600;
+
+      &-usd {
+        width: 32px;
+        height: 32px;
+        transform: translateY(3px) translateX(-6px);
+      }
+      
+      &-pound {
+        width: 18px;
+        height: 18px;
+        transform: translateY(1px)
+      }
+    }
+    
     &--date {
       display: flex;
       align-items: center;
       margin-bottom: 30px;
+      font-size: 20px;
 
       &-date {
         width: 40px;
@@ -113,11 +134,23 @@
         margin-right: 50px;
         font-weight: 400;
       }
-      
-      &-usd {
-        width: 32px;
-        height: 32px;
-        transform: translateY(3px) translateX(-6px);
+    }
+ 
+    &--location {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-size: 20px;
+
+      &-svg {
+        width: 30px;
+        height: 30px;
+        transform: translateX(-5px);
+      }
+
+      &-span {
+        margin-right: 50px;
+        font-weight: 400;
       }
     }
 
@@ -232,6 +265,12 @@
 
 .stars {
   display: flex;
+
+  @for $index from 1 through 5 {
+    &--#{$index} :nth-child(-n + #{$index}) {
+      background-image: url(../../images/star-active.svg);
+    }
+  }
 }
 
 .stars_star {
@@ -242,8 +281,4 @@
   background-size: cover;
   background-image: url(../../images/star.svg);
   background-repeat: no-repeat;
-}
-
-.stars--4 :nth-child(-n+4) {
-  background-image: url(../../images/star-active.svg);
 }

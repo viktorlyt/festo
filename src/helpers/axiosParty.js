@@ -31,3 +31,15 @@ export const party = {
     return instance.delete(url);
   },
 };
+
+const API_URL = 'https://api.festoapp.co.uk/v1/party/';
+
+export function getParty(id) {
+  return fetch(`${API_URL}party-details?id=${id}`)
+    .then(res => res.json())
+    .then(response => response.data)
+    .catch(() => ({
+      Response: 'False',
+      Error: 'unexpected error',
+    }));
+}
