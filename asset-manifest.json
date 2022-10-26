@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/festo/static/css/main.0baab5dc.css",
-    "main.js": "/festo/static/js/main.0ee04150.js",
+    "main.css": "/festo/static/css/main.e1f95048.css",
+    "main.js": "/festo/static/js/main.38e70998.js",
     "static/js/787.50b1c56e.chunk.js": "/festo/static/js/787.50b1c56e.chunk.js",
     "static/media/features_banner6.png": "/festo/static/media/features_banner6.a29d4d166a30861c222f.png",
     "static/media/red_shadow.png": "/festo/static/media/red_shadow.db1579acd252edf7a04c.png",
@@ -46,12 +46,12 @@
     "index.html": "/festo/index.html",
     "static/media/star-active.svg": "/festo/static/media/star-active.4754875e94609a96a0a2.svg",
     "static/media/star.svg": "/festo/static/media/star.8716d6d6660680060174.svg",
-    "main.0baab5dc.css.map": "/festo/static/css/main.0baab5dc.css.map",
-    "main.0ee04150.js.map": "/festo/static/js/main.0ee04150.js.map",
+    "main.e1f95048.css.map": "/festo/static/css/main.e1f95048.css.map",
+    "main.38e70998.js.map": "/festo/static/js/main.38e70998.js.map",
     "787.50b1c56e.chunk.js.map": "/festo/static/js/787.50b1c56e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0baab5dc.css",
-    "static/js/main.0ee04150.js"
+    "static/css/main.e1f95048.css",
+    "static/js/main.38e70998.js"
   ]
 }
