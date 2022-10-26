@@ -1,18 +1,21 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import { useJsApiLoader } from '@react-google-maps/api';
+import { getParty } from '../../helpers/axiosParty'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Slider2 } from '../../components/Slider2/Slider2'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
-// import flagOfEngland from '../../images/flag-of-england.png'
+import { Map } from '../../components/Map/Map';
 import slide1_img from '../../images/slide1_img.png'
 import usd from '../../images/noun-usd-square-4425742.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
-import { useParams } from 'react-router-dom'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { getParty } from '../../helpers/axiosParty'
+
+const libraries = ['places'];
 
 export const Party = () => {
   const { id } = useParams();
@@ -29,10 +32,15 @@ export const Party = () => {
       setParty(partyFromServer);
     }
     fetchData();
-    
   }, [id]); 
 
   console.log(party);
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: "AIzaSyAtRoN67EWe9K1x0vIoncr3DzjP9QYQzAQ",
+    libraries
+  })
 
   return (
     <div className='party'>
@@ -134,13 +142,27 @@ export const Party = () => {
 
             <div className='party__right'>
               <div className='party__right--notes'>
-                <h3 className='party__right--notes-h3'>Notes</h3>
+                {/* <h3 className='party__right--notes-h3'>Notes</h3> */}
                 <p className='party__right--notes-p'>
                   <div dangerouslySetInnerHTML={{ __html: party.note }} />
                 </p>
               </div>
-              <div className='party__right--map'></div>
-              <button className='party__right--btn' type='button'>Buy</button>
+              
+                {isLoaded ? (
+                  <div className='party__right--map'>
+                    <Map 
+                      center={{ 
+                        lat: +party.location_lat, 
+                        lng: +party.location_lng,
+                      }}
+                    />
+                  </div>
+                  ) : <h2>Loading...</h2>
+                }
+              
+              {party.is_free === 0 &&
+                <button className='party__right--btn' type='button'>Pay Now</button>
+              }
             </div>
           </div>
 
