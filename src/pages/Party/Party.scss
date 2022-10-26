@@ -49,6 +49,7 @@
     }
 
     &--host {
+      position: relative;
       display: flex;
       justify-content: space-between;
       margin-bottom: 30px;
@@ -62,10 +63,15 @@
           margin-right: 30px;
           border-radius: 100%;
 
+          @include mq(1000) {
+            width: 75px;
+            height: 75px;
+            margin-right: 15px;
+          }
+
           @include onMobile {
             width: 60px;
             height: 60px;
-            margin-right: 20px;
           }
         }
 
@@ -90,10 +96,94 @@
         height: 90px;
         border-radius: 100%;
 
+        @include mq(1000) {
+          width: 75px;
+          height: 75px;
+        }
+
         @include onMobile {
           width: 60px;
           height: 60px;
-          margin-right: 20px;
+        }
+      }
+      
+      &-img1 {
+        position: absolute;
+        right: 45px;
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+
+        @include mq(1000) {
+          right: 37.5px;
+          width: 75px;
+          height: 75px;
+        }
+
+        @include onMobile {
+          right: 30px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      
+      &-img2 {
+        z-index: 1;
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+
+        @include mq(1000) {
+          width: 75px;
+          height: 75px;
+        }
+
+        @include onMobile {
+          width: 60px;
+          height: 60px;
+        }
+
+        &-gray {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+          width: 90px;
+          height: 90px;
+          border-radius: 100%;
+          background-color: grey;
+          color: $colorWhite;
+
+          @include mq(1000) {
+            width: 75px;
+            height: 75px;
+          }
+
+          @include onMobile {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+
+      &-img3 {
+        z-index: 0.5;
+        position: absolute;
+        right: 90px;
+        width: 90px;
+        height: 90px;
+        border-radius: 100%;
+
+        @include mq(1000) {
+          right: 75px;
+          width: 75px;
+          height: 75px;
+        }
+
+        @include onMobile {
+          right: 60px;
+          width: 60px;
+          height: 60px;
         }
       }
     }

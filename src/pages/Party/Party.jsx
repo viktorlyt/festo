@@ -9,7 +9,6 @@ import { Header } from '../../components/Header/Header'
 import { Slider2 } from '../../components/Slider2/Slider2'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
 import { Map } from '../../components/Map/Map';
-import slide1_img from '../../images/slide1_img.png'
 import usd from '../../images/noun-usd-square-4425742.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
@@ -74,11 +73,42 @@ export const Party = () => {
                     <p className='party__left--host-l-text2'>Host</p>
                   </div>
                 </div>
-                <img
-                  src={slide1_img}
-                  alt='flagOfEngland'
-                  className='party__left--host-img'
-                />
+                {party.joining_user.length === 1 &&
+                  <img
+                    src={party.joining_user[0]}
+                    alt='flagOfEngland'
+                    className='party__left--host-img'
+                  />
+                }
+                {party.joining_user.length === 2 &&
+                  <>
+                    <img
+                      src={party.joining_user[0]}
+                      alt='flagOfEngland'
+                      className='party__left--host-img1'
+                    />
+                    <img
+                      src={party.joining_user[1]}
+                      alt='flagOfEngland'
+                      className='party__left--host-img2'
+                    />
+                  </>
+                }
+                {party.joining_user.length > 2 &&
+                  <>
+                    <img
+                      src={party.joining_user[0]}
+                      alt='photo1'
+                      className='party__left--host-img3'
+                    />
+                    <img
+                      src={party.joining_user[1]}
+                      alt='photo1'
+                      className='party__left--host-img1'
+                    />
+                    <div className='party__left--host-img2-gray'>+ {party.joining_user.length - 2}</div>
+                  </>
+                }
               </h3>
               
               <h3 className='party__left--price'>
