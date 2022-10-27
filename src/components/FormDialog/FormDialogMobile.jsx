@@ -27,9 +27,9 @@ export const FormDialogMobile = () => {
           width: '100%', 
         }}
       >
-        <button className='party__right--btn' type='button'>
-          Pay Now
-        </button>
+        <div className='party__right--btn'>
+          <p>Pay Now</p>
+        </div>
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle 

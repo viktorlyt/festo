@@ -36,7 +36,7 @@ export const Map = ({ center }) => {
   }, [])
 
   return (
-    <div className='party__right--map'>
+    // <div className='party__right--map'>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
@@ -47,6 +47,6 @@ export const Map = ({ center }) => {
       >
         <Marker position={center} />
       </GoogleMap>
-    </div>
+    // </div>
   )
 }

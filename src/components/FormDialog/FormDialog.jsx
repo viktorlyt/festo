@@ -27,9 +27,9 @@ export const FormDialog = () => {
           width: '100%', 
         }}
       >
-        <button className='party__left--btn' type='button'>
+        <div className='party__left--btn'>
           Pay Now
-        </button>
+        </div>
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle 

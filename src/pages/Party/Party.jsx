@@ -176,22 +176,22 @@ export const Party = () => {
             <div className='party__right'>
               <div className='party__right--notes'>
                 {/* <h3 className='party__right--notes-h3'>Notes</h3> */}
-                <p className='party__right--notes-p'>
+                <div className='party__right--notes-p'>
                   <div dangerouslySetInnerHTML={{ __html: party.note }} />
-                </p>
+                </div>
               </div>
               
-                {isLoaded ? (
-                  // <div className='party__right--map'>
-                    <Map 
-                      center={{ 
-                        lat: +party.location_lat, 
-                        lng: +party.location_lng,
-                      }}
-                    />
-                  // </div>
-                  ) : <h2>Loading...</h2>
-                }
+              {isLoaded ? (
+                <div className='party__right--map'>
+                  <Map 
+                    center={{ 
+                      lat: +party.location_lat, 
+                      lng: +party.location_lng,
+                    }}
+                  />
+                </div>
+                ) : <h2>Loading...</h2>
+              }
               
               {party.is_free === 0 &&
                 <FormDialogMobile />
