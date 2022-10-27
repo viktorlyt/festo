@@ -47,7 +47,7 @@ export const FormDialog = () => {
           </DialogContentText> */}
           <TextField
             required
-            autoFocus
+            // autoFocus
             margin="dense"
             id="name"
             label="First Name"
@@ -57,7 +57,7 @@ export const FormDialog = () => {
           />
           <TextField
             required
-            autoFocus
+            // autoFocus
             margin="dense"
             id="phone"
             label="Phone Number"
@@ -66,7 +66,7 @@ export const FormDialog = () => {
             variant="outlined"
           />
           <TextField
-            autoFocus
+            // autoFocus
             margin="dense"
             id="name"
             label="Last Name"
@@ -75,7 +75,7 @@ export const FormDialog = () => {
             variant="outlined"
           />
           <TextField
-            autoFocus
+            // autoFocus
             margin="dense"
             id="date"
             label="Birthday"
