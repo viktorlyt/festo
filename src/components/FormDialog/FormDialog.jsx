@@ -87,7 +87,12 @@ export const FormDialog = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Go to Checkout</Button>
+          <Button 
+            onClick={handleClose}
+            type='submit'
+          >
+            Go to Checkout
+          </Button>
         </DialogActions>
       </Dialog>
     </div>
