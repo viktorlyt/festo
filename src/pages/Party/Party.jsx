@@ -13,6 +13,7 @@ import usd from '../../images/noun-usd-square-4425742.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
+import { FormDialog } from '../../components/FormDialog/FormDialog';
 
 const libraries = ['places'];
 
@@ -191,7 +192,8 @@ export const Party = () => {
                 }
               
               {party.is_free === 0 &&
-                <button className='party__right--btn' type='button'>Pay Now</button>
+                <FormDialog />
+                // <button className='party__right--btn' type='button'>Pay Now</button>
               }
             </div>
           </div>
