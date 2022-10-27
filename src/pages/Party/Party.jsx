@@ -13,6 +13,7 @@ import usd from '../../images/noun-usd-square-4425742.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
+import { FormDialogMobile } from '../../components/FormDialog/FormDialogMobile';
 import { FormDialog } from '../../components/FormDialog/FormDialog';
 
 const libraries = ['places'];
@@ -167,7 +168,8 @@ export const Party = () => {
               </h3>
               
               {party.is_free === 0 &&
-                <button className='party__left--btn' type='button'>Pay Now</button>
+                <FormDialog />
+                // <button className='party__left--btn' type='button'>Pay Now</button>
               }
             </div>
 
@@ -180,19 +182,19 @@ export const Party = () => {
               </div>
               
                 {isLoaded ? (
-                  <div className='party__right--map'>
+                  // <div className='party__right--map'>
                     <Map 
                       center={{ 
                         lat: +party.location_lat, 
                         lng: +party.location_lng,
                       }}
                     />
-                  </div>
+                  // </div>
                   ) : <h2>Loading...</h2>
                 }
               
               {party.is_free === 0 &&
-                <FormDialog />
+                <FormDialogMobile />
                 // <button className='party__right--btn' type='button'>Pay Now</button>
               }
             </div>

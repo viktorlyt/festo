@@ -7,7 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 // import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-export const FormDialog = () => {
+export const FormDialogMobile = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -27,7 +27,7 @@ export const FormDialog = () => {
           width: '100%', 
         }}
       >
-        <button className='party__left--btn' type='button'>
+        <button className='party__right--btn' type='button'>
           Pay Now
         </button>
       </Button>
