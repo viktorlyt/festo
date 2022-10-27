@@ -47,7 +47,7 @@ export const FormDialog = () => {
           </DialogContentText> */}
           <TextField
             required
-            // autoFocus
+            autoFocus
             margin="dense"
             id="name"
             label="First Name"
@@ -84,15 +84,6 @@ export const FormDialog = () => {
             fullWidth
             variant="outlined"
           />
-          {/* <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-            variant="standard"
-          /> */}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
