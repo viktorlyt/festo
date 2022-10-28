@@ -6,6 +6,7 @@ import { ContactUs } from "./pages/ContactUs/ContactUs";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { Party } from "./pages/Party/Party";
 import Success from "./pages/Success/Success";
+import Error from "./pages/Error/Error";
 
 function App() {
   const animeFunction = () => {
@@ -61,6 +62,7 @@ function App() {
           <Route path=":id" element={(<Party />)} />
         </Route>
         <Route path="/success" element={<Success />} />
+        <Route path="/error" element={<Error />} />
       </Routes>
     </div>
   );

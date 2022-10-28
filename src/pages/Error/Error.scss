@@ -1,0 +1,85 @@
+.error {
+  &__text {
+    padding: 100px 0 60px;
+    background-color: #ff3822;
+    text-align: center;
+
+    @include onMobile {
+      background-color: #ff3822;
+      color: $colorWhite;
+    }
+
+    &--h {
+      font-size: 70px;
+      font-weight: normal;
+      color: #fff;
+      text-align: center;
+
+      @include onMobile {
+        font-size: 34px;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 20px;
+    font-size: 16px;
+    font-stretch: 100%;
+
+    @include onMobile {
+      display: grid;
+      column-gap: $grid_gutter;
+      grid-template-columns: 1fr;
+      font-size: 18px;
+    }
+
+    &--h3 {
+      margin-bottom: 20px;
+      color: black;
+
+      @include onMobile {
+        font-size: 18px;
+      }
+    }
+
+    &--abz {
+      display: block;
+      margin-bottom: 20px;
+      line-height: 1.2em;
+      text-align: center;
+
+      @include onMobile {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 300px;
+  }
+
+  &__big_icon {
+    width: 5rem !important;
+    height: 5rem !important;
+    color: #fff;
+    margin-top: 25px;
+    animation: rotationSvg 3s infinite linear;
+  }
+
+  @keyframes rotationSvg {
+    0%    { transform: rotate(0deg) }
+    20%   { transform: rotate(40deg) }
+    80%   { transform: rotate(-60deg) }
+    100%  { transform: rotate(0deg) }
+  }
+
+  &__qr-code,
+  &__app-store {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+}
