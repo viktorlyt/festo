@@ -1,11 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import {useSearchParams} from "react-router-dom"
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import VerifiedIcon from '@mui/icons-material/Verified'
 import AppStoreImage from '../../images/App-Store-Symbol.png'
 import QrCodeImage from '../../images/qr-code.svg'
+import {requestToServer} from "../../helpers/requestToServer"
 
 const Success = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+      requestToServer(
+        '/payment/check-stripe',
+        {
+          token: searchParams.get("token")
+        },
+      );
+  }, []);
+
   return (
     <div className='features'>
       <Header />
