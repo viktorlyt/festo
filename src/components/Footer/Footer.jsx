@@ -6,33 +6,33 @@ import logo from '../../images/festo-app-logo.png';
 import Fb from '../../images/F.png';
 import Inst from '../../images/Inst.png';
 
-export const Footer = () => {
+export const Footer = ({className = ''}) => {
   const { pathname } = useLocation();
 
   return (
-    <footer id='footer' className="footer">
+    <footer id='footer' className={`footer ${className}`}>
       <HashLink smooth to='/#top' className='footer__logo'>
-        <img 
-          src={logo} 
+        <img
+          src={logo}
           alt="logo"
           className='footer__logo--img'
         />
       </HashLink>
-      <NavHashLink 
+      <NavHashLink
         smooth to='/#top'
         className={({ isActive }) => classNames('footer__home', { 'isActive': pathname === '/' })}
       >
         Home
       </NavHashLink>
-      
-      <NavHashLink 
+
+      <NavHashLink
         smooth to='/features#top'
         className={({ isActive }) => classNames('footer__features', { 'isActive': isActive })}
       >
         Features
       </NavHashLink>
 
-      <NavHashLink 
+      <NavHashLink
         smooth to='/contact-us#top'
         className={({ isActive }) => classNames('footer__register', { 'isActive': isActive })}
       >
@@ -40,45 +40,45 @@ export const Footer = () => {
       </NavHashLink>
 
       <div className='footer__fi'>
-          <a 
-            href='https://www.facebook.com/Festo-Entertainment-103326965771562' 
-            target='_blank' 
+          <a
+            href='https://www.facebook.com/Festo-Entertainment-103326965771562'
+            target='_blank'
             rel="noreferrer"
           >
             <img src={Fb} alt="F" className='footer__facebook--m' />
           </a>
-          <a 
-            href='https://www.instagram.com/festoapp/' 
-            target='_blank' 
+          <a
+            href='https://www.instagram.com/festoapp/'
+            target='_blank'
             rel="noreferrer"
           >
             <img src={Inst} alt="Inst" className='footer__instagram--m' />
           </a>
         </div>
 
-      <NavHashLink 
+      <NavHashLink
         smooth to='/privacy-policy#top'
         className={({ isActive }) => classNames('footer__pp', { 'isActive': isActive })}
       >
         Privacy Policy
       </NavHashLink>
-      
+
       <div className='footer__line'>
         <div className='footer__line-item' />
       </div>
       <div className='footer__copyright'>
         <p className='footer__copyright--text'>© Copyright 2022, Festo All rights reserved.</p>
         <div>
-          <a 
-            href='https://www.facebook.com/Festo-Entertainment-103326965771562' 
-            target='_blank' 
+          <a
+            href='https://www.facebook.com/Festo-Entertainment-103326965771562'
+            target='_blank'
             rel="noreferrer"
           >
             <img src={Fb} alt="F" className='footer__facebook' />
           </a>
-          <a 
-            href='https://www.instagram.com/festoapp/' 
-            target='_blank' 
+          <a
+            href='https://www.instagram.com/festoapp/'
+            target='_blank'
             rel="noreferrer"
           >
             <img src={Inst} alt="Inst" className='footer__instagram' />
