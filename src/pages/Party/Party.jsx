@@ -13,6 +13,7 @@ import usd from '../../images/noun-usd-square-4425742.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
+import arrowLeft from '../../images/arrow_left.svg'
 import { FormDialogMobile } from '../../components/FormDialog/FormDialogMobile';
 import { FormDialog } from '../../components/FormDialog/FormDialog';
 
@@ -53,7 +54,14 @@ export const Party = () => {
           <div className='party__container grid'>
             <div className='party__left'>
               <a className='party__left--a' href="/">
-                <h3 className='party__left--h3'>🠔 All events</h3>
+                <h3 className='party__left--h3'>
+                  <img
+                    src={arrowLeft}
+                    alt='arrowLeft'
+                    className='party__left--h3-img'
+                  />
+                  <p className='party__left--h3-p'>Go home</p>
+                </h3>
               </a>
               <h2 className='party__left--h2'>
                 {party.title} 
