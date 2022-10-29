@@ -4,6 +4,12 @@
   }
 }
 
+@mixin onDesktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 @mixin mq($from, $to: false) {
   @if $to {
       @media (min-width: #{$from}px) and (max-width: #{$to}px) {
