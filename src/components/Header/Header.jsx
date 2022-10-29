@@ -32,7 +32,7 @@ export const Header = () => {
         <img 
           src={logo} 
           alt="logo"
-          className="header__logo"
+          className="header__logo" //уу
         />
       </HashLink>
 
