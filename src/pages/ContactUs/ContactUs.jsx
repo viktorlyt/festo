@@ -10,16 +10,16 @@ import { requestToServer } from '../../helpers/requestToServer';
 import { Alert } from '@mui/material';
 
 export const ContactUs = () => {
-  const { 
-    register, 
-    handleSubmit, 
+  const {
+    register,
+    handleSubmit,
     formState: { errors, isValid },
-  } = useForm({ 
+  } = useForm({
     criteriaMode: "all",
     mode: "onChange"
   });
 
-  const [data, setData] = useState({ 
+  const [data, setData] = useState({
     first_name: "",
     last_name: "",
     email: "",
@@ -37,7 +37,7 @@ export const ContactUs = () => {
   }
 
   console.log('isValid', isValid);
- 
+
   const onSubmit = (data, e) => {
     e.preventDefault();
 
@@ -58,7 +58,7 @@ export const ContactUs = () => {
         comment: "",
         company: "",
       });
-    } 
+    }
   };
 
   return (
@@ -75,9 +75,9 @@ export const ContactUs = () => {
 
       <section className='contactUs__register'>
         <div className='contactUs__register--red'>
-          <img 
+          <img
             src={logoBig}
-            alt="logo-big" 
+            alt="logo-big"
             className='contactUs__register--red-logo'
           />
         </div>
@@ -85,18 +85,18 @@ export const ContactUs = () => {
           <div className='contactUs__register--info'>
             <h3 className='contactUs__register--info-h2'>Register your interest.</h3>
 
-            {itog === 'success' && 
-              <Alert 
-                variant='filled' 
+            {itog === 'success' &&
+              <Alert
+                variant='filled'
                 severity="success"
                 id='success_form'
               >
-                  Your data was sent succesfully!
+                  Your data was sent successfully!
               </Alert>
             }
-            {itog === 'failure' && 
-              <Alert 
-                variant='filled' 
+            {itog === 'failure' &&
+              <Alert
+                variant='filled'
                 severity="error"
                 id='success_form'
               >
@@ -106,7 +106,7 @@ export const ContactUs = () => {
 
             <form
               onSubmit={handleSubmit(onSubmit)}
-              action="" 
+              action=""
               method='POST'
               className='contactUs__register--form'
             >
@@ -195,7 +195,7 @@ export const ContactUs = () => {
                   />
                 </span>
               </div>
-              
+
               <div className='contactUs__register--form-row'>
                 <span className='contactUs__register--form-row__item'>
                   <label htmlFor="email" className='contactUs__register--form-row__item--label'>
@@ -205,8 +205,8 @@ export const ContactUs = () => {
                     {...register("email", {
                       required: 'This input is required.',
                       pattern: {
-                        value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
-                        message: "Please enter a valid email address.", 
+                        value: /^.+@.+\.[a-zA-Z]{2,63}$/,
+                        message: "Please enter a valid email address.",
                       },
                     onChange: (e) => handle(e),
                     })}
@@ -247,8 +247,8 @@ export const ContactUs = () => {
                         message: 'Max 20 characters.',
                       },
                       pattern: {
-                        value: /^\+\d+$/, 
-                        message: "Please enter a valid phone number", 
+                        value: /^\+\d+$/,
+                        message: "Please enter a valid phone number",
                       },
                       onChange: (e) => handle(e),
                     })}
@@ -273,7 +273,7 @@ export const ContactUs = () => {
                   />
                 </span>
               </div>
-              
+
               <div className='contactUs__register--form-row'>
                 <span className='contactUs__register--form-row__item'>
                   <label htmlFor="comment" className='contactUs__register--form-row__item--label'>

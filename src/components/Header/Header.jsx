@@ -9,7 +9,7 @@ export const Header = () => {
   const { pathname } = useLocation();
   const [scrollTop, setScrollTop] = useState(0);
   const [nav, setNav] = useState(false);
-  
+
   // eslint-disable-next-line
   const onScroll = (e) => {
     if (scrollTop !== e.target.documentElement.scrollTop) {
@@ -22,15 +22,15 @@ export const Header = () => {
   }, [onScroll]);
 
   return (
-    <header 
-      className={classNames({ 
-        'header': scrollTop === 0, 
-        'header-scrolled': scrollTop !== 0, 
+    <header
+      className={classNames({
+        'header': scrollTop === 0,
+        'header-scrolled': scrollTop !== 0,
       })}
     >
       <HashLink smooth to='/#top' className='header__logobox'>
-        <img 
-          src={logo} 
+        <img
+          src={logo}
           alt="logo"
           className="header__logo"
         />
@@ -38,28 +38,28 @@ export const Header = () => {
 
       <Nav setNav={setNav} nav={nav} />
 
-      <div 
+      <div
         className={
-          nav 
-          ? ['header__rightSide', 'header__rightSide--active'].join(' ') 
+          nav
+          ? ['header__rightSide', 'header__rightSide--active'].join(' ')
           : 'header__rightSide'
         }
       >
-        <NavHashLink 
+        <NavHashLink
           smooth to='/#top'
           className={() => classNames('header__rightSide--home', { 'isActive': pathname === '/' })}
         >
           Home
         </NavHashLink>
 
-        <NavHashLink 
+        <NavHashLink
           smooth to='/features#top'
           className={({ isActive }) => classNames('header__rightSide--features', { 'isActive': isActive })}
         >
           Features
         </NavHashLink>
-        
-        <NavHashLink 
+
+        <NavHashLink
           smooth to='/contact-us#top'
           className={({ isActive }) => classNames('header__rightSide--register', { 'isActive': isActive })}
         >

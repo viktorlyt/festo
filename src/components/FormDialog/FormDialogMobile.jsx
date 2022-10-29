@@ -20,11 +20,11 @@ export const FormDialogMobile = () => {
 
   return (
     <div>
-      <Button 
-        onClick={handleClickOpen} 
+      <Button
+        onClick={handleClickOpen}
         sx={{
           padding: 0,
-          width: '100%', 
+          width: '100%',
         }}
       >
         <div className='party__right--btn'>
@@ -32,8 +32,8 @@ export const FormDialogMobile = () => {
         </div>
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle 
-          sx={{ 
+        <DialogTitle
+          sx={{
             textAlign: 'center',
             color: 'red',
           }}
@@ -96,7 +96,7 @@ export const FormDialogMobile = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Go to Checkout</Button>
+          <Button onClick={handleClose}>Go to Checkout1</Button>
         </DialogActions>
       </Dialog>
     </div>
