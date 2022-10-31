@@ -31,6 +31,20 @@
     }
   }
 
+  &__section {
+    display: flex;
+    justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__home {
     display: inline;
     width: fit-content;
@@ -80,13 +94,33 @@
       display: none;
     }
   }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__apple {
+    align-self: flex-end;
+    padding: 0 15px;
+
+    @include onMobile {
+      align-self: center;
+    }
+
+    &--img {
+      align-self: flex-end;
+      width: 150px;
+      height: 60px;
+    }
+  }
   
   &__pp {
     display: inline;
     width: fit-content;
     align-self: flex-end;
-    margin: 12px 0 60px;
-    padding: 0 30px;
+    margin: 12px 0;
+    padding: 0 24px;
     color: $colorWhite;
     text-decoration: none;
 
@@ -176,7 +210,7 @@
   &__fi {
     @include onMobile {
       justify-self: center;
-      margin: 0 auto 40px;
+      margin: 0 auto 20px;
     }
   }
 }
