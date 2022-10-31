@@ -1,9 +1,14 @@
 import React from 'react'
+import CookieConsent from "react-cookie-consent"
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
 import { Subscribe2 } from '../../components/Subscribe/Subscribe2'
+import { Slider } from '../../components/Slider/Slider'
 import festoPartyApp from '../../images/Festo-party-app.png'
 import festoAppOnMobile from '../../images/festo-app-on-mobile.png'
 import redShadow from '../../images/red_shadow.png'
@@ -20,10 +25,7 @@ import logo198x78 from '../../images/festo-app-logo-198x78.png'
 import festoPartyAppM from '../../images/mobile/Festo-party-app.png'
 import festoAppOnMobileM from '../../images/mobile/festo-app-on-mobile.png'
 import redShadows from '../../images/mobile/red_shadows.png'
-import { Slider } from '../../components/Slider/Slider'
-import { useEffect } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -279,6 +281,22 @@ export const Home = ({ animeFunction }) => {
 
       <Subscribe2 />
       <Footer />
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        cookieName="FestoCookie"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ 
+          background: "FFF",
+          color: "#2B373B", 
+          fontSize: "15px",
+          fontWeight: "bold",
+        }}
+        expires={365}
+        hideOnAccept='true'
+      >
+        We use cookies on our website to see how you interact with it. By accepting, you agree to our use of such cookies. <a href='/privacy-policy'>Privacy Policy</a>
+      </CookieConsent>
     </div>
   )
 }

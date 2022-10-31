@@ -25,8 +25,6 @@ export const Subscribe = () => {
     setData(newData);
   }
 
-  // console.log('isValid', isValid);
-
   const onSubmit = (data, e) => {
     e.preventDefault();
 
@@ -101,8 +99,7 @@ export const Subscribe = () => {
             console.log("messages", messages);
             return messages
               ? Object.entries(messages).map(([type, message]) => (
-                  <Alert key={type} severity="warning">{message}</Alert>
-                  // <p key={type} style={{ color: 'red' }}>{message}</p>
+                  <Alert key={type} severity="error">{message}</Alert>
                 ))
               : null;
           }}

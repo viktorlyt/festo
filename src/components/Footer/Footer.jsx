@@ -6,7 +6,6 @@ import logo from '../../images/festo-app-logo.png';
 import Fb from '../../images/F.png';
 import Inst from '../../images/Inst.png';
 import appleRed from '../../images/apple-red.png';
-import apple from '../../images/apple.png';
 
 export const Footer = () => {
   const { pathname } = useLocation();
@@ -25,7 +24,7 @@ export const Footer = () => {
         <div className='footer__left'>
           <NavHashLink
             smooth to='/#top'
-            className={({ isActive }) => classNames('footer__home', { 'isActive': pathname === '/' })}
+            className={() => classNames('footer__home', { 'isActive': pathname === '/' })}
           >
             Home
           </NavHashLink>

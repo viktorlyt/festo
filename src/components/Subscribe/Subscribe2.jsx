@@ -102,8 +102,7 @@ export const Subscribe2 = () => {
             console.log("messages", messages);
             return messages
               ? Object.entries(messages).map(([type, message]) => (
-                  <Alert key={type} severity="warning">{message}</Alert>
-                  // <p key={type} style={{ color: 'red' }}>{message}</p>
+                  <Alert key={type} severity="error">{message}</Alert>
                 ))
               : null;
           }}

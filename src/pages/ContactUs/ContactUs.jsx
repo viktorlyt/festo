@@ -146,7 +146,6 @@ export const ContactUs = () => {
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <Alert key={type} severity="error">{message}</Alert>
-                            // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
                     }}
@@ -188,7 +187,6 @@ export const ContactUs = () => {
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <Alert key={type} severity="error">{message}</Alert>
-                            // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
                     }}
@@ -224,7 +222,6 @@ export const ContactUs = () => {
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                           <Alert key={type} severity="error">{message}</Alert>
-                            // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
                     }}
@@ -266,7 +263,6 @@ export const ContactUs = () => {
                       return messages
                         ? Object.entries(messages).map(([type, message]) => (
                             <Alert key={type} severity="error">{message}</Alert>
-                            // <p key={type} style={{ color: 'red' }}>{message}</p>
                           ))
                         : null;
                     }}
