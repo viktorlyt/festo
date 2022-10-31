@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 // import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+// import DialogTitle from '@mui/material/DialogTitle';
 import {useForm} from "react-hook-form";
 import { useParams } from 'react-router-dom'
 import {useState} from "react";
@@ -53,7 +53,7 @@ export const FormDialog = ({className = ''}) => {
           'PaySiteForm[first_name]': data.first_name,
           'PaySiteForm[phone]': data?.phone?.replace('+44', ''),
           'PaySiteForm[last_name]': data.last_name,
-          'PaySiteForm[birth_date]': data.birthday
+          'PaySiteForm[birth_date]': Math.round(Date.parse(data.birthday)/1000),
         },
       )
         .then((res) => {
@@ -100,14 +100,6 @@ export const FormDialog = ({className = ''}) => {
         </div>
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle
-          sx={{
-            textAlign: 'center',
-            color: 'red',
-          }}
-        >
-          Today will be the day you will make new friends and meet amazing people!
-        </DialogTitle>
         <DialogContent>
           {itog === 'success' &&
             <Alert
@@ -186,8 +178,8 @@ export const FormDialog = ({className = ''}) => {
                     {...register("phone", {
                       required: 'This input is required.',
                       minLength: {
-                        value: 10,
-                        message: 'Min 10 characters.',
+                        value: 12,
+                        message: 'Min 12 characters.',
                       },
                       maxLength: {
                         value: 20,
@@ -259,43 +251,50 @@ export const FormDialog = ({className = ''}) => {
                   />
                 </span>
 
-              {/*<span className='contactUs__register--form-row__item'>*/}
-              {/*    <label htmlFor="birthday" className='contactUs__register--form-row__item--label'>*/}
-              {/*      Date of Birth*/}
-              {/*    </label>*/}
-              {/*    <input*/}
-              {/*      {...register("birthday")}*/}
-              {/*      value={data.birthday}*/}
-              {/*      placeholder='Smith'*/}
-              {/*      className='contactUs__register--form-row__item--input'*/}
-              {/*      type='date'*/}
-              {/*      id='birthday'*/}
-              {/*      style={{width:'100%', marginBottom: 25}}*/}
-              {/*    />*/}
-              {/*    <ErrorMessage*/}
-              {/*      errors={errors}*/}
-              {/*      name="birthday"*/}
-              {/*      render={({ messages }) => {*/}
-              {/*        console.log("messages", messages);*/}
-              {/*        return messages*/}
-              {/*          ? Object.entries(messages).map(([type, message]) => (*/}
-              {/*            <Alert key={type} severity="error">{message}</Alert>*/}
-              {/*            // <p key={type} style={{ color: 'red' }}>{message}</p>*/}
-              {/*          ))*/}
-              {/*          : null;*/}
-              {/*      }}*/}
-              {/*    />*/}
-              {/*  </span>*/}
+              <span className='contactUs__register--form-row__item'>
+                 <label htmlFor="birthday" className='contactUs__register--form-row__item--label'>
+                   Date of Birth
+                 </label>
+                 <input
+                  {...register("birthday", {
+                    onChange: (e) => handle(e),
+                  })}
+                    value={data.birthday}
+                    className='contactUs__register--form-row__item--input'
+                    type='date'
+                    id='birthday'
+                    style={{width:'100%', marginBottom: 25}}
+                  />
+                  <ErrorMessage
+                    errors={errors}
+                    name="birthday"
+                    render={({ messages }) => {
+                      console.log("messages", messages);
+                      return messages
+                        ? Object.entries(messages).map(([type, message]) => (
+                          <Alert key={type} severity="error">{message}</Alert>
+                          // <p key={type} style={{ color: 'red' }}>{message}</p>
+                        ))
+                        : null;
+                    }}
+                  />
+               </span>
             </div>
           </form>
 
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button 
+            onClick={handleClose}
+            // style={{backgroundColor: 'grey'}}
+          >
+            Cancel
+          </Button>
           <Button
             onClick={handleSubmit(onSubmit)}
             type='submit'
             style={{backgroundColor: '#ff3818', color: '#fff'}}
+            // className={'party__left--btn'}
           >
             Go to Checkout
           </Button>

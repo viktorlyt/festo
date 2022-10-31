@@ -6,7 +6,7 @@ import logo from '../../images/festo-app-logo.png';
 import Fb from '../../images/F.png';
 import Inst from '../../images/Inst.png';
 import appleRed from '../../images/apple-red.png';
-// import apple from '../../images/apple.png';
+import apple from '../../images/apple.png';
 
 export const Footer = () => {
   const { pathname } = useLocation();
@@ -61,7 +61,12 @@ export const Footer = () => {
           </a>
         </div>
         <div className='footer__right'>
-          <a href="https://apps.apple.com/en/app/festo/id1624893933" className='footer__apple' target='_blank'>
+          <a 
+            href="https://apps.apple.com/en/app/festo/id1624893933" 
+            className='footer__apple' 
+            target='_blank'
+            rel="noreferrer"
+          >
             <img
               src={appleRed}
               alt="appleRed"
