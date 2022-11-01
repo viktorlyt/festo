@@ -27,7 +27,7 @@ export const InputFesto = ({
   });
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <input
         {...register(inputName, {
           required: required,

@@ -159,8 +159,8 @@ export const ContactUs = () => {
                   <InputFesto
                     inputName={'email'}
                     required={'This input is required.'}
-                    minLength={3}
-                    maxLength={20}
+                    minLength={null}
+                    maxLength={null}
                     patternValue={/^.+@.+\.[a-zA-Z]{2,63}$/}
                     patternMessage={'email address'}
                     placeholder={'name@example.com'}

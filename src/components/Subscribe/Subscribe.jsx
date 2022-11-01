@@ -1,15 +1,14 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ErrorMessage } from "@hookform/error-message"
 import { useState } from 'react';
 import { requestToServer } from '../../helpers/requestToServer';
 import { Alert } from '@mui/material';
+import { InputFesto } from '../InputFesto/InputFesto';
 
 export const Subscribe = () => {
   const { 
-    register, 
     handleSubmit, 
-    formState: { errors, isValid } 
+    formState: { isValid } 
   } = useForm({ 
     criteriaMode: "all",
     mode: "onChange"
@@ -25,13 +24,10 @@ export const Subscribe = () => {
     setData(newData);
   }
 
-  const onSubmit = (data, e) => {
+  const onSubmit = (_, e) => {
     e.preventDefault();
 
-    if (!isValid) {
-      alert('Check out the form for mistakes!');
-    } else {
-      setData(data);
+    if (isValid) {
       requestToServer(
         '/user/create-subscribe',
         data,
@@ -59,21 +55,21 @@ export const Subscribe = () => {
           Enter your email address
         </label>
         <div className='subscribe-form--div'>
-          <input
-             {...register("email", {
-              required: 'This input is required.',
-              pattern: {
-                value: /^.+@.+\.[a-zA-Z]{2,63}$/, 
-                message: "Please enter a valid email address.", 
-              },
-              onChange: (e) => handle(e),
-            })}
-            value={data.email}
-            placeholder='name@example.com'
-            className='subscribe-form--input'
-            type='email'
-            id='email'
+          <InputFesto
+            inputName={'email'}
+            required={'This input is required.'}
+            minLength={null}
+            maxLength={null}
+            patternValue={/^.+@.+\.[a-zA-Z]{2,63}$/}
+            patternMessage={'email address'}
+            placeholder={'name@example.com'}
+            className={'subscribe-form--input'}
+            type={'email'}
+            style={null}
+            onChange={handle}
+            inputData={data}
           />
+ 
           <div>
             <button
               type="submit"
@@ -92,18 +88,6 @@ export const Subscribe = () => {
             </button>
           </div>
         </div>
-        <ErrorMessage
-          errors={errors}
-          name="email"
-          render={({ messages }) => {
-            console.log("messages", messages);
-            return messages
-              ? Object.entries(messages).map(([type, message]) => (
-                  <Alert key={type} severity="error">{message}</Alert>
-                ))
-              : null;
-          }}
-        />
 
         {itog === 'success' &&
           <Alert 
