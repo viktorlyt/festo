@@ -14,7 +14,6 @@ import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
 import arrowLeft from '../../images/arrow_left.svg'
-import { FormDialogMobile } from '../../components/FormDialog/FormDialogMobile';
 import { FormDialog } from '../../components/FormDialog/FormDialog';
 
 const libraries = ['places'];
@@ -182,7 +181,6 @@ export const Party = () => {
 
             <div className='party__right'>
               <div className='party__right--notes'>
-                {/* <h3 className='party__right--notes-h3'>Notes</h3> */}
                 <div className='party__right--notes-p'>
                   <div dangerouslySetInnerHTML={{ __html: party.note }} />
                 </div>

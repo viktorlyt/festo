@@ -25,8 +25,6 @@ export const Subscribe2 = () => {
     setData(newData);
   }
 
-  console.log('isValid', isValid);
-
   const onSubmit = (data, e) => {
     e.preventDefault();
 
