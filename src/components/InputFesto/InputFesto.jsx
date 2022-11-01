@@ -15,6 +15,7 @@ export const InputFesto = ({
   type,
   style,
   onChange,
+  inputData,
 }) => {
 
   const {
@@ -49,6 +50,7 @@ export const InputFesto = ({
         type={type}
         id={inputName}
         style={style}
+        value={inputData[inputName]}
       />
       <ErrorMessage
         errors={errors}

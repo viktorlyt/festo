@@ -35,7 +35,6 @@ export const FormDialog = ({className = ''}) => {
     const newData = { ...data };
     newData[e.target.id] = e.target.value;
     setData(newData);
-    console.log(data);
   }
 
   const onSubmit = (_, e) => {
@@ -139,6 +138,7 @@ export const FormDialog = ({className = ''}) => {
                     type={'text'}
                     style={{width:'100%'}}
                     onChange={handle}
+                    inputData={data}
                   />
                 </span>
 
@@ -158,6 +158,7 @@ export const FormDialog = ({className = ''}) => {
                     type={'phone'}
                     style={{width:'100%'}}
                     onChange={handle}
+                    inputData={data}
                   />
                 </span>
 
@@ -177,6 +178,7 @@ export const FormDialog = ({className = ''}) => {
                     type={'text'}
                     style={{width:'100%'}}
                     onChange={handle}
+                    inputData={data}
                   />
                 </span>
 
@@ -196,6 +198,7 @@ export const FormDialog = ({className = ''}) => {
                     type={'date'}
                     style={{width:'100%'}}
                     onChange={handle}
+                    inputData={data}
                   />
                </span>
             </div>

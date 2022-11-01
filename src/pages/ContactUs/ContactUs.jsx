@@ -8,6 +8,7 @@ import logoBig from '../../images/logo-big.png'
 import { useState } from 'react';
 import { requestToServer } from '../../helpers/requestToServer';
 import { Alert } from '@mui/material';
+import { InputFesto } from '../../components/InputFesto/InputFesto';
 
 export const ContactUs = () => {
   const {
@@ -36,13 +37,11 @@ export const ContactUs = () => {
     setData(newData);
   }
 
-  console.log('isValid', isValid);
 
-  const onSubmit = (data, e) => {
+  const onSubmit = (_, e) => {
     e.preventDefault();
 
     if (isValid) {
-      setData(data);
       requestToServer(
         '/user/create-users-potential',
         data,
@@ -115,40 +114,19 @@ export const ContactUs = () => {
                   <label htmlFor="first_name" className='contactUs__register--form-row__item--label'>
                     First Name
                   </label>
-                  <input
-                    {...register('first_name', {
-                      required: 'This input is required.',
-                      minLength: {
-                        value: 3,
-                        message: 'Min 3 characters.',
-                      },
-                      maxLength: {
-                        value: 20,
-                        message: 'Max 20 characters.',
-                      },
-                      pattern: {
-                        value: /^[A-Za-z]+$/,
-                        message: "Please enter a valid last name.",
-                      },
-                      onChange: (e) => handle(e),
-                    })}
-                    value={data.first_name}
-                    placeholder='John'
-                    className='contactUs__register--form-row__item--input'
-                    type='text'
-                    id='first_name'
-                  />
-                  <ErrorMessage
-                    errors={errors}
-                    name="first_name"
-                    render={({ messages }) => {
-                      console.log("messages", messages);
-                      return messages
-                        ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="error">{message}</Alert>
-                          ))
-                        : null;
-                    }}
+                  <InputFesto
+                    inputName={'first_name'}
+                    required={'This input is required.'}
+                    minLength={3}
+                    maxLength={20}
+                    patternValue={/^[A-Za-z]+$/}
+                    patternMessage={'first name'}
+                    placeholder={'John'}
+                    className={'contactUs__register--form-row__item--input'}
+                    type={'text'}
+                    style={null}
+                    onChange={handle}
+                    inputData={data}
                   />
                 </span>
 
@@ -156,40 +134,19 @@ export const ContactUs = () => {
                   <label htmlFor="last_name" className='contactUs__register--form-row__item--label'>
                     Last Name
                   </label>
-                  <input
-                    {...register("last_name", {
-                      required: 'This input is required.',
-                      minLength: {
-                        value: 3,
-                        message: 'Min 3 characters.',
-                      },
-                      maxLength: {
-                        value: 20,
-                        message: 'Max 20 characters.',
-                      },
-                      pattern: {
-                        value: /^[A-Za-z]+$/,
-                        message: "Please enter a valid last name.",
-                      },
-                      onChange: (e) => handle(e),
-                    })}
-                    value={data.last_name}
-                    placeholder='Smith'
-                    className='contactUs__register--form-row__item--input'
-                    type='text'
-                    id='last_name'
-                  />
-                  <ErrorMessage
-                    errors={errors}
-                    name="last_name"
-                    render={({ messages }) => {
-                      console.log("messages", messages);
-                      return messages
-                        ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="error">{message}</Alert>
-                          ))
-                        : null;
-                    }}
+                  <InputFesto
+                    inputName={'last_name'}
+                    required={'This input is required.'}
+                    minLength={3}
+                    maxLength={20}
+                    patternValue={/^[A-Za-z]+$/}
+                    patternMessage={'last name'}
+                    placeholder={'Smith'}
+                    className={'contactUs__register--form-row__item--input'}
+                    type={'text'}
+                    style={null}
+                    onChange={handle}
+                    inputData={data}
                   />
                 </span>
               </div>
@@ -199,32 +156,19 @@ export const ContactUs = () => {
                   <label htmlFor="email" className='contactUs__register--form-row__item--label'>
                     Email
                   </label>
-                  <input
-                    {...register("email", {
-                      required: 'This input is required.',
-                      pattern: {
-                        value: /^.+@.+\.[a-zA-Z]{2,63}$/,
-                        message: "Please enter a valid email address.",
-                      },
-                    onChange: (e) => handle(e),
-                    })}
-                    value={data.email}
-                    placeholder='name@example.com'
-                    className='contactUs__register--form-row__item--input'
-                    type='email'
-                    id='email'
-                  />
-                  <ErrorMessage
-                    errors={errors}
-                    name="email"
-                    render={({ messages }) => {
-                      console.log("messages", messages);
-                      return messages
-                        ? Object.entries(messages).map(([type, message]) => (
-                          <Alert key={type} severity="error">{message}</Alert>
-                          ))
-                        : null;
-                    }}
+                  <InputFesto
+                    inputName={'email'}
+                    required={'This input is required.'}
+                    minLength={3}
+                    maxLength={20}
+                    patternValue={/^.+@.+\.[a-zA-Z]{2,63}$/}
+                    patternMessage={'email address'}
+                    placeholder={'name@example.com'}
+                    className={'contactUs__register--form-row__item--input'}
+                    type={'email'}
+                    style={null}
+                    onChange={handle}
+                    inputData={data}
                   />
                 </span>
 
@@ -232,40 +176,19 @@ export const ContactUs = () => {
                   <label htmlFor="phone" className='contactUs__register--form-row__item--label'>
                     Phone
                   </label>
-                  <input
-                    {...register("phone", {
-                      required: 'This input is required.',
-                      minLength: {
-                        value: 10,
-                        message: 'Min 10 characters.',
-                      },
-                      maxLength: {
-                        value: 20,
-                        message: 'Max 20 characters.',
-                      },
-                      pattern: {
-                        value: /^\+\d+$/,
-                        message: "Please enter a valid phone number",
-                      },
-                      onChange: (e) => handle(e),
-                    })}
-                    value={data.phone}
-                    placeholder = "+447428072804"
-                    className='contactUs__register--form-row__item--input'
-                    type='phone'
-                    id='phone'
-                  />
-                  <ErrorMessage
-                    errors={errors}
-                    name="phone"
-                    render={({ messages }) => {
-                      console.log("messages", messages);
-                      return messages
-                        ? Object.entries(messages).map(([type, message]) => (
-                            <Alert key={type} severity="error">{message}</Alert>
-                          ))
-                        : null;
-                    }}
+                  <InputFesto
+                    inputName={'phone'}
+                    required={'This input is required.'}
+                    minLength={10}
+                    maxLength={20}
+                    patternValue={/^\+\d+$/}
+                    patternMessage={'phone number'}
+                    placeholder={'+447428072804'}
+                    className={'contactUs__register--form-row__item--input'}
+                    type={'phone'}
+                    style={null}
+                    onChange={handle}
+                    inputData={data}
                   />
                 </span>
               </div>
@@ -314,18 +237,20 @@ export const ContactUs = () => {
                   <label htmlFor="company" className='contactUs__register--form-row__item--label-NR'>
                     Company (optional)
                   </label>
-                  <input
-                    {...register("company", {
-                      required: false,
-                      onChange: (e) => handle(e),
-                    })}
-                    value={data.company}
-                    className='contactUs__register--form-row__item--input'
-                    type='text'
-                    id='company'
-                    placeholder='company name'
-                  >
-                  </input>
+                  <InputFesto
+                    inputName={'company'}
+                    required={false}
+                    minLength={null}
+                    maxLength={null}
+                    patternValue={null}
+                    patternMessage={null}
+                    placeholder={'company name'}
+                    className={'contactUs__register--form-row__item--input'}
+                    type={'text'}
+                    style={{width:'100%'}}
+                    onChange={handle}
+                    inputData={data}
+                  />
                 </span>
               </div>
 
