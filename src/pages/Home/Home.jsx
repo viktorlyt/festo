@@ -41,7 +41,6 @@ export const Home = ({ animeFunction }) => {
             trigger: '._red_anime1',
             start: 'top 90%',
             end: 'center 50%',
-            // markers: true,
             scrub: true,
             toggleActions: 'restart none reverse reset',
           }
@@ -52,7 +51,6 @@ export const Home = ({ animeFunction }) => {
             trigger: '._red_anime2',
             start: 'top 90%',
             end: 'center 50%',
-            // markers: true,
             scrub: true,
             toggleActions: 'restart none reverse reset',
           }
@@ -63,19 +61,16 @@ export const Home = ({ animeFunction }) => {
             trigger: '._red_anime3',
             start: 'top 90%',
             end: 'center 50%',
-            // markers: true,
             scrub: true,
             toggleActions: 'restart none reverse reset',
           }
         })
         .to('._red_anime4', {
-          // backgroundColor: '$colorRed',
           opacity: 1,
           scrollTrigger: {
             trigger: '._red_anime4',
             start: 'top 90%',
             end: 'center 50%',
-            // markers: true,
             scrub: true,
             toggleActions: 'restart none reverse reset',
           }
@@ -280,7 +275,9 @@ export const Home = ({ animeFunction }) => {
       </section>
 
       <Subscribe2 />
+
       <Footer />
+      
       <CookieConsent
         location="bottom"
         buttonText="Accept"

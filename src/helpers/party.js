@@ -1,4 +1,4 @@
-import { party } from '../helpers/axiosParty';
+import { party } from './axiosParty';
 
 export const getParties = () => {
   return party.get('/party');

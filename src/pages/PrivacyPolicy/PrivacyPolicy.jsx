@@ -116,6 +116,7 @@ export const PrivacyPolicy = () => {
       </section>
 
       <Subscribe />
+      
       <Footer />
     </div>
   )

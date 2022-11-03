@@ -203,14 +203,15 @@ export const FormDialog = ({className = ''}) => {
                </span>
             </div>
           </form>
-
         </DialogContent>
+
         <DialogActions>
           <Button 
             onClick={handleClose}
           >
             Cancel
           </Button>
+          
           <Button
             onClick={handleSubmit(onSubmit)}
             type='submit'

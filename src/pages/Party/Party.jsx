@@ -9,12 +9,12 @@ import { Header } from '../../components/Header/Header'
 import { Slider2 } from '../../components/Slider2/Slider2'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
 import { Map } from '../../components/Map/Map';
+import { FormDialog } from '../../components/FormDialog/FormDialog';
 import usd from '../../images/noun-usd-square-4425742.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
 import arrowLeft from '../../images/arrow_left.svg'
-import { FormDialog } from '../../components/FormDialog/FormDialog';
 
 const libraries = ['places'];
 
@@ -205,6 +205,7 @@ export const Party = () => {
           </div>
 
           <Subscribe />
+          
           <Footer />
         </>
       )}

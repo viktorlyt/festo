@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { ParallaxBanner } from './ParallaxBanner'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
@@ -15,7 +16,6 @@ import f10 from '../../images/f10.svg'
 import f11 from '../../images/f11.svg'
 import f12 from '../../images/f12.svg'
 import f13 from '../../images/f13.png'
-import { ParallaxBanner } from './ParallaxBanner'
 
 export const Features = ({ animeFunction }) => {
   // eslint-disable-next-line

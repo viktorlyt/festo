@@ -3,30 +3,6 @@
   grid-template-columns: repeat(10, 1fr);
   column-gap: $grid_gutter;
 
-  /* @include onTablet {
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 30px;
-  }
-
-  @include onMobile {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-  } */
-
-  /* &--desktop {
-    display: grid;
-    align-items: center;
-
-    @include onTablet {
-      display: grid;
-    }
-
-    @include onMobile {
-      display: grid;
-      align-items: center;
-    }
-  } */
-
   &__item {
     @for $start from 1 through 10 {
       @for $end from 1 through 10 {

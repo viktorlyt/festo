@@ -38,9 +38,7 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  /* overflow-x: hidden; */
   min-width: 340px;
-  /* min-width: 1000px; */
   font-family: questrial, sans-serif;
   font-weight: normal;
   scroll-behavior: smooth;
@@ -74,7 +72,6 @@ body {
   top: 0;
   width: 100%;
   margin: 0 auto;
-  /* max-width: 1680px; */
 }
 
 .isActive {

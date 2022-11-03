@@ -123,10 +123,6 @@
       @include onMobile {
         display: none;
       }
-
-      /* &-div {
-        width: 100%;
-      } */
     }
 
     &--button-mobile {
@@ -163,7 +159,6 @@
 
 #success_sub {
   margin-top: 20px;
-  /* height: 48px; */
   border-radius: 24px;
 
   @include onMobile {

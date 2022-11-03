@@ -179,7 +179,7 @@ export const ContactUs = () => {
                   <InputFesto
                     inputName={'phone'}
                     required={'This input is required.'}
-                    minLength={10}
+                    minLength={12}
                     maxLength={20}
                     patternValue={/^\+\d+$/}
                     patternMessage={'phone number'}
