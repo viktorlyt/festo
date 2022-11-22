@@ -220,6 +220,21 @@
       }
     }
 
+    &--ticket {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      font-size: 20px;
+      font-weight: 400;
+
+      &-img {
+        width: 28px;
+        height: 32px;
+        margin-right: 5px;
+        transform: translateY(0px) translateX(-2px);
+      }
+    }
+
     &--date {
       display: flex;
       align-items: center;

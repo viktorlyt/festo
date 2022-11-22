@@ -11,12 +11,13 @@ import { Subscribe } from '../../components/Subscribe/Subscribe'
 import { Map } from '../../components/Map/Map';
 import { FormDialog } from '../../components/FormDialog/FormDialog';
 import usd from '../../images/noun-usd-square-4425742.svg'
+import ticket from '../../images/ticket-confirmation-outline.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
 import arrowLeft from '../../images/arrow_left.svg'
 
-const libraries = ['places'];
+const libraries1 = ['places'];
 
 export const Party = () => {
   const { id } = useParams();
@@ -40,7 +41,7 @@ export const Party = () => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAtRoN67EWe9K1x0vIoncr3DzjP9QYQzAQ",
-    libraries
+    libraries1
   })
 
   return (
@@ -82,14 +83,14 @@ export const Party = () => {
                     <p className='party__left--host-l-text2'>Host</p>
                   </div>
                 </div>
-                {party.joining_user.length === 1 &&
+                {party.joining_user_count === 1 &&
                   <img
                     src={party.joining_user[0]}
                     alt='flagOfEngland'
                     className='party__left--host-img'
                   />
                 }
-                {party.joining_user.length === 2 &&
+                {party.joining_user_count === 2 &&
                   <>
                     <img
                       src={party.joining_user[0]}
@@ -103,7 +104,7 @@ export const Party = () => {
                     />
                   </>
                 }
-                {party.joining_user.length > 2 &&
+                {party.joining_user_count > 2 &&
                   <>
                     <img
                       src={party.joining_user[0]}
@@ -115,11 +116,29 @@ export const Party = () => {
                       alt='photo1'
                       className='party__left--host-img1'
                     />
-                    <div className='party__left--host-img2-gray'>+ {party.joining_user.length - 2}</div>
+                    <div className='party__left--host-img2-gray'>+ {party.joining_user_count - 2}</div>
                   </>
                 }
               </h3>
 
+              <h3 className='party__left--ticket'>
+                <img
+                  src={ticket}
+                  alt="ticket"
+                  className='party__left--ticket-img'
+                />
+                {party.is_free === 0
+                  ? (
+                      <span>
+                        <b>{party.qty_now}</b> from <b>{party.qty}</b> tickets
+                      </span>
+                  )
+                  : (
+                    <span>Free</span>
+                  )
+                }
+              </h3>
+              
               <h3 className='party__left--price'>
                 <img
                   src={usd}
@@ -174,8 +193,9 @@ export const Party = () => {
                 </div>
               </h3>
 
-              {party.is_free === 0 &&
-                <FormDialog />
+              {party.is_free === 0 && party.qty_now >= 1
+                ? <FormDialog />
+                : null
               }
             </div>
 
@@ -198,8 +218,9 @@ export const Party = () => {
                 ) : <h2>Loading...</h2>
               }
 
-              {party.is_free === 0 &&
-                <FormDialog className={'party__right--lastBtn'}/>
+              {party.is_free === 0 && party.qty_now >= 1
+                ? <FormDialog className={'party__right--lastBtn'}/>
+                : null
               }
             </div>
           </div>
