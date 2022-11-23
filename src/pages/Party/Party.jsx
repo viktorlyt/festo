@@ -9,19 +9,20 @@ import { Header } from '../../components/Header/Header'
 import { Slider2 } from '../../components/Slider2/Slider2'
 import { Subscribe } from '../../components/Subscribe/Subscribe'
 import { Map } from '../../components/Map/Map';
+import { FormDialog } from '../../components/FormDialog/FormDialog';
 import usd from '../../images/noun-usd-square-4425742.svg'
+import ticket from '../../images/ticket-confirmation-outline.svg'
 import pound from '../../images/pound.svg'
 import location from '../../images/location.svg'
 import nounDate from '../../images/noun-date-1146237.svg'
 import arrowLeft from '../../images/arrow_left.svg'
-import { FormDialogMobile } from '../../components/FormDialog/FormDialogMobile';
-import { FormDialog } from '../../components/FormDialog/FormDialog';
 
-const libraries = ['places'];
+const libraries1 = ['places'];
 
 export const Party = () => {
   const { id } = useParams();
   const [party, setParty] = useState(null);
+  const [isOutTime, setIsOutTime] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -36,17 +37,27 @@ export const Party = () => {
     fetchData();
   }, [id]);
 
-  console.log(party);
-
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAtRoN67EWe9K1x0vIoncr3DzjP9QYQzAQ",
-    libraries
+    libraries1
   })
+
+  useEffect(() => {
+    const currentDate = Date.parse(new Date().toUTCString());
+
+    if (party !== null) {
+      const dateOfParty = Date.parse(party.to_date + ' ' + party.to_time);
+    
+      if (dateOfParty <= currentDate) {
+        setIsOutTime(true);
+      }
+    }
+  }, [party]);
 
   return (
     <div className='party'>
-      {party && (
+      {party ? (
         <>
           <Header />
 
@@ -83,14 +94,14 @@ export const Party = () => {
                     <p className='party__left--host-l-text2'>Host</p>
                   </div>
                 </div>
-                {party.joining_user.length === 1 &&
+                {party.joining_user_count === 1 &&
                   <img
                     src={party.joining_user[0]}
                     alt='flagOfEngland'
                     className='party__left--host-img'
                   />
                 }
-                {party.joining_user.length === 2 &&
+                {party.joining_user_count === 2 &&
                   <>
                     <img
                       src={party.joining_user[0]}
@@ -104,7 +115,7 @@ export const Party = () => {
                     />
                   </>
                 }
-                {party.joining_user.length > 2 &&
+                {party.joining_user_count > 2 &&
                   <>
                     <img
                       src={party.joining_user[0]}
@@ -116,11 +127,29 @@ export const Party = () => {
                       alt='photo1'
                       className='party__left--host-img1'
                     />
-                    <div className='party__left--host-img2-gray'>+ {party.joining_user.length - 2}</div>
+                    <div className='party__left--host-img2-gray'>+ {party.joining_user_count - 2}</div>
                   </>
                 }
               </h3>
 
+              <h3 className='party__left--ticket'>
+                <img
+                  src={ticket}
+                  alt="ticket"
+                  className='party__left--ticket-img'
+                />
+                {party.is_free === 0
+                  ? (
+                      <span>
+                        <b>{party.qty_now}</b> from <b>{party.qty}</b> tickets
+                      </span>
+                  )
+                  : (
+                    <span>Free</span>
+                  )
+                }
+              </h3>
+              
               <h3 className='party__left--price'>
                 <img
                   src={usd}
@@ -175,14 +204,14 @@ export const Party = () => {
                 </div>
               </h3>
 
-              {party.is_free === 0 &&
-                <FormDialog />
+              {party.is_free === 0 && party.qty_now >= 1 && !isOutTime
+                ? <FormDialog />
+                : null
               }
             </div>
 
             <div className='party__right'>
               <div className='party__right--notes'>
-                {/* <h3 className='party__right--notes-h3'>Notes</h3> */}
                 <div className='party__right--notes-p'>
                   <div dangerouslySetInnerHTML={{ __html: party.note }} />
                 </div>
@@ -200,16 +229,21 @@ export const Party = () => {
                 ) : <h2>Loading...</h2>
               }
 
-              {party.is_free === 0 &&
-                <FormDialog className={'party__right--lastBtn'}/>
+              {party.is_free === 0 && party.qty_now >= 1 && !isOutTime
+                ? <FormDialog className={'party__right--lastBtn'}/>
+                : null
               }
             </div>
           </div>
 
           <Subscribe />
+          
           <Footer />
-        </>
-      )}
+        </>)
+        : (
+          <h1 className='title'>This party not found</h1>
+        )
+      }
     </div>
   );
 };

@@ -288,32 +288,11 @@
     content: '';
     display: none;
     height: 824px;
-    /* position: absolute; */
-    /* z-index: -1; */
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('../../images/features_banner6.png');
     background-position: center;
-
-    /* &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: -1;
-      transform-origin: center;
-      min-height: 824px;
-      background-image: url('../../images/features_banner2.png');
-      filter: brightness(50%);
-      background-size: cover;
-      background-repeat: no-repeat;
-
-      transform: translateZ(-200px);
-    } */
 
     @include onMobile {
       display: block;

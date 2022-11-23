@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { HashLink, NavHashLink } from 'react-router-hash-link';
-import logo from '../../images/festo-app-logo.png';
+import { useLocation } from 'react-router-dom';
 import { Nav } from '../Nav/Nav';
+import logo from '../../images/festo-app-logo.png';
 
 export const Header = () => {
   const { pathname } = useLocation();

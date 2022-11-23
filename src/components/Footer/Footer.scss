@@ -4,14 +4,12 @@
   flex-direction: column;
   padding: 40px 30px 0;
   height: auto;
-  /* width: 100%; */
   background-color: rgba(255, 56, 34, 1);
   opacity: 1;
   box-shadow: 0 5px 20px 1px rgba(0,0,0,0.2);
 
   @include onMobile {
     padding: 20px 0 0;
-    /* max-width: 320px; */
   }
 
   &__logo {
@@ -29,6 +27,20 @@
         height: 50px;
       }
     }
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
   }
 
   &__home {
@@ -80,13 +92,33 @@
       display: none;
     }
   }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__apple {
+    align-self: flex-end;
+    padding: 0 15px;
+
+    @include onMobile {
+      align-self: center;
+    }
+
+    &--img {
+      align-self: flex-end;
+      width: 150px;
+      height: 60px;
+    }
+  }
   
   &__pp {
     display: inline;
     width: fit-content;
     align-self: flex-end;
-    margin: 12px 0 60px;
-    padding: 0 30px;
+    margin: 12px 0;
+    padding: 0 24px;
     color: $colorWhite;
     text-decoration: none;
 
@@ -176,7 +208,7 @@
   &__fi {
     @include onMobile {
       justify-self: center;
-      margin: 0 auto 40px;
+      margin: 0 auto 20px;
     }
   }
 }
