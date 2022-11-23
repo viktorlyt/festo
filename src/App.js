@@ -63,6 +63,7 @@ function App() {
         </Route>
         <Route path="/success" element={<Success />} />
         <Route path="/error" element={<Error />} />
+        <Route path="*" element={<h1 className="title">Page not found</h1>} />
       </Routes>
     </div>
   );

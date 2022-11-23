@@ -22,6 +22,7 @@ const libraries1 = ['places'];
 export const Party = () => {
   const { id } = useParams();
   const [party, setParty] = useState(null);
+  const [isOutTime, setIsOutTime] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -36,17 +37,27 @@ export const Party = () => {
     fetchData();
   }, [id]);
 
-  console.log(party);
-
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAtRoN67EWe9K1x0vIoncr3DzjP9QYQzAQ",
     libraries1
   })
 
+  useEffect(() => {
+    const currentDate = Date.parse(new Date().toUTCString());
+
+    if (party !== null) {
+      const dateOfParty = Date.parse(party.to_date + ' ' + party.to_time);
+    
+      if (dateOfParty <= currentDate) {
+        setIsOutTime(true);
+      }
+    }
+  }, [party]);
+
   return (
     <div className='party'>
-      {party && (
+      {party ? (
         <>
           <Header />
 
@@ -193,7 +204,7 @@ export const Party = () => {
                 </div>
               </h3>
 
-              {party.is_free === 0 && party.qty_now >= 1
+              {party.is_free === 0 && party.qty_now >= 1 && !isOutTime
                 ? <FormDialog />
                 : null
               }
@@ -218,7 +229,7 @@ export const Party = () => {
                 ) : <h2>Loading...</h2>
               }
 
-              {party.is_free === 0 && party.qty_now >= 1
+              {party.is_free === 0 && party.qty_now >= 1 && !isOutTime
                 ? <FormDialog className={'party__right--lastBtn'}/>
                 : null
               }
@@ -228,8 +239,11 @@ export const Party = () => {
           <Subscribe />
           
           <Footer />
-        </>
-      )}
+        </>)
+        : (
+          <h1 className='title'>This party not found</h1>
+        )
+      }
     </div>
   );
 };
