@@ -10,7 +10,7 @@ import {requestToServer} from "../../helpers/requestToServer";
 import {Alert} from "@mui/material";
 import { InputFesto } from '../InputFesto/InputFesto';
 
-export const FormDialog = ({className = ''}) => {
+export const FormDialog = ({className = '', free = false}) => {
   const { id } = useParams();
   const [open, setOpen] = React.useState(false);
   const [itog, setItog] = useState('initial');
@@ -61,6 +61,14 @@ export const FormDialog = ({className = ''}) => {
 
           if(res?.message?.includes('https://checkout.stripe.com/'))
             setTimeout(() => window.location.href = res?.message, 100)
+          else if(res?.message){
+            setErrorText(res?.message ?? "Server Error!")
+            if(res?.status)
+              setItog('success');
+            else
+              setItog('failure');
+          }
+
         })
         .catch( );
 
@@ -91,7 +99,7 @@ export const FormDialog = ({className = ''}) => {
         }}
       >
         <div className='party__left--btn'>
-          Pay Now
+          {(free) ? 'Request to join' : 'Pay Now'}
         </div>
       </Button>
       <Dialog open={open} onClose={handleClose}>
@@ -102,7 +110,7 @@ export const FormDialog = ({className = ''}) => {
               severity="success"
               id='success_form'
             >
-              Your data was sent successfully!
+              {errorText}
             </Alert>
           }
           {itog === 'failure' &&
@@ -206,18 +214,18 @@ export const FormDialog = ({className = ''}) => {
         </DialogContent>
 
         <DialogActions>
-          <Button 
+          <Button
             onClick={handleClose}
           >
             Cancel
           </Button>
-          
+
           <Button
             onClick={handleSubmit(onSubmit)}
             type='submit'
             style={{backgroundColor: '#ff3818', color: '#fff'}}
           >
-            Go to Checkout
+            {(free) ? 'Join Now' : 'Go to Checkout'}
           </Button>
         </DialogActions>
       </Dialog>
