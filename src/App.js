@@ -7,6 +7,7 @@ import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { Party } from "./pages/Party/Party";
 import Success from "./pages/Success/Success";
 import Error from "./pages/Error/Error";
+import { PartyNotFound } from "./pages/PartyNotFound/PartyNotFound";
 
 function App() {
   const animeFunction = () => {
@@ -63,6 +64,7 @@ function App() {
         </Route>
         <Route path="/success" element={<Success />} />
         <Route path="/error" element={<Error />} />
+        <Route path="/error" element={<PartyNotFound />} />
         <Route path="*" element={<h1 className="title">Page not found</h1>} />
       </Routes>
     </div>
