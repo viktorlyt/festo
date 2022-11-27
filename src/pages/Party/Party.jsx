@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import CookieConsent from "react-cookie-consent"
 import { useJsApiLoader } from '@react-google-maps/api';
 import { getParty } from '../../helpers/axiosParty'
 import { Footer } from '../../components/Footer/Footer'
@@ -250,6 +251,23 @@ export const Party = () => {
         }
       </div>
       {noParty && <PartyNotFound />}
+
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        cookieName="FestoCookie"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ 
+          background: "FFF",
+          color: "#2B373B", 
+          fontSize: "15px",
+          fontWeight: "bold",
+        }}
+        expires={365}
+        hideOnAccept='true'
+      >
+        We use cookies on our website to see how you interact with it. By accepting, you agree to our use of such cookies. <a href='/privacy-policy'>Privacy Policy</a>
+      </CookieConsent>
     </>
   );
 };
