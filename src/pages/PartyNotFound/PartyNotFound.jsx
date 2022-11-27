@@ -2,6 +2,7 @@ import React from 'react'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
+import { Subscribe } from '../../components/Subscribe/Subscribe';
 
 export const PartyNotFound = () => {
 
@@ -24,6 +25,7 @@ export const PartyNotFound = () => {
         </div>
       </section>
 
+      <Subscribe />
       <Footer className='error__footer'/>
     </div>
   )
