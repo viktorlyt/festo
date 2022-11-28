@@ -212,11 +212,10 @@ export const Party = () => {
                   </div>
                 </h3>
 
-                {/* {party.is_free === 0 && party.qty_now >= 1 && !isOutTime */}
-                  {/* ?  */}
-                  <FormDialog />
-                  {/* : null */}
-                {/* } */}
+                {party.is_free === 0 && party.qty_now >= 1 && !isOutTime
+                  ? <FormDialog />
+                  : null
+                }
               </div>
 
               <div className='party__right'>
