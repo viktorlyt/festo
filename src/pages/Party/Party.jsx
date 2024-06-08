@@ -55,7 +55,7 @@ export const Party = () => {
 
     if (party !== null) {
       const dateOfParty = Date.parse(party.to_date + ' ' + party.to_time);
-    
+
       if (dateOfParty <= currentDate) {
         setIsOutTime(true);
       }
@@ -189,7 +189,23 @@ export const Party = () => {
                   />
                   <span className='party__left--date-span'>{party.at_date} - {party.from_time}</span>
                 </h3>
+                <h3 className='party__left--date'>
+                  <img
+                    src={nounDate}
+                    alt="nounDate"
+                    className='party__left--date-date'
+                  />
+                  <span className='party__left--date-span'>{party.at_date} - {party.from_time}</span>
+                </h3>
 
+                <h3 className='party__left--location'>
+                  <img
+                    src={location}
+                    alt="location"
+                    className='party__left--location-svg'
+                  />
+                  <span className='party__left--location-span'>{party.location}</span>
+                </h3>
                 <h3 className='party__left--location'>
                   <img
                     src={location}
@@ -211,6 +227,16 @@ export const Party = () => {
                     <div className="stars_star"></div>
                   </div>
                 </h3>
+                <h3 className='party__left--rate'>
+                  <span className='party__left--rate-span'>Ratings</span>
+                  <div className={`stars stars--${party.avg_rating}`}>
+                    <div className="stars_star"></div>
+                    <div className="stars_star"></div>
+                    <div className="stars_star"></div>
+                    <div className="stars_star"></div>
+                    <div className="stars_star"></div>
+                  </div>
+                </h3>
 
                 {party.is_free === 0 && party.qty_now >= 1 && !isOutTime
                   ? <FormDialog />
@@ -218,6 +244,12 @@ export const Party = () => {
                 }
               </div>
 
+              <div className='party__right'>
+                <div className='party__right--notes'>
+                  <div className='party__right--notes-p'>
+                    <div dangerouslySetInnerHTML={{ __html: party.note }} />
+                  </div>
+                </div>
               <div className='party__right'>
                 <div className='party__right--notes'>
                   <div className='party__right--notes-p'>
