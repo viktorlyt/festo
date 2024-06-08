@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { requestToServer } from '../../helpers/requestToServer';
 import { Alert } from '@mui/material';
 import { InputFesto } from '../../components/InputFesto/InputFesto';
+import CookieConsent from 'react-cookie-consent';
 
 export const ContactUs = () => {
   const {
@@ -267,6 +268,22 @@ export const ContactUs = () => {
 
       <Subscribe />
       <Footer />
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        cookieName="FestoCookie"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ 
+          background: "FFF",
+          color: "#2B373B", 
+          fontSize: "15px",
+          fontWeight: "bold",
+        }}
+        expires={365}
+        hideOnAccept='true'
+      >
+        We use cookies on our website to see how you interact with it. By accepting, you agree to our use of such cookies. <a href='/privacy-policy'>Privacy Policy</a>
+      </CookieConsent>
     </div>
   )
 }

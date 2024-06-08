@@ -103,7 +103,7 @@ export const FormDialog = ({className = '', free = false}) => {
         </div>
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
+        <DialogContent  className='dialog'>
           {itog === 'success' &&
             <Alert
               variant='filled'

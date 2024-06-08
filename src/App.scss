@@ -12,11 +12,13 @@
 @import './pages/Party/Party';
 @import './pages/Success/Success';
 @import './pages/Error/Error';
+@import './pages/PartyNotFound/PartyNotFound';
 
 @import './components/Footer/Footer';
 @import './components/Nav/Nav';
 @import './components/Slider/Slider';
 @import './components/Slider2/Slider2';
+@import './components/FormDialog/FormDialog';
 
 * {
   margin: 0;

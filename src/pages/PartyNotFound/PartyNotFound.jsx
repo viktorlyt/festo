@@ -2,53 +2,32 @@ import React from 'react'
 import { Footer } from '../../components/Footer/Footer'
 import { Header } from '../../components/Header/Header'
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import AppStoreImage from '../../images/App-Store-Symbol.png'
-import QrCodeImage from '../../images/qr-code.svg'
+import { Subscribe } from '../../components/Subscribe/Subscribe';
 import CookieConsent from 'react-cookie-consent';
 
-const Error = () => {
+export const PartyNotFound = () => {
 
   return (
     <div className='features'>
       <Header />
 
       <div className='error__text'>
-        <h1 className='error__text--h'>PAYMENT ERROR</h1>
+        <h1 className='error__text--h'>This party not found</h1>
         <NewReleasesIcon className='error__big_icon'/>
       </div>
 
       <section className='error__main'>
         <div className='error__mainbox'>
-
           <span className='error__main--abz error__main--abz-flex'>
-            <p>
-              If you still want to join the party, please try paying again.
+            <p className='error__main--text'>
+              Something went wrong, please try again.
             </p>
           </span>
-
-          <img
-            className='error__qr-code'
-            src={QrCodeImage}
-            alt=''
-          />
-
-          <a
-            href='https://apps.apple.com/en/app/festo/id1624893933'
-            target='_blank'
-            rel="noreferrer"
-          >
-            <img
-              className='error__app-store'
-              src={AppStoreImage}
-              alt=''
-            />
-          </a>
-
         </div>
       </section>
 
+      <Subscribe />
       <Footer className='error__footer'/>
-
       <CookieConsent
         location="bottom"
         buttonText="Accept"
@@ -68,5 +47,3 @@ const Error = () => {
     </div>
   )
 }
-
-export default Error
