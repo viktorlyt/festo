@@ -9,7 +9,7 @@ import {requestToServer} from "../../helpers/requestToServer"
 import CookieConsent from 'react-cookie-consent'
 
 const Success = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
       requestToServer(
@@ -18,7 +18,7 @@ const Success = () => {
           token: searchParams.get("token")
         },
       );
-  }, []);
+  }, [searchParams]);
 
   return (
     <div className='features'>
